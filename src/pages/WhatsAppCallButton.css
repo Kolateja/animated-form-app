@@ -1,0 +1,15 @@
+.whatsapp-call-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-button img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-button img:hover {
+    transform: scale(1.1);
+}

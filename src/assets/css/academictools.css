@@ -1,0 +1,53 @@
+#academictoolsec {
+    position: relative; /* Ensure relative positioning for the ::after pseudo-element */
+    padding: 50px 0px;
+    background-image: linear-gradient(130deg,  #1E3C72, #8e50c7);
+    
+  }
+  
+  #academictoolsec::before {
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: radial-gradient(circle, transparent 20%, #d9d9d9 20%, #d9d9d9 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #d9d9d9 20%, #d9d9d9 80%, transparent 80%, transparent) 65px 65px, linear-gradient(#4a96a7 5.2px, transparent 5.2px) 0 -2.6px, linear-gradient(90deg, #4a96a7 5.2px, #d9d9d9 5.2px) -2.6px 0;
+    background-size: 130px 130px, 130px 130px, 65px 65px, 65px 65px;
+   opacity: 0.2;
+  }
+
+  #academictoolsec .form-group{
+    
+    min-height: 300px;
+    position: relative;
+    border-radius: 100px;
+  }
+
+  #academictoolsec .form-group textarea{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 20px;
+    padding: 20px;
+    border: none;
+    overflow: auto; 
+    text-align: justify;
+    
+  }
+
+ 
+
+  #academictoolsec #academictoolsecinputwrap{
+    position: relative;
+  }
+
+  #academictoolsec #academictoolsecinputwrap button{
+    position: absolute;
+    bottom: 10px;
+    width: 110px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    
+  }

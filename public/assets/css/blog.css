@@ -1,0 +1,42 @@
+.blog-home-wel-sec{
+    background-image: linear-gradient(to bottom, #1E3C72, #2A5298);
+}
+
+.blog-home-wel-container h1{
+    color: white;
+}
+.blog-home-wel-container p{
+    color: rgb(168, 168, 168);
+}
+
+.blog-wrapper{
+    background-image: linear-gradient(to bottom, #E5E5E5, #FFFFFF);
+    padding: 20PX;
+}
+
+.blog-container .blog-row .blog-col .blog-item {
+   box-shadow: -2px 0px 5px black;
+}
+
+.blog-container .blog-row .blog-col .blog-item img{
+    height: 300px;
+}
+
+.blog-container .blog-row .blog-col .blog-item .card-body h5{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 15px;
+    color: #2A5298;
+    
+}
+.blog-container .blog-row .blog-col .blog-item .card-img-top{
+    background: linear-gradient(to bottom, #1E3C72, #2A5298);
+}
+
+.blog-container .blog-row .blog-col .blog-item .blog-created-date, .blog-author{
+    color: rgb(109, 109, 1);
+}
+
+.blog-container .blog-row .blog-col .blog-item .btn-primary{
+    background: linear-gradient(to bottom, #1E3C72, #2A5298);
+}
+

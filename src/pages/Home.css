@@ -1,0 +1,47 @@
+/* src/pages/Home.css */
+
+.home-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    background-color: #f0f4f8;
+  }
+  
+  .home-text {
+    max-width: 50%;
+  }
+  
+  .home-text h1 {
+    font-size: 3rem;
+    color: #023e8a;
+    margin-bottom: 1rem;
+  }
+  
+  .home-text p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+  
+  .home-text button {
+    background: #0077b6;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .home-text button:hover {
+    background: #0096c7;
+  }
+  
+  .home-banner img {
+    max-width: 45%;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+  

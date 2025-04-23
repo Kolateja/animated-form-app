@@ -1,0 +1,30 @@
+#career {
+  background: #3f71af98;
+  padding: 50px 0px;
+}
+
+#career .hero-section h3,
+h6 {
+  color: white;
+}
+
+#career .hero-section h5 {
+  color: #112d4e;
+}
+
+#career .why-choose-assignment-linkers .why-assignment-linkers-content .card {
+  text-align: justify;
+  min-height: 150px;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #112d4e;
+  box-shadow: 0px 0px 20px #112d4efa;
+}
+
+#upload-a-resume-section {
+  padding: 50px 0px;
+  background: #3f72af;
+}
+
+#upload-a-resume-section form button {
+  background-color: #37985c;
+}

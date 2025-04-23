@@ -1,0 +1,103 @@
+.form-group input,
+.form-group select,
+.form-group textarea {
+  border: 1px solid rgb(70, 70, 134);
+  padding: 9px;
+  font-family: "Times New Roman", Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  box-shadow: 0 0 5px #808080; /* Change this value to the desired shadow color */
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* .input_container {
+  border: 1px solid rgb(70, 70, 134);
+  font-family: "Times New Roman", Times, serif;
+  border-radius: 5px;
+}
+
+input[type=file]::file-selector-button {
+  background-color: #3c79c0;
+  color: #ffffff;
+  border: 0px;
+  border-right: 1px solid #e5e5e5;
+  padding: 10px 15px;
+  margin-right: 20px;
+  transition: .5s;
+  border-radius: 5px;
+}
+
+input[type=file]::file-selector-button:hover {
+  background-color: #0479ff;
+  border: 0px;
+  border-right: 1px solid #e5e5e5;
+} */
+/* Hide the default file input text */
+.input_container input[type="file"] {
+  display: none;
+}
+.input_container {
+  border: 1px solid rgb(70, 70, 134);
+  font-family: "Times New Roman", Times, serif;
+  border-radius: 5px;
+}
+
+.custom-file-upload {
+  background-color: #3c79c0;
+  color: #ffffff;
+  padding: 10px 15px;
+  margin-right: 20px;
+  transition: 0.5s;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom-file-upload:hover {
+  background-color: #0479ff;
+}
+
+#formsection {
+  background-color: rgba(144, 161, 216, 0.372);
+  background: linear-gradient(135deg, rgba(144, 161, 216, 0.372), rgba(216, 144, 161, 0.372));
+
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 50px;
+  position: relative;
+}
+
+#formsection .section-heading {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  position: absolute;
+  top: -17px;
+  left: 0px;
+  right: 0px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px 10px 0px 0px;
+  padding: 5px;
+}
+#added-subj-specialized-lists {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.subj-specialized-list-item {
+  list-style: none;
+  background-color: rgb(231, 194, 228);
+  padding: 5px;
+}
+
+#added-lang-specialized-lists {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.lang-specialized-list-item {
+  list-style: none;
+  background-color: rgb(231, 194, 228);
+  padding: 5px;
+}

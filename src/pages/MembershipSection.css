@@ -1,0 +1,30 @@
+.hero-section {
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+.hero-section-image {
+    text-align: center;
+}
+
+.hero-section-content {
+    margin-top: 20px;
+}
+
+#membership-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card .ant-card-body {
+    padding: 15px;
+}
+
+.thumb-box {
+    text-align: center;
+}
+
+.thumb-text {
+    margin-top: 10px;
+    font-weight: bold;
+}

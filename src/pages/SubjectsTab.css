@@ -1,0 +1,124 @@
+.subjects-tab-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+    /* Let the body handle scrolling */
+}
+
+.tab-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.tab-content {
+    padding-right: 1rem;
+    overflow: visible;
+    /* Remove scroll from here */
+}
+
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.category-card {
+    border-radius: 16px !important;
+    padding: 1.5rem;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    min-height: 300px;
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+}
+
+.category-card .subject-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.subject-item {
+    font-size: 1.1rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.subject-item:hover {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Arrow before list item */
+.subject-item::before {
+    content: '➤';
+    margin-right: 10px;
+    color: #007bff;
+}
+
+/* Second card specific styles */
+.category-card:nth-of-type(2) .subject-item {
+    font-size: 1.2rem;
+}
+
+/* Selected subject display */
+.selected-subject-card {
+    margin-top: 2rem;
+}
+
+.selected-subject-display {
+    padding: 1.5rem;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.selected-subject-display h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.selected-subject-display p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Color backgrounds for each category */
+.category-card.STEM {
+    background: linear-gradient(135deg, #c1eaff, #e0f7fa);
+}
+
+.category-card.BusinessManagement {
+    background: linear-gradient(135deg, #ffe0b2, #ffcc80);
+}
+
+.category-card.SocialSciences {
+    background: linear-gradient(135deg, #f8bbd0, #fce4ec);
+}
+
+.category-card.HealthSciences {
+    background: linear-gradient(135deg, #dcedc8, #f0f4c3);
+}
+
+.category-card.CommunicationsMedia {
+    background: linear-gradient(135deg, #e1bee7, #f3e5f5);
+}

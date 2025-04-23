@@ -1,0 +1,38 @@
+.about-container {
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #f0faff, #ffffff);
+  min-height: 100vh;
+}
+
+.about-section {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.about-header {
+  margin-bottom: 2rem;
+}
+
+.about-card-feature {
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  background: #fff;
+  transition: transform 0.3s ease;
+}
+
+.about-card-feature:hover {
+  transform: translateY(-5px);
+}
+
+.feature-title {
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.about-global-img {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}

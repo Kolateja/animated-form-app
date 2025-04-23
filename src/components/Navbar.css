@@ -1,0 +1,52 @@
+/* Navbar.css */
+
+.navbar-container {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.navbar-logo img {
+  max-height: 80px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar-links a.active,
+.navbar-links a:hover {
+  color: #1890ff;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+}
+
+.navbar-order-button {
+  margin-left: auto;
+}

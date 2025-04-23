@@ -1,0 +1,13 @@
+#services {
+  padding: 50px 0px;
+  /* background: #dbe2ef; */
+  background: #3f71af98;
+}
+
+#main #services .container .section-header p {
+  color: #edecec;
+}
+#services .container .row .services-list .list-group .list-group-item {
+  color: white;
+  background: rgba(17, 45, 78, 0.7);
+}
