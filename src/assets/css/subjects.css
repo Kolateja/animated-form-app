@@ -8,7 +8,7 @@
   position: relative; */
 }
 
-/* #main #subjects::before {
+#main #subjects::before {
   content: "";
   position: absolute;
   left: 0;
@@ -17,7 +17,7 @@
   bottom: 0;
   background: rgba(167, 163, 192, 0.326);
   z-index: 9;
-} */
+}
 
 #main #subjects .container {
   position: relative;
@@ -27,18 +27,22 @@
 /**/
 
 #main #subjects .container .row .subjects-category {
-  padding: 20px; /* Add some padding for better spacing */
-  border-radius: 10px; /* Add rounded corners */
+  padding: 20px;
+  /* Add some padding for better spacing */
+  border-radius: 10px;
+  /* Add rounded corners */
   /* border: 1px solid #555;  */
 }
 
 #main #subjects .container .row .subjects-category .list-group {
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.7); /* Adjust the values for your desired shadow effect */
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.7);
+  /* Adjust the values for your desired shadow effect */
 }
 
 #main #subjects .container .row .subjects-category .list-group .list-group-item {
   background-color: rgba(245, 245, 220, 0.295);
-  color: rgb(18, 18, 18); /* Text color */
+  color: rgb(18, 18, 18);
+  /* Text color */
   transition: transform 0.3s ease;
 }
 
@@ -54,15 +58,17 @@
 }
 
 #main #subjects .container .row .subjects-category .list-group .list-group-item.active {
-  background-color: rgba(17, 45, 78, 0.7); /* Active item background color */
-  color: #fff; /* Active item text color */
+  background-color: rgba(17, 45, 78, 0.7);
+  /* Active item background color */
+  color: #fff;
+  /* Active item text color */
 }
 
 /**/
 
 #main #subjects .container .row .subjects-list-row .subjects-list-row-column .list-group-item {
   /* background: #112d4e; */
-  color: rgb(238, 238, 238);
+  color: rgb(40, 35, 99);
   background: rgba(17, 45, 78, 0.7);
   transition: transform 0.3s ease;
 }
@@ -75,4 +81,42 @@
 #main #subjects .container .row .subjects-list-row h4 {
   color: rgb(255, 255, 255);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.subjects-list-row-column ul {
+  max-height: none;
+  /* allow to grow naturally */
+  background-color: rgb(255, 255, 255);
+  /* replace dark grey */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-shadow: none;
+  /* optional: remove inner shadow */
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.subjects-list-row-column li {
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  color: #333;
+}
+
+.subjects-list-row-column li:hover,
+.subjects-list-row-column li.active {
+  background-color: #1a2b60;
+  /* Light blue */
+  font-weight: 500;
+}
+
+.subjects-list-row-column li::before {
+  content: none;
 }

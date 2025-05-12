@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { Layout, Typography, List } from 'antd';
 import '../assets/css/common.css';
 import '../assets/css/refund_policy.css';
+import Header from './Header';
+import Footer from './FooterSection';
 
 const { Content } = Layout;
 const { Title } = Typography;
@@ -50,6 +52,8 @@ const PrivacyPolicy: React.FC = () => {
 
     return (
         <Layout>
+            {/* <Header /> */}
+
             <Content className="container" style={{ padding: '2rem' }}>
                 <div className="section-header">
                     <Title level={4} style={{ color: '#fff' }}>Privacy Policy</Title>
@@ -63,6 +67,8 @@ const PrivacyPolicy: React.FC = () => {
                     )}
                 />
             </Content>
+            {/* <Footer /> */}
+
         </Layout>
     );
 };

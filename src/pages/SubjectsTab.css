@@ -1,10 +1,10 @@
 .subjects-tab-container {
     max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem;
-    background: #f9f9f9;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    padding: 4rem;
+    background: #0596d3;
+    border-radius: 40px;
+    box-shadow: 0 8px 24px rgba(234, 29, 29, 0.1);
     overflow: visible;
     /* Let the body handle scrolling */
 }
@@ -12,29 +12,37 @@
 .tab-title {
     font-size: 18px;
     font-weight: bold;
-    color: #333;
+    color: #90ce0b;
 }
 
 .tab-content {
-    padding-right: 1rem;
+    padding-right: 0rem;
     overflow: visible;
     /* Remove scroll from here */
 }
 
+.list-group {
+    background-color: #00ff33;
+}
+
+.list-group-item {
+    width: 200px;
+}
+
 .subject-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, minmax(250px, 2fr));
     gap: 1.5rem;
     margin-top: 1rem;
 }
 
 .category-card {
-    border-radius: 16px !important;
+    border-radius: 22px !important;
     padding: 1.5rem;
-    font-size: 15px;
+    font-size: 205px;
     font-weight: 500;
-    color: #333;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    color: #da2626;
+    box-shadow: 0 4px 12px rgba(217, 20, 112, 0.08);
     transition: transform 0.3s ease;
     min-height: 300px;
 }
@@ -61,22 +69,27 @@
     align-items: center;
 }
 
+.selected-subject-info {
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
 .subject-item:hover {
     background-color: #007bff;
-    color: #fff;
+    color: #13a6d7;
     cursor: pointer;
 }
 
 /* Arrow before list item */
 .subject-item::before {
     content: '➤';
-    margin-right: 10px;
+    margin-right: 3px;
     color: #007bff;
 }
 
 /* Second card specific styles */
 .category-card:nth-of-type(2) .subject-item {
-    font-size: 1.2rem;
+    font-size: 2rem;
 }
 
 /* Selected subject display */
@@ -122,3 +135,14 @@
 .category-card.CommunicationsMedia {
     background: linear-gradient(135deg, #e1bee7, #f3e5f5);
 }
+.subjects-list-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .subjects-list-row-column {
+    flex: 1 1 calc(33.33% - 16px);
+    min-width: 280px;
+  }
+  

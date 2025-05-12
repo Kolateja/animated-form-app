@@ -12,7 +12,7 @@ const { Title, Paragraph } = Typography;
 const TermsAndConditions: React.FC = () => {
     return (
         <Layout>
-            <Header />
+            {/* <Header /> */}
             <Content id="main" style={{ background: '#fff' }}>
                 <section id="refund_policy" className="container">
                     <div className="section-header">
@@ -64,7 +64,7 @@ const TermsAndConditions: React.FC = () => {
                 </section>
                 <WhatsAppCallButton />
             </Content>
-            <Footer />
+            {/* <Footer /> */}
         </Layout>
     );
 };

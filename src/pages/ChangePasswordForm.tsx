@@ -1,14 +1,34 @@
 import React from 'react';
 import { Form, Input, Button, message } from 'antd';
+import ApiService from '../services/ApiService';
 
 const ChangePasswordForm: React.FC = () => {
   const [form] = Form.useForm();
 
-  const onFinish = (values: any) => {
+  const onFinish = async (values: any) => {
     console.log('Password Change Submitted:', values);
-    message.success('Password changed successfully!');
-    form.resetFields();
+
+    try {
+      const payload = {
+        oldPassword: values.oldPassword,
+        newPassword: values.newPassword,
+        confirmPassword: values.confirmPassword,
+
+      };
+      const response: any = await ApiService.post('/auth/change-password', payload);
+
+
+      if (response.success) {
+        message.success('Password changed successfully!');
+        form.resetFields();
+      } else {
+        message.error(response.message || 'Password change failed');
+      }
+    } catch (error) {
+      message.error('Error changing password');
+    }
   };
+
 
   return (
     <Form

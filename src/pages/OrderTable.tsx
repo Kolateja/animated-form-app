@@ -1,131 +1,141 @@
-import React, { useState, useRef } from 'react';
-import { Table, Input, Button, Space, Tag } from 'antd';
+import React, { useState, useRef, useEffect } from 'react';
+import { Table, Input, Button, Space, Tag, Popconfirm, message, Select, Modal, Card } from 'antd';
+
 import type { ColumnType } from 'antd/es/table';
 import type { InputRef } from 'antd';
 import { SearchOutlined, EyeOutlined } from '@ant-design/icons';
-
+import axios from 'axios';
+import ApiService from '../services/ApiService';
+import { Link } from 'react-router-dom';
 interface Order {
+  id: string
   key: string;
   orderId: string;
   subject: string;
+  userId: string
   deadline: string;
-  wordsCount: number;
-  status: 'pending' | 'in progress' | 'completed';
+  wordCount: number;
+  pages: number;
+  orderStatus: 'pending' | 'inProgress' | 'completed' | 'awaitingClarification';
 }
 
 type DataIndex = keyof Order;
 
-const sampleOrders: Order[] = [
-  {
-    key: '1',
-    orderId: 'ORD001',
-    subject: 'Mathematics Assignment',
-    deadline: '2025-04-20 14:00',
-    wordsCount: 1000,
-    status: 'pending',
-  },
-  {
-    key: '2',
-    orderId: 'ORD002',
-    subject: 'History Essay',
-    deadline: '2025-04-21 16:30',
-    wordsCount: 1500,
-    status: 'in progress',
-  },
-  {
-    key: '3',
-    orderId: 'ORD003',
-    subject: 'Marketing Plan',
-    deadline: '2025-04-18 11:00',
-    wordsCount: 2000,
-    status: 'completed',
-  },
-];
-
 const OrderTable: React.FC = () => {
+  const [orders, setOrders] = useState<Order[]>([]);
+  const [loading, setLoading] = useState(true);
   const [searchText, setSearchText] = useState('');
   const [searchedColumn, setSearchedColumn] = useState('');
   const searchInput = useRef<InputRef>(null);
+  const [updating, setUpdating] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [selectedOrderId, setSelectedOrderId] = useState<string | null>(null);
+  const [selectedStatus, setSelectedStatus] = useState<string>('');
 
-  const handleSearch = (
-    selectedKeys: React.Key[],
-    confirm: () => void,
-    dataIndex: DataIndex
-  ) => {
-    confirm();
-    setSearchText(selectedKeys[0]?.toString() || '');
-    setSearchedColumn(dataIndex);
-  };
 
-  const handleReset = (clearFilters: () => void) => {
-    clearFilters();
-    setSearchText('');
-  };
+  // 🔹 Fetch assignments from backend
+  useEffect(() => {
+    const fetchAssignments = async () => {
+      try {
+        const response = await ApiService.get('/assignments/', { withCredentials: true });
+        const data = Array.isArray(response.data) ? response.data : [];
 
-  const getColumnSearchProps = (dataIndex: DataIndex): ColumnType<Order> => ({
-    filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
-      <div style={{ padding: 8 }}>
-        <Input
-          ref={searchInput}
-          placeholder={`Search ${dataIndex}`}
-          value={selectedKeys[0]?.toString()}
-          onChange={(e) => setSelectedKeys(e.target.value ? [e.target.value] : [])}
-          onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
-          style={{ marginBottom: 8, display: 'block' }}
-        />
-        <Space>
-          <Button
-            type="primary"
-            icon={<SearchOutlined />}
-            onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
-            size="small"
-            style={{ width: 90 }}
-          >
-            Search
-          </Button>
-          <Button
-            onClick={() => handleReset(clearFilters!)}
-            size="small"
-            style={{ width: 90 }}
-          >
-            Reset
-          </Button>
-        </Space>
-      </div>
-    ),
-    filterIcon: (filtered) => (
-      <SearchOutlined style={{ color: filtered ? '#1890ff' : undefined }} />
-    ),
-    onFilter: (value, record) =>
-      record[dataIndex]
-        .toString()
-        .toLowerCase()
-        .includes((value as string).toLowerCase()),
-    onFilterDropdownOpenChange: (visible) => {
-      if (visible) {
-        setTimeout(() => searchInput.current?.select(), 100);
+        const formatted: Order[] = data.map((item: any, index: number) => ({
+          id: item.id,
+          key: index.toString(),
+          orderId: item.orderId,
+          userId: item.userId,
+          subject: item.subject || 'N/A',
+          deadline: item.deadline || 'N/A',
+          wordCount: item.wordCount || 0,         // match interface
+          pages: item.pages || 0,         // match interface
+          orderStatus: item.orderStatus || 'pending',   // match interface
+        }));
+
+
+        console.log(formatted, "??????")
+        setOrders(formatted);
+      } catch (error) {
+        console.error('Error fetching assignments:', error);
+      } finally {
+        setLoading(false);
       }
-    },
-    render: (text) =>
-      searchedColumn === dataIndex ? (
-        <span style={{ backgroundColor: '#ffd', fontWeight: 500 }}>{text}</span>
-      ) : (
-        text
-      ),
-  });
+    };
+
+    fetchAssignments();
+  }, []);
+
+  const updateOrderStatus = async (id: string, orderStatus: string) => {
+    setUpdating(true);
+    try {
+      const response: any = await ApiService.put(`/assignments/${id}`, { orderStatus: orderStatus });
+      console.log(response, ":::::::::::")
+      if (response.success) {
+        alert('Order status updated successfully');
+        message.success('Order status updated successfully');
+        setOrders((prevData) =>
+          prevData.map((order) =>
+            order.id === id
+              ? { ...order, orderStatus: orderStatus as Order['orderStatus'] }
+              : order
+          )
+        );
+      } else {
+        message.error(response.message || 'Failed to update order status');
+      }
+    } catch (error) {
+      message.error('Error updating order status');
+    } finally {
+      setUpdating(false);
+    }
+  };
+
+  const handleStatusChange = (orderId: string, newStatus: string) => {
+    setSelectedOrderId(orderId);
+    setSelectedStatus(newStatus);
+    setIsModalVisible(true);
+  };
+
+  const handleModalOk = () => {
+    if (selectedOrderId && selectedStatus) {
+      updateOrderStatus(selectedOrderId, selectedStatus);
+    }
+    setIsModalVisible(false);
+  };
+
+  const handleModalCancel = () => {
+    setIsModalVisible(false);
+    setSelectedOrderId(null);
+    setSelectedStatus('');
+  };
+  const filteredOrders = Array.isArray(orders)
+    ? orders.filter(order =>
+      Object.values(order).some(value =>
+        String(value ?? '').toLowerCase().includes(searchText.toLowerCase())
+      )
+    )
+    : [];
+
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchText(e.target.value);
+  };
 
   const columns: ColumnType<Order>[] = [
     {
       title: 'Order ID',
       dataIndex: 'orderId',
       key: 'orderId',
-      ...getColumnSearchProps('orderId'),
+    },
+    {
+      title: 'User Id',
+      dataIndex: 'userId',
+      key: 'userId',
     },
     {
       title: 'Subject',
       dataIndex: 'subject',
       key: 'subject',
-      ...getColumnSearchProps('subject'),
     },
     {
       title: 'Deadline (IST)',
@@ -134,43 +144,131 @@ const OrderTable: React.FC = () => {
     },
     {
       title: 'Words Count',
-      dataIndex: 'wordsCount',
-      key: 'wordsCount',
+      dataIndex: 'wordCount',
+      key: 'wordCount',
+    },
+    {
+      title: 'Pages',
+      dataIndex: 'pages',
+      key: 'pages',
     },
     {
       title: 'Order Status',
-      dataIndex: 'status',
-      key: 'status',
-      render: (status) => {
-        const color =
-          status === 'pending'
-            ? 'orange'
-            : status === 'in progress'
-            ? 'blue'
-            : 'green';
-        return <Tag color={color}>{status.toUpperCase()}</Tag>;
+      dataIndex: 'orderStatus',
+      key: 'orderStatus',
+      render: (orderStatus: string, record: Order) => {
+        const status = orderStatus || 'pending';
+
+        return (
+          <Select
+            value={status}
+            onChange={(newStatus) => handleStatusChange(record.id, newStatus)} // <-- OPEN MODAL HERE
+            style={{ width: 180 }}
+          >
+            <Select.Option value="pending">Pending</Select.Option>
+            <Select.Option value="inProgress">In Progress</Select.Option>
+            <Select.Option value="awaitingClarification">Awaiting Clarification</Select.Option>
+            <Select.Option value="completed">Completed</Select.Option>
+          </Select>
+        );
       },
     },
     {
       title: 'Action',
       key: 'action',
-      render: (_, record) => (
-        <Button
-          type="link"
-          icon={<EyeOutlined />}
-          onClick={() => console.log('Viewing Order:', record)}
-        >
-          View
-        </Button>
+      render: (_: any, record: Order) => (
+        <Space size="middle">
+          <Link to={`/orderDetails/${record.userId}/${record.orderId}`}>
+            <Button icon={<EyeOutlined />} type="link">View</Button>
+          </Link>
+        </Space>
       ),
-    },
+    }
   ];
 
   return (
-    <div style={{ padding: 24 }}>
-      <h2>Orders List</h2>
-      <Table columns={columns} dataSource={sampleOrders} bordered />
-    </div>
+    // <>
+    //   <h2>Orders List</h2>
+    // <Space>
+    //   <Input.Search
+    //     placeholder="Search order Details..."
+    //     allowClear
+    //     value={searchText}
+    //     onChange={handleSearch}
+    //     onSearch={(value: any) => { setSearchText(value) }}
+    //     style={{ width: 200, float: "right" }}
+    //     size='small'
+    //   />
+    // </Space>
+    // <Table
+    //   columns={columns}
+    //   dataSource={orders.filter(order =>
+    //     Object.values(order).some(value =>
+    //       String(value ?? '').toLowerCase().includes(searchText.toLowerCase())
+    //     )
+    //   )}
+    //   loading={loading}
+    //   bordered
+    //   size='small'
+    //   rowKey="id"
+    // />
+
+
+    // <Modal
+    //   title="Confirm Status Change"
+    //   visible={isModalVisible}
+    //   onOk={handleModalOk}
+    //   onCancel={handleModalCancel}
+    //   okText="Update"
+    //   cancelText="Cancel"
+    // >
+    //   <p>Are you sure you want to change the status to <strong>{selectedStatus}</strong>?</p>
+    // </Modal>
+
+    // </>
+
+    <>
+
+      <Card
+        title={<span style={{ color: '#eb987d', display: 'flex', justifyContent: 'center' }} >Orders List</span>}
+        style={{ width: 900, margin: '0 auto' }}
+      >
+        <Space>
+          <Input.Search
+            placeholder="Search order Details..."
+            allowClear
+            value={searchText}
+            onChange={handleSearch}
+            onSearch={(value: any) => { setSearchText(value) }}
+            style={{ width: 200, float: "right" ,height:40}}
+             size='large'
+          />
+        </Space>
+        <Table
+          columns={columns}
+          dataSource={orders.filter(order =>
+            Object.values(order).some(value =>
+              String(value ?? '').toLowerCase().includes(searchText.toLowerCase())
+            )
+          )}
+          loading={loading}
+          bordered
+          size='small'
+          rowKey="id"
+        />
+
+        <Modal
+          title="Confirm Status Change"
+          visible={isModalVisible}
+          onOk={handleModalOk}
+          onCancel={handleModalCancel}
+          okText="Update"
+          cancelText="Cancel"
+        >
+          <p>Are you sure you want to change the status to <strong>{selectedStatus}</strong>?</p>
+        </Modal>
+      </Card>
+    </>
   );
 };
 

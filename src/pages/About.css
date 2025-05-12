@@ -1,12 +1,15 @@
 .about-container {
   padding: 4rem 2rem;
-  background: linear-gradient(to bottom, #f0faff, #ffffff);
+  background: linear-gradient(to bottom, #88c6e4, #df8383);
   min-height: 100vh;
+  /* background-color: #a6cdd6; */
 }
 
 .about-section {
   margin-bottom: 4rem;
   text-align: center;
+  /* background-color: #a87e24; */
+
 }
 
 .about-header {
@@ -18,7 +21,7 @@
   padding: 1rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
   text-align: center;
-  background: #fff;
+  background: #3e81aa;
   transition: transform 0.3s ease;
 }
 

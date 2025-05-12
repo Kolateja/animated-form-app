@@ -1,0 +1,54 @@
+.dashboard-container-user-view {
+    /* max-width: 1200px; */
+    /* margin: 40px auto; */
+    padding: 24px;
+    background-color: #1592a5;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.dashboard-title-user-view {
+    text-align: center;
+    margin-bottom: 32px;
+    color: #1f1f1f;
+    font-weight: 700;
+}
+
+.dashboard-card {
+    border-radius: 12px;
+    background-color: #de9292;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border-top: 4px solid transparent;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-title-user-view {
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+/* Colored borders for visual distinction */
+/* .dashboard-card-blue-user-view {
+    border-top: 4px solid #1677ff;
+} */
+
+/* .dashboard-card-green-user-view {
+    border-top: 4px solid #52c41a;
+}
+
+.dashboard-card-orange-user-view {
+    border-top: 4px solid #fa8c16;
+} */
+
+/* Optional: unify ant card head style */
+.ant-card-head {
+    background-color: #fafafa;
+    border-radius: 12px 12px 0 0;
+}

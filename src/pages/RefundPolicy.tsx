@@ -1,6 +1,5 @@
 import React from 'react';
 import { Typography, List, Divider } from 'antd';
-
 const { Title, Paragraph } = Typography;
 
 const policyItems = [
@@ -102,32 +101,72 @@ const policyItems = [
 
 const RefundPolicy: React.FC = () => {
     return (
-        <div style={{ background: '#111', padding: '2rem' }}>
-            <Typography style={{ color: '#fff' }}>
-                <Title level={3} style={{ color: '#fff' }}>REFUND POLICY</Title>
-                <Paragraph style={{ fontSize: 16 }}>
-                    Dear client, we work to deliver the best quality to our clients. We believe in truthfulness, transparency, and honesty, leading us to craft a fully transparent refund policy.
-                </Paragraph>
-                <Paragraph style={{ fontSize: 16 }}>
-                    When you place an order, it's assumed you've read and agreed to all policies on our website and in the invoice email.
-                </Paragraph>
-                {policyItems.map((section, index) => (
-                    <div key={index}>
-                        <Divider orientation="left" style={{ color: '#fff', borderColor: '#fff' }}>{section.title}</Divider>
-                        <List
-                            dataSource={section.items}
-                            renderItem={(item, idx) => (
-                                <List.Item style={{ color: '#fff' }}>
-                                    <List.Item.Meta
-                                        title={<span style={{ color: '#fff' }}>&#10004; {item.title}</span>}
-                                        description={item.description ? <span style={{ color: '#ccc' }}>{item.description}</span> : null}
-                                    />
-                                </List.Item>
-                            )}
-                        />
-                    </div>
-                ))}
-            </Typography>
+        <div style={{ background: '#1e6891', padding: '2rem', color: '#fff', width: '100vw' }}>
+            {/* <Header /> */}
+
+            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                <Title
+                    level={2}
+                    style={{
+                        color: '#fff',
+                        fontWeight: 600,
+                        fontSize: '2.5rem',
+                        textTransform: 'uppercase',
+                        letterSpacing: '1px',
+                        marginBottom: '0.5rem'
+                    }}
+                >
+                    Refund Policy
+                </Title>
+                <div style={{
+                    width: '100px',
+                    height: '4px',
+                    background: '#fff',
+                    margin: '0 auto',
+                    borderRadius: '2px',
+                    position: 'relative'
+                }}>
+                    <div style={{
+                        width: '12px',
+                        height: '12px',
+                        background: '#fff',
+                        borderRadius: '50%',
+                        position: 'absolute',
+                        top: '-4px',
+                        left: 'calc(50% - 6px)'
+                    }} />
+                </div>
+            </div>
+
+
+
+
+
+            <Paragraph style={{ fontSize: 16, color: '#fff' }}>
+                Dear client, we work to deliver the best quality to our clients. We believe in truthfulness, transparency, and honesty, leading us to craft a fully transparent refund policy.
+            </Paragraph>
+            <Paragraph style={{ fontSize: 16, color: '#fff' }}>
+                When you place an order, it's assumed you've read and agreed to all policies on our website and in the invoice email.
+            </Paragraph>
+
+            {policyItems.map((section, index) => (
+                <div key={index}>
+                    <Divider orientation="left" style={{ color: '#fff', borderColor: '#fff' }}>{section.title}</Divider>
+                    <List
+                        dataSource={section.items}
+                        renderItem={(item, idx) => (
+                            <List.Item style={{ color: '#fff' }}>
+                                <List.Item.Meta
+                                    title={<span style={{ color: '#fff' }}>&#10004; {item.title}</span>}
+                                    description={item.description ? <span style={{ color: '#ccc' }}>{item.description}</span> : null}
+                                />
+                            </List.Item>
+                        )}
+                    />
+                </div>
+            ))}
+            {/* <Footer /> */}
+
         </div>
     );
 };

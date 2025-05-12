@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { Typography, List, Layout } from 'antd';
 import '@/assets/css/common.css';
 import '@/assets/css/refund_policy.css';
+import Header from './Header';
+import Footer from './FooterSection';
 
 const { Title } = Typography;
 const { Content } = Layout;
@@ -58,6 +60,8 @@ const PaymentPolicy: React.FC = () => {
 
     return (
         <Layout>
+            {/* <Header /> */}
+
             {/* You can include your header and footer components here */}
             <Content id="main">
                 <section id="refund_policy">
@@ -73,6 +77,8 @@ const PaymentPolicy: React.FC = () => {
                     </div>
                 </section>
             </Content>
+            {/* <Footer /> */}
+
         </Layout>
     );
 };

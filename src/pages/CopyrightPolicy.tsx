@@ -13,7 +13,7 @@ const { Title, Paragraph } = Typography;
 const CopyrightPolicy: React.FC = () => {
     return (
         <Layout>
-            <Header />
+            {/* <Header /> */}
             <Content id="main">
                 <section id="refund_policy">
                     <div className="container">
@@ -41,7 +41,7 @@ const CopyrightPolicy: React.FC = () => {
                 </section>
                 <WhatsAppCallButton />
             </Content>
-            <Footer />
+            {/* <Footer /> */}
         </Layout>
     );
 };

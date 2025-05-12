@@ -15,7 +15,7 @@ interface ErrorPageProps {
 const ErrorPage: React.FC<ErrorPageProps> = ({ error }) => {
     return (
         <Layout style={{ minHeight: "100vh" }}>
-            <Header />
+            {/* <Header /> */}
 
             <Content style={{ padding: "2rem", background: "#fff" }}>
                 <div style={{ maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
@@ -35,7 +35,7 @@ const ErrorPage: React.FC<ErrorPageProps> = ({ error }) => {
                 </div>
             </Content>
 
-            <Footer />
+            {/* <Footer /> */}
         </Layout>
     );
 };

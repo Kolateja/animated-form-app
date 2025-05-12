@@ -1,8 +1,9 @@
-import { Tabs, Typography, Row, Col, Card } from 'antd';
+import { Tabs, Typography, Row, Col, Card, Collapse } from 'antd';
 import { useState } from 'react';
-
+import { MessageOutlined } from '@ant-design/icons';
 const { Title, Paragraph } = Typography;
 const { TabPane } = Tabs;
+const { Panel } = Collapse;
 
 const faqs = {
     assignment: [
@@ -162,29 +163,54 @@ const faqs = {
         },
     ],
 };
+const renderFaqs = (faqList: { question: string; answer: string }[]) => (
+    <div style={{ width: 1300 /* or any fixed value you want */ }}>
+        <Collapse
+            accordion
+            bordered={false}
+            style={{
+                background: '#ffffff',
+                borderRadius: 22,
+                boxShadow: '0 2px 12px rgba(0,0,0,0.05)',
+                padding: 16,
+                width: '100%' // make it fill the wrapper
+            }}
+        >
+            {faqList.map((faq, index) => (
+                <Panel header={faq.question} key={index}>
+                    <div style={{ height: 100 }}>
+                        <Title level={5} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                            <MessageOutlined style={{ color: '#1890ff' }} />
+                        </Title>
+                        <Paragraph style={{ marginTop: 8, color: '#595959' }}>
+                            {faq.answer}
+                        </Paragraph>
+                    </div>
+                </Panel>
+            ))}
+        </Collapse>
+    </div>
+);
+
+
 
 
 const FaqPage = () => {
+
     const [activeKey, setActiveKey] = useState('assignment');
 
-    const renderFaqs = (faqList: { question: string; answer: string }[]) => (
-        <Row gutter={[24, 24]}>
-            {faqList.map((faq, index) => (
-                <Col xs={24} md={12} key={index}>
-                    <Card bordered={false} style={{ background: '#fafafa' }}>
-                        <Title level={5}>{faq.question}</Title>
-                        <Paragraph>{faq.answer}</Paragraph>
-                    </Card>
-                </Col>
-            ))}
-        </Row>
-    );
-
     return (
-        <div className="container" style={{ padding: '24px' }}>
-            <Row justify="center">
+        <div style={{ padding: '32px 16px', background: '#f5f7fa' }}>
+            {/* <Header /> */}
+
+            <Row justify="center" style={{ marginBottom: 24 }}>
                 <Col>
-                    <Title level={3}>Frequently Asked Questions</Title>
+                    <Title level={2} style={{ textAlign: 'center', marginBottom: 0 }}>
+                        Frequently Asked Questions
+                    </Title>
+                    <Paragraph style={{ textAlign: 'center', color: '#777' }}>
+                        Get answers to the most common questions our students ask.
+                    </Paragraph>
                 </Col>
             </Row>
 
@@ -193,6 +219,8 @@ const FaqPage = () => {
                 activeKey={activeKey}
                 onChange={(key) => setActiveKey(key)}
                 centered
+                size="large"
+                type="line"
             >
                 <TabPane tab="Assignment Enquiries" key="assignment">
                     {renderFaqs(faqs.assignment)}
@@ -203,7 +231,11 @@ const FaqPage = () => {
                 <TabPane tab="Portal Enquiries" key="portal">
                     {renderFaqs(faqs.portal)}
                 </TabPane>
+
+
             </Tabs>
+            {/* <Footer /> */}
+
         </div>
     );
 };

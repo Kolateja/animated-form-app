@@ -1,6 +1,8 @@
 import React from 'react';
 import { Typography, List, Layout } from 'antd';
 import './FairUsePolicy.css'; // Optional: Put any custom styles here
+import Header from './Header';
+import Footer from './FooterSection';
 
 const { Title, Paragraph } = Typography;
 const { Content } = Layout;
@@ -15,6 +17,8 @@ const FairUsePolicy: React.FC = () => {
 
     return (
         <Layout className="fair-use-policy-layout">
+            {/* <Header /> */}
+
             <Content style={{ padding: '2rem', maxWidth: 1000, margin: '0 auto' }}>
                 <div className="section-header">
                     <Title level={4}>Fair Use Policy</Title>
@@ -35,6 +39,7 @@ const FairUsePolicy: React.FC = () => {
                     )}
                 />
             </Content>
+            {/* <Footer /> */}
         </Layout>
     );
 };

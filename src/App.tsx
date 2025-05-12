@@ -1,73 +1,155 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Register from './pages/Register';
-import Login from './pages/Login';
-import About from './pages/About';
-import AcademicDetailsForm from './pages/AcademicDetailsForm';
-import OrderAssignmentForm from './pages/OrderAssignmentForm';
-import RaiseTicketForm from './pages/RaiseTicketForm';
-import ChangePasswordForm from './pages/ChangePasswordForm';
-import AddUser from './pages/User';
-import BlogForm from './pages/BlogForm';
-import CreateSampleForm from './pages/sample-form';
-import UserTable from './pages/UserTable';
-import OrderTable from './pages/OrderTable';
-import SubjectsTab from './pages/subjects';
-import AuthPage from './pages/AuthPage';
-import BlogPage from './pages/BlogPage';
-import BlogDetailsPage from './pages/BlogDetailsPage';
-import CareerPage from './pages/CareerPage'
-import Services from './pages/Services';
-import TermsAndConditions from './pages/TermsAndConditions';
-import ContactForm from './pages/ContactForm';
-import FairUsePolicy from './pages/FairUsePolicy';
-import FaqPage from './pages/FaqPage';
-import ForgotPassword from './pages/ForgotPassword';
-import WhyChooseUs from './pages/WhyChooseUs';
-import MembershipSection from './pages/MembershipSection';
-import OffersPage from './pages/OffersPage';
-import RefundPolicy from './pages/RefundPolicy';
-import Samples from './pages/Samples';
-const App: React.FC = () => {
-  return (
-    <Router>
-      <Navbar />
-      <div style={{ padding: '2rem' }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/auth/login-signup" element={<AuthPage />} />
-          <Route path="/academicdetails" element={<AcademicDetailsForm />} />
-          <Route path="/orderassignment" element={<OrderAssignmentForm />} />
-          <Route path="/raiseticket" element={<RaiseTicketForm />} />
-          <Route path="/changepassword" element={<ChangePasswordForm />} />
-          <Route path="/adduser" element={<AddUser />} />
-          <Route path="/createblog" element={<BlogForm />} />
-          <Route path="/sample" element={<CreateSampleForm />} />
-          <Route path="/userslist" element={<UserTable />} />
-          <Route path="/orderslist" element={<OrderTable />} />
-          <Route path="/career" element={<CareerPage />} />
-          <Route path="/subjects" element={<SubjectsTab />} />
-          <Route path="/terms" element={<TermsAndConditions />} />
-          <Route path="/contactus" element={<ContactForm />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/whychooseus" element={<WhyChooseUs />} />
-          <Route path="/membership" element={<MembershipSection />} />
-          <Route path="/offers" element={<OffersPage />} />
-          <Route path="/faq" element={<FaqPage />} />
-          <Route path="/refundpolicy" element={<RefundPolicy />} />
-          <Route path="/fair-use-policy" element={<FairUsePolicy />} />
-          <Route path="/forgotpassword" element={<ForgotPassword />} />
-          <Route path="/samples" element={<Samples samplesList={[]} />} />
-          <Route path="/blog" element={<BlogPage blogList={[]} />} />
-          {/* <Route path="/blogDetails" element={<BlogDetailsPage getBlogDetails={} />} /> */}
 
-        </Routes>
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Sidebar from './pages/sidebar';
+import BodyLayout from './pages/bodyLayout';
+import Header from './pages/Header';
+import Footer from './pages/FooterSection';
+
+type RoleType = 'super admin' | 'admin' | 'student';
+
+const App = () => {
+  const navigate = useNavigate();
+  const [role, setRole] = useState<RoleType | null>(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Sidebar visible by default on desktop
+
+  useEffect(() => {
+    const storedRole = localStorage.getItem('role') as RoleType;
+    if (storedRole === 'super admin' || storedRole === 'admin' || storedRole === 'student') {
+      setRole(storedRole);
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  const handleLoginFlag = (userRole: RoleType | null) => {
+    if (userRole) {
+      setRole(userRole);
+      setIsLoggedIn(true);
+      navigate(`/${userRole.replace(' ', '')}DashBoard`);
+    } else {
+      setRole(null);
+      setIsLoggedIn(false);
+      navigate('/home');
+    }
+  };
+
+  const handleLogoutFlag = () => {
+    localStorage.clear();
+    setRole(null);
+    setIsLoggedIn(false);
+    navigate('/home');
+  };
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+  return (
+    <div
+      className="layout-container"
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        // maxWidth: '1440px',
+        minHeight: '100vh',
+        justifyContent: 'center', backgroundColor: '#f9f9f9'
+      }}
+    >
+      {!isLoggedIn && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '80px',
+            zIndex: 999,
+            backgroundColor: '#fff'
+          }}
+        >
+          <Header />
+        </div>
+      )}
+
+
+      <div className="layout-main flex">
+        {isLoggedIn && role && (
+          <div
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '250px',
+              height: '100vh',
+              backgroundColor: '#f8f9fa',
+              zIndex: 1000
+            }}
+          >
+            <Sidebar role={role} handleLogoutFlag={handleLogoutFlag} />
+          </div>
+        )}
+
+        <div
+          className="main-content"
+          style={{
+            marginLeft: isLoggedIn && role ? '250px' : '0',
+            padding: '20px',
+            paddingTop: !isLoggedIn ? '80px' : '20px', // offset if header is fixed
+            width: '100vw'
+          }}
+        >
+          <BodyLayout />
+          {!isLoggedIn && <Footer />}
+        </div>
       </div>
-    </Router>
+    </div>
   );
+
+  // return (
+  //   <div className="flex h-screen" style={{ display: "flex" }}>
+  //     <div className="layout-container" style={{ display: "flex", flexDirection: "column" }}>
+
+  //       {/* Show Header and Footer only BEFORE login */}
+  //       {!isLoggedIn && <Header />}
+
+  //       <div className="layout-main flex">
+  //         {/* Sidebar with fixed width and position */}
+  //         {isLoggedIn && role && (
+  //           <div
+  //             style={{
+  //               position: 'fixed',
+  //               top: 0,
+  //               left: 0,
+  //               width: '250px',
+  //               height: '100vh',
+  //               backgroundColor: '#f8f9fa', // optional background
+  //               zIndex: 1000
+  //             }}
+  //           >
+  //             <Sidebar role={role} handleLogoutFlag={handleLogoutFlag} />
+  //           </div>
+  //         )}
+
+  //         {/* Main content shifted to the right of the sidebar */}
+  //         <div
+  //           className="flex-1 overflow-y-auto"
+  //           style={{
+  //             marginLeft: isLoggedIn && role ? '250px' : '0',
+  //             padding: '20px',
+  //             width: '100%'
+  //           }}
+  //         >
+  //           <BodyLayout />
+  //         </div>
+  //       </div>
+
+
+  //       {/* Show Footer only BEFORE login */}
+  //       {!isLoggedIn && <Footer />}
+  //     </div>
+  //   </div>
+  // );
 };
 
 export default App;

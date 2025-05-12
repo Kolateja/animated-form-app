@@ -3,15 +3,15 @@ import React from 'react';
 import { Row, Col, Card, Typography } from 'antd';
 import { motion } from 'framer-motion';
 import AnimatedPage from '../components/AnimatedPage';
-// import './About.css';
+import './About.css';
 // Remove this (it's causing the error)
-import '../assets/css/aboutus.css'; // Adjust the path based on file location
+// import '../assets/css/aboutus.css'; // Adjust the path based on file location
 
 
 
 const { Title, Paragraph } = Typography;
 const features = [
-  { title: 'Best experienced organisation', img: '/assets/img/aboutus/experiance-organization.png' },
+  { title: 'Best experienced organisation', img: '/assets/img/aboutus/experiance-organization.png', },
   { title: 'Team of expert writers', img: '/assets/img/aboutus/team-professional-writers.png' },
   { title: 'Award winners', img: '/assets/img/aboutus/award-winners.png' },
   { title: 'Service oriented', img: '/assets/img/aboutus/service-oriented.png' },
@@ -24,38 +24,48 @@ const features = [
 const About: React.FC = () => {
   return (
     <AnimatedPage>
-      <div className="about-container">
-        <section className="about-section">
-          <motion.div
-            className="about-header"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Title level={3}>Who we are?</Title>
-            <Paragraph>
-              Struggling with assignments? We offer top-notch, reliable academic help to alleviate stress
-              and boost your grades. Trust our expert writers to guide you towards success.
-            </Paragraph>
-          </motion.div>
+      <div className="about-container" style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',      // Horizontal center
+        justifyContent: 'center', // Optional: vertical center if used full height
+        textAlign: 'center',
+        padding: '4rem 2rem',
+        // maxWidth: 800,
+        margin: '0 auto',
+      }}>
+        {/* <Header /> */}
+        {/* <section className="about-section"> */}
+        <motion.div
+          className="about-header"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Title level={3} style={{ marginBottom: '1rem', color: '#333' }}>Who we are?</Title>
+          <Paragraph style={{ fontSize: '1.1rem', color: '#555', lineHeight: 1.6 }}>
+            Struggling with assignments? We offer top-notch, reliable academic help to alleviate stress
+            and boost your grades. Trust our expert writers to guide you towards success.
+          </Paragraph>
+        </motion.div>
 
-          <Row gutter={[24, 24]} justify="center">
-            {features.map((feature, idx) => (
-              <Col xs={12} sm={8} md={6} key={idx}>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                >
-                  <Card bordered={false} className="about-card-feature" hoverable>
-                    <img src={feature.img} alt={feature.title} width="100%" style={{ maxWidth: 120 }} />
-                    <Paragraph className="feature-title">{feature.title}</Paragraph>
-                  </Card>
-                </motion.div>
-              </Col>
-            ))}
-          </Row>
-        </section>
+        <Row gutter={[24, 24]} justify="center">
+          {features.map((feature, idx) => (
+            <Col xs={12} sm={8} md={6} key={idx}>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+              >
+                <Card bordered={false} className="about-card-feature" hoverable>
+                  <img src={feature.img} alt={feature.title} width="100%" style={{ maxWidth: 120 }} />
+                  <Paragraph className="feature-title">{feature.title}</Paragraph>
+                </Card>
+              </motion.div>
+            </Col>
+          ))}
+        </Row>
+        {/* </section> */}
 
         <section className="about-section">
           <motion.div
@@ -75,8 +85,9 @@ const About: React.FC = () => {
             <img src="/assets/img/aboutus/globalpresence.png" alt="Global Presence" style={{ width: '100%', maxWidth: 800 }} />
           </motion.div>
         </section>
+        {/* <Footer /> */}
       </div>
-    </AnimatedPage>
+    </AnimatedPage >
   );
 };
 

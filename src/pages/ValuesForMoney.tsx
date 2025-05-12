@@ -38,9 +38,7 @@ const ValuesForMoney: React.FC = () => {
             </Helmet>
 
             {/* Header */}
-            <Header className="header">
-                {/* Insert header content here if necessary */}
-            </Header>
+            
 
             {/* Main Content */}
             <Content>
@@ -74,10 +72,7 @@ const ValuesForMoney: React.FC = () => {
                 </div>
             </Content>
 
-            {/* Footer */}
-            <Footer className="footer">
-                {/* Insert footer content here if necessary */}
-            </Footer>
+      
         </Layout>
     );
 };

@@ -1,88 +1,157 @@
-/* offers.css */
-
-.container {
-  padding: 2rem;
-  animation: fadeInUp 1s ease-in-out;
+#main #hero-section {
+  /* padding: 20px 0px; */
+  background: #3f71af98;
+  height: 30vh;
+  text-align: center;
 }
 
-.offer-card,
-.dissertation-offer-card {
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+#main #hero-section h2 {
+  color: white;
+}
+
+#main .offer-card-section {
+  padding: 50px;
+  background: rgba(63, 114, 175, 0.92);
+  z-index: 1;
+  background: url(../img/offers/offer-bg-celebration.jpg) top fixed no-repeat;
+  background-size: auto;
   position: relative;
-  overflow: hidden;
-  animation: fadeInCard 1s ease-in-out;
 }
 
-.offer-card:hover,
-.dissertation-offer-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-}
-
-.offer-badge {
+#main .offer-card-section::before {
+  content: "";
   position: absolute;
-  top: -20px;
-  right: -20px;
-  transform: rotate(-10deg);
-  animation: popIn 1s ease-in-out;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: rgba(216, 216, 216, 0.354);
+}
+
+#main .offer-card {
+  padding: 20px;
+  /* padding-right: 60px; */
+  /* border: 2px dashed #3498db; */
+  min-height: 450px;
+  border-radius: 50px 10px 100px 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 20px;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  background: white;
+  text-align: justify;
+}
+
+#main .offer-card p:last-of-type {
+  margin-bottom: 50px;
+}
+
+#main .offer-card:hover {
+  transform: scale(1.05);
+}
+
+#main .dissertion-offer-card {
+  padding: 20px;
+  /* padding-right: 60px; */
+  /* border: 2px dashed #3498db; */
+  min-height: 350px;
+  border-radius: 50px 10px 100px 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 20px;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  background: white;
+  text-align: justify;
+}
+
+#main .dissertion-offer-cardoffer-card p:last-of-type {
+  margin-bottom: 50px;
+}
+
+#main .dissertion-offer-card:hover {
+  transform: scale(1.05);
+}
+
+.h4 {
+  color: #3498db;
+  color: #112d4e;
+}
+
+.p {
+  color: #000000;
+  font-size: 16px;
+  /* margin: 20px; */
+  text-align: justify;
+}
+
+.percentage-icon {
+  color: #e74c3c;
 }
 
 .order-button {
-  margin-top: 1rem;
-  background: #fff;
-  color: #333;
-  font-weight: bold;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  /* background-color: #3498db; */
+  /* background-color: coral; */
+  margin-top: 10px;
+  position: absolute;
+  background: rgb(255, 255, 255);
+  color: #000000;
+  padding: 10px;
+  border: none;
+  border-radius: 5px 50px 50px 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  animation: gradientAnimation 2s ease-in-out infinite;
+  bottom: 0px;
+  left: 0px;
+}
+
+@keyframes gradientAnimation {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .order-button:hover {
-  background: #333;
-  color: #fff;
+  /* background-color: #2980b9; */
+  background-color: rgb(0, 0, 0);
+  color: white;
 }
 
-.text-center {
+/* Add this to your existing styles */
+.offer-badge {
+  position: absolute;
+
+  right: 20px;
+  bottom: 0;
+  color: #fff;
+  padding: 10px;
+  border-radius: 100px 50px 45px 0;
   text-align: center;
+}
+
+.footer {
+  background: #112d4e;
   color: #fff;
-  font-weight: 600;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
-/* Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInCard {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
+@media only screen and (max-width: 400px) {
+  #main .offer-card-section {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
-@keyframes popIn {
-  0% {
-    transform: scale(0) rotate(-10deg);
-    opacity: 0;
-  }
-
-  100% {
-    transform: scale(1) rotate(-10deg);
-    opacity: 1;
-  }
+.note {
+  border-radius: 50px 50px 50px 50px;
 }

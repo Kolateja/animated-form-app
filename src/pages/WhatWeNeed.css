@@ -1,0 +1,143 @@
+/* WhatWeNeed.css */
+
+#client-quote {
+    background: #3f72af;
+}
+
+#client-quote .row {
+    display: flex;
+    justify-content: center;
+}
+
+#client-quote .What-need-from-clients-card img {
+    background: rgb(255, 255, 255);
+}
+
+#client-quote .container:first-child {
+    /* Your styles for the first container within #client-quote go here */
+    padding: 20px;
+}
+
+#what-we-need-from-clients {
+    margin-bottom: 30px;
+}
+
+.What-need-from-clients-card .card-title {
+    color: white;
+    font-size: 18px;
+    margin-top: 20px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+@media screen and (max-width: 480px) {
+    .What-need-from-clients-card .card-title {
+        font-size: 12px;
+    }
+}
+
+.client-quote-background {
+    background-color: #6799c7;
+    /* Example: light blue */
+    padding: 40px 20px;
+}
+
+#what-we-need-from-clients .row {
+    margin-top: 30px;
+}
+
+#what-we-need-from-clients .section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#what-we-need-from-clients .section-header h4 {
+    display: inline-block;
+    font-size: 1.8rem;
+    color: #fff;
+    position: relative;
+    padding-bottom: 0.3rem;
+}
+
+#what-we-need-from-clients .section-header h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 3px;
+    width: 0;
+    background: #fff;
+    transform: translateX(-50%);
+    animation: grow 0.7s forwards;
+}
+
+@keyframes grow {
+    to {
+        width: 40%;
+    }
+}
+
+/* Center the row’s flex‑items */
+#what-we-need-from-clients .ant-row {
+    justify-content: center;
+}
+
+/* Give every card a fixed max-width so they align */
+#what-we-need-from-clients .card-wrapper {
+    margin: 0 auto;
+    max-width: 150px;
+}
+
+#what-we-need-from-clients .client-card {
+    text-align: center;
+    background: transparent;
+    /* remove white box */
+    box-shadow: none;
+    /* remove shadow */
+    border-radius: 0;
+    /* remove rounding */
+    padding: 0;
+    /* remove default padding if any */
+    transition: none;
+}
+
+#what-we-need-from-clients .client-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Perfect circle images */
+#what-we-need-from-clients .card-image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eee;
+}
+
+#what-we-need-from-clients .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Title under the circle */
+#what-we-need-from-clients .card-title {
+    margin: 0;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.4;
+}
+
+#get-a-free-quote-now {
+    margin-top: 30px;
+}
+
+#get-a-free-quote-now form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

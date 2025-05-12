@@ -1,13 +1,18 @@
+
 import React from 'react';
-import { Form, Input, Button, Select, Row, Col, Typography } from 'antd';
 import {
-    PhoneOutlined,
-    MailOutlined,
-    WhatsAppOutlined,
+    Form, Input, Button, Select, Row, Col, Typography, Divider, Space, Tooltip,
+    Card
+} from 'antd';
+import {
+    PhoneOutlined, MailOutlined, WhatsAppOutlined
 } from '@ant-design/icons';
+import { motion } from 'framer-motion';
+import '../assets/css/contact.css';
+import ApiService from '../services/ApiService';
 
 const { TextArea } = Input;
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
 const countryCodes = [
     { label: '+61 (Australia)', value: '+61' },
@@ -42,88 +47,229 @@ const countryCodes = [
     { label: '+234 (Nigeria)', value: '+234' },
 ];
 
+const socialLinks = [
+    {
+        href: 'https://wa.me/+61494311801',
+        icon: '/assets/img/socialmedialogos/Digital_Stacked_Green.png',
+        alt: 'WhatsApp',
+    },
+    {
+        href: 'https://www.instagram.com/assignmentlinkers/',
+        icon: '/assets/img/socialmedialogos/Instagram_Glyph_Gradient.png',
+        alt: 'Instagram',
+    },
+    {
+        href: 'https://www.facebook.com/people/Assignment-Linkers/61556511496784/',
+        icon: '/assets/img/socialmedialogos/Facebook_Logo_Primary.png',
+        alt: 'Facebook',
+    },
+    {
+        href: 'https://www.linkedin.com/in/assignmentlinkers/',
+        icon: '/assets/img/socialmedialogos/LI-In-Bug.png',
+        alt: 'LinkedIn',
+    },
+    {
+        href: 'https://x.com/i/flow/login?redirect_after_login=%2FAssignmentsLink',
+        icon: '/assets/img/socialmedialogos/logo-black.png',
+        alt: 'Twitter',
+    },
+    {
+        href: 'https://in.pinterest.com/assignmentlinkers/',
+        icon: '/assets/img/socialmedialogos/pinterest-logo.png',
+        alt: 'Pinterest',
+    },
+];
+
 const ContactForm: React.FC = () => {
-    const onFinish = (values: any) => {
-        console.log('Form Values:', values);
+
+    const onFinish = async (values: any) => {
+        const { name, email, message, countrycode, number } = values;
+
+        try {
+            const response: any = await ApiService.post("/webPageRoutes/getintouch", {
+                body: JSON.stringify({
+                    name,
+                    email,
+                    message,
+                    countrycode,
+                    mobilenumber: number,
+                }),
+            });
+            alert('message created successfully!');
+
+            // const data = await response.json();
+
+            // if (response.ok && data.success) {
+            //     message.success("Thank you for contacting us!");
+            // } else {
+            //     throw new Error(data.message || "Submission failed");
+            // }
+        } catch (error: any) {
+            console.error(error);
+            if (error.response && error.response.data && error.response.data.error) {
+                const errorMessage = error.response.data.error.errors?.[0]?.message;
+                if (errorMessage) {
+                    alert(errorMessage);  // Display the specific error message
+                } else {
+                    alert('Error creating user');  // Fallback message
+                }
+            } else {
+                alert('Error creating user');
+            }
+        }
     };
 
     return (
-        <div style={{ padding: '2rem', background: '#f0f2f5' }}>
-            <Title level={3} style={{ textAlign: 'center' }}>Contact Us</Title>
 
-            <Row justify="center" gutter={[16, 16]}>
-                <Col xs={24} sm={12} md={8}>
-                    <div style={{ textAlign: 'center' }}>
-                        <a href="https://wa.me/+61494311801" target="_blank" rel="noopener noreferrer">
-                            <img src="/assets/img/socialmedialogos/Digital_Stacked_Green.png" alt="WhatsApp" width={30} />
-                        </a>
-                        <a href="https://www.instagram.com/assignmentlinkers/" target="_blank" rel="noopener noreferrer">
-                            <img src="/assets/img/socialmedialogos/Instagram_Glyph_Gradient.png" alt="Instagram" width={30} />
-                        </a>
-                        <a href="https://www.facebook.com/people/Assignment-Linkers/61556511496784/" target="_blank" rel="noopener noreferrer">
-                            <img src="/assets/img/socialmedialogos/Facebook_Logo_Primary.png" alt="Facebook" width={30} />
-                        </a>
-                        <a href="https://www.linkedin.com/in/assignmentlinkers/" target="_blank" rel="noopener noreferrer">
-                            <img src="/assets/img/socialmedialogos/LI-In-Bug.png" alt="LinkedIn" width={30} />
-                        </a>
-                        <a href="https://x.com/i/flow/login?redirect_after_login=%2FAssignmentsLink" target="_blank" rel="noopener noreferrer">
-                            <img src="/assets/img/socialmedialogos/logo-black.png" alt="Twitter" width={30} />
-                        </a>
-                        <a href="https://in.pinterest.com/assignmentlinkers/" target="_blank" rel="noopener noreferrer">
-                            <img src="/assets/img/socialmedialogos/pinterest-logo.png" alt="Pinterest" width={30} />
-                        </a>
-                    </div>
-                </Col>
-            </Row>
+        <div id="contact-form-section" style={{ padding: '2rem 1rem 4rem', width: '100vw' }}>
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+            // className="transparent"
+            >
+                <Title level={2} style={{ textAlign: 'center', marginBottom: 10 }}>
+                    Let's Get in Touch!
+                </Title>
+                <Text style={{ display: 'block', textAlign: 'center', marginBottom: 40 }}>
+                    Fill out the form or reach us directly through our contact methods below.
+                </Text>
+            </motion.div>
+            <div style={{ textAlign: 'center', padding: '40px 0px' }}>
+                {/* Social Links Row */}
+                <div className="social-media-wrapper social-links" style={{ marginBottom: 10, display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '20px' }}>
+                    {socialLinks.map((item, index) => (
+                        <Tooltip title={item.alt} key={index}>
+                            <a href={item.href} target="_blank" rel="noopener noreferrer">
+                                <motion.img
+                                    whileHover={{ scale: 1.3 }}
+                                    src={item.icon}
+                                    alt={item.alt}
+                                    width={40}
+                                    height={40}
+                                    style={{ verticalAlign: 'middle' }}
+                                />
+                            </a>
+                        </Tooltip>
+                    ))}
+                </div>
 
-            <Row justify="center" gutter={[16, 16]} style={{ marginTop: 20 }}>
-                <Col xs={24} sm={12} md={6}>
-                    <div style={{ color: '#000' }}>
-                        <PhoneOutlined /> <a href="tel:+918309368958">8309368958</a>
-                        <br />
-                        <WhatsAppOutlined /> <a href="https://wa.me/+61494311801">+61494311801</a>
-                    </div>
-                </Col>
-                <Col xs={24} sm={12} md={6}>
-                    <MailOutlined /> <a href="mailto:assignmentlinkers@gmail.com">assignmentlinkers@gmail.com</a>
-                </Col>
-            </Row>
+                {/* Contact Details */}
+                <div className="call-us-wrapper"
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        flexWrap: 'wrap',
+                        gap: '2rem',
+                        color: '#2476a6',
+                        fontSize: 16,
+                        maxWidth: '700px',
+                        margin: '0 auto',
+                    }}
+                >
+                    <Text strong>
+                        <PhoneOutlined style={{ marginRight: 8, color: '#0d74b0' }} />
+                        <a href="tel:+918309368958" style={{ color: '#0d74b0' }}>8309368958</a>
+                    </Text>
+                    <Text strong>
+                        <WhatsAppOutlined style={{ marginRight: 8, color: '#25D366' }} />
+                        <a href="https://wa.me/+61494311801" style={{ color: '#25D366' }}>+61494311801</a>
+                    </Text>
+                    <Text strong>
+                        <MailOutlined style={{ marginRight: 8, color: '#f5222d' }} />
+                        <a href="mailto:assignmentlinkers@gmail.com" style={{ color: '#f5222d' }}>assignmentlinkers@gmail.com</a>
+                    </Text>
+                </div>
+            </div>
 
-            <Row justify="center" style={{ marginTop: 30 }}>
-                <Col xs={24} sm={20} md={12}>
-                    <Form layout="vertical" onFinish={onFinish}>
-                        <Row gutter={16}>
-                            <Col span={12}>
-                                <Form.Item name="name" rules={[{ required: true, message: 'Please enter your name' }]}>
-                                    <Input placeholder="Your Name" />
-                                </Form.Item>
-                                <Form.Item name="email" rules={[{ required: true, message: 'Please enter your email' }]}>
-                                    <Input type="email" placeholder="Your Email" />
-                                </Form.Item>
-                            </Col>
-                            <Col span={12}>
-                                <Form.Item>
-                                    <Input.Group compact>
-                                        <Form.Item name="countrycode" noStyle rules={[{ required: true, message: 'Country code required' }]}>
-                                            <Select style={{ width: '30%' }} options={countryCodes} defaultValue="+61" />
+            <Row justify="center" style={{ padding: '1rem 0rem' }}>
+                <Col xs={24} sm={22} md={20} lg={16} xl={16}>
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.3 }}
+                    >
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.5 }}
+                            style={{ padding: '0rem' }} // keep some spacing
+                        >
+                            <Form layout="vertical" onFinish={onFinish}>
+                                <Row gutter={[16, 16]}>
+                                    <Col xs={24} md={12}>
+                                        <Form.Item
+                                            name="name"
+                                            label={<strong style={{ color: '#0d74b0' }}>Name</strong>}
+                                            rules={[{ required: true, message: 'Please enter your name', }]}
+                                        >
+                                            <Input size="large" placeholder="Please enter your name" />
                                         </Form.Item>
-                                        <Form.Item name="number" noStyle rules={[{ required: true, message: 'Please enter number' }]}>
-                                            <Input type="number" style={{ width: '70%' }} placeholder="Mobile Number" />
+
+                                        <Form.Item
+                                            name="email"
+                                            label={<strong style={{ color: '#0d74b0' }}>Email</strong>}
+                                            rules={[{ required: true, message: 'Please enter your email' }]}
+                                        >
+                                            <Input size="large" placeholder="you@example.com" />
                                         </Form.Item>
-                                    </Input.Group>
+                                    </Col>
+
+                                    <Col xs={24} md={12}>
+                                        <Form.Item label={<strong style={{ color: '#0d74b0' }}>Phone</strong>}>
+                                            <Input.Group compact>
+                                                <Form.Item name="countrycode" noStyle rules={[{ required: true }]}>
+                                                    <Select
+                                                        style={{ width: '35%' }}
+                                                        size="large"
+                                                        options={countryCodes}
+                                                        defaultValue="+61"
+                                                    />
+                                                </Form.Item>
+                                                <Form.Item name="number" noStyle rules={[{ required: true }]}>
+                                                    <Input size="large" style={{ width: '65%' }} placeholder="Mobile Number" />
+                                                </Form.Item>
+                                            </Input.Group>
+                                        </Form.Item>
+
+                                        <Form.Item
+                                            name="message"
+                                            label={<strong style={{ color: '#0d74b0' }}>Message</strong>}
+                                            rules={[{ required: true, message: 'Please enter a message' }]}
+                                        >
+                                            <TextArea rows={4} size="large" placeholder="How can we help you?" />
+                                        </Form.Item>
+                                    </Col>
+                                </Row>
+
+                                <Form.Item style={{ textAlign: 'center', marginTop: '2rem' }}>
+                                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                                        <Button
+                                            type="primary"
+                                            htmlType="submit"
+                                            size="large"
+                                            style={{
+                                                padding: '0 2rem',
+                                                background: '#0d74b0',
+                                                borderRadius: 8,
+                                                boxShadow: '0 4px 14px rgba(13, 116, 176, 0.4)'
+                                            }}
+                                        >
+                                            Send Message
+                                        </Button>
+                                    </motion.div>
                                 </Form.Item>
-                                <Form.Item name="message">
-                                    <TextArea rows={3} placeholder="Message" />
-                                </Form.Item>
-                            </Col>
-                        </Row>
-                        <Form.Item style={{ textAlign: 'center' }}>
-                            <Button type="primary" htmlType="submit">Send Message</Button>
-                        </Form.Item>
-                    </Form>
+                            </Form>
+                        </motion.div>
+                    </motion.div>
                 </Col>
             </Row>
+
+
         </div>
+
+
     );
 };
 

@@ -49,6 +49,20 @@ h6 {
   top: 0;
 }
 
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center everything horizontally */
+  justify-content: center; /* Center everything vertically if needed */
+  text-align: center; /* Ensure text is centered */
+  padding: 60px 0; /* Add some spacing around the section */
+}
+
+
+.feature-title {
+  margin-top: 10px; /* Add some space above the title in the card */
+}
+
 /* #header.header-transparent {
       background: transparent;
     } */
@@ -658,4 +672,50 @@ h6 {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.about-container {
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #f0faff, #ffffff);
+  min-height: 100vh;
+}
+
+
+.about-header {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  /* Center the title horizontally */
+  align-items: center;
+  /* Center the title vertically, if necessary */
+  text-align: center;
+  /* Ensure the text is centered */
+}
+
+.about-card-feature {
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  background: #fff;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-card-feature:hover {
+  transform: translateY(-5px);
+}
+
+.feature-title {
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.about-global-img {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }

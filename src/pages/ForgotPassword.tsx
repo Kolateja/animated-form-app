@@ -3,6 +3,7 @@ import { Button, Form, Input, Alert, Typography } from 'antd';
 import { MailOutlined } from '@ant-design/icons';
 import { Link, useLocation } from 'react-router-dom';
 import './ForgotPassword.css';
+import ApiService from '../services/ApiService';
 
 const { Title, Paragraph } = Typography;
 
@@ -14,29 +15,43 @@ const ForgotPassword: React.FC = () => {
 
     const handleSubmit = async () => {
         try {
-            const response = await fetch('/auth/forgotpassword', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email }),
-            });
-
-            const result = await response.json();
-            if (!response.ok) {
-                throw new Error(result.message || 'Something went wrong.');
-            }
-
+            const response = await ApiService.post('/webPageRoutes/forgot-password', { email });  // Pass email in the body
             setSubmitted(true);
             setErrorMessage(null);
         } catch (error: any) {
-            setErrorMessage(error.message || 'An error occurred');
+            console.error(error);
+            if (error.response && error.response.data && error.response.data.error) {
+                const errorMessage = error.response.data.error.errors?.[0]?.message;
+                if (errorMessage) {
+                    alert(errorMessage);  // Display the specific error message
+                } else {
+                    alert('Error creating user');  // Fallback message
+                }
+            } else {
+                alert('Error creating user');
+            }
         }
     };
 
+
     return (
-        <div className="forgot-password-container" style={{ padding: '60px 20px', backgroundColor: '#001529', minHeight: '100vh' }}>
-            <div className="form-wrapper" style={{ maxWidth: 500, margin: '0 auto', backgroundColor: '#fff', padding: 30, borderRadius: 8 }}>
+        <div style={{
+            height: '100vh',
+            width: '100vw',
+            background: 'linear-gradient(to right,rgb(116, 144, 156),rgb(109, 147, 160),rgb(111, 162, 184))',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: '20px',
+        }}>
+            <div style={{
+                backgroundColor: '#fff',
+                padding: '50px',
+                borderRadius: '12px',
+                boxShadow: '0 8px 40px rgba(0,0,0,0.3)',
+                width: '100%',
+                maxWidth: '500px',
+            }}>
                 <Title level={2} style={{ textAlign: 'center' }}>Recover Account</Title>
                 <Paragraph style={{ textAlign: 'center', marginBottom: 30 }}>
                     <strong>Enter the email</strong> you used when signing up to receive a <strong>password reset link.</strong>

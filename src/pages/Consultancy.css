@@ -1,0 +1,12 @@
+.slick-slider,
+.slick-list,
+.slick-track {
+    display: flex !important;
+    align-items: stretch;
+}
+
+.slick-slide {
+    display: flex !important;
+    justify-content: center;
+    height: auto !important;
+}

@@ -1,5 +1,9 @@
 import React from "react";
 import { Row, Col, List, Typography } from "antd";
+import '../assets/css/services.css';
+import AnimatedPage from "../components/AnimatedPage";
+import { motion } from "framer-motion";
+
 const { Title, Paragraph } = Typography;
 
 const servicesData: string[][] = [
@@ -37,30 +41,60 @@ const servicesData: string[][] = [
 
 const Services: React.FC = () => {
     return (
-        <section id="services" style={{ padding: "60px 20px", background: "#fff" }}>
-            <div className="container">
-                <div style={{ textAlign: "center", marginBottom: "40px" }}>
-                    <Title level={4}>Our Services</Title>
-                    <Paragraph>
-                        Unlock the power of words with our online writing services, where
-                        expertise meets creativity to craft compelling content for your
-                        success.
-                    </Paragraph>
-                </div>
+        <AnimatedPage>
+            <section id="services" style={{
+                display: 'flex',
+                flexDirection: 'column',
+                // alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                padding: 16,
+                margin: '0 auto',
+                borderRadius: 22,
+                width: '100vw' // make it fill the wrapper
+            }}>
+                <motion.div
+                    className="about-header"
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <header className="section-header">
+                        <div className="center-content">
+                            <Title level={2} style={{ color: "white" }}>Our Services</Title>
+                            <Paragraph style={{ color: "#f0f0f0", maxWidth: 700, margin: "0 auto", fontSize: "18px" }}>
+                                Unlock the power of words with our online writing services, where
+                                expertise meets creativity to craft compelling content for your
+                                success.
+                            </Paragraph>
+                        </div>
+                    </header>
+                </motion.div>
 
-                <Row gutter={[24, 24]}>
-                    {servicesData.map((group, idx) => (
-                        <Col xs={24} md={12} lg={8} key={idx}>
-                            <List
-                                bordered
-                                dataSource={group}
-                                renderItem={(item) => <List.Item>{item}</List.Item>}
-                            />
-                        </Col>
-                    ))}
-                </Row>
-            </div>
-        </section>
+                <div className="container">
+                    <Row gutter={[16, 16]} className="services-list" justify="center">
+                        {servicesData.map((group, idx) => (
+                            <Col span={8} key={idx}>
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.5, delay: idx * 0.2 }}
+                                >
+                                    <List
+                                        className="custom-list"
+                                        bordered
+                                        dataSource={group}
+                                        renderItem={(item) => (
+                                            <List.Item className="custom-list-item">{item}</List.Item>
+                                        )}
+                                    />
+                                </motion.div>
+                            </Col>
+                        ))}
+                    </Row>
+                </div>
+            </section>
+        </AnimatedPage>
     );
 };
 

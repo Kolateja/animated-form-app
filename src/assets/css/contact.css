@@ -1,28 +1,34 @@
 #contact-form-section {
-  background: url(../img/contact/wonder.jpg) bottom no-repeat;
+  background: url('/src/assets/img/contact/wonder.jpg') bottom no-repeat;
   background-size: cover;
   height: 100vh;
   padding: 20px;
 }
+
 @media (max-width: 576px) {
   #contact-form-section {
-    background-position: left; /* Change background position */
-    height: auto; /* Remove fixed height */
+    background-position: left;
+    /* Change background position */
+    height: auto;
+    /* Remove fixed height */
   }
 }
 
 .transparent {
-  background-color: rgba(255, 255, 255, 0.5); /* Transparent white color */
+  background-color: rgba(255, 255, 255, 0.5);
+  /* Transparent white color */
   background-color: rgba(158, 86, 185, 0.502);
   border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  /* Shadow effect */
 }
 
 #contact-form-section .social-media-wrapper .social-links {
   display: flex;
   justify-content: space-evenly;
 }
+
 #contact-form-section .social-media-wrapper .social-links img {
   background-color: white;
   border-radius: 20px;
@@ -43,6 +49,7 @@
     display: flex;
     justify-content: flex-start;
   }
+
   #contact-form-section .call-us-wrapper i {
     margin-right: 20px;
   }
@@ -59,6 +66,7 @@
     justify-content: flex-start;
     margin-top: 20px;
   }
+
   #contact-form-section .email-us-wrapper i {
     margin-right: 20px;
   }
@@ -76,6 +84,7 @@
 #contact-form-section .message .form-group input {
   /* width: 200px; */
 }
+
 #contact-form-section .message .form-control {
   background: rgba(205, 143, 239, 0.5);
   background: rgba(255, 255, 255, 0.5);
@@ -83,7 +92,8 @@
 }
 
 #contact-form-section .message .form-control:focus {
-  box-shadow: none; /* Remove the default box-shadow when focused */
+  box-shadow: none;
+  /* Remove the default box-shadow when focused */
   background: rgba(255, 255, 255, 0.5);
   background-color: rgba(228, 183, 245, 0.502);
   color: white;

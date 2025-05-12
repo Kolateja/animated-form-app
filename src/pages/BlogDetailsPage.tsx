@@ -1,43 +1,46 @@
+
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 import { Row, Col, Typography, Image, Spin } from 'antd';
+import ApiService from '../services/ApiService';
 
 const { Title } = Typography;
 
 interface BlogPost {
     id: string;
     title: string;
+    tags: string;
+    fileUrl: string;
     image: string;
     createdAt: string;
-    author: string;
+    subtitle: string;
     content: string;
 }
 
-interface BlogDetailsProps {
-    getBlogDetails: (id: string) => Promise<BlogPost | null>;
-}
-
-const BlogDetailsPage: React.FC<BlogDetailsProps> = ({ getBlogDetails }) => {
+const BlogDetailsPage: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const [blog, setBlog] = useState<BlogPost | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        if (id) {
-            getBlogDetails(id).then((data) => {
-                setBlog(data);
+        const fetchBlogDetails = async () => {
+            try {
+                const response = await ApiService.get(`/blogs/${id}`);
+                setBlog(response.data);
+            } catch (err) {
+                console.error(err);
+            } finally {
                 setLoading(false);
-            });
+            }
+        };
+
+        if (id) {
+            fetchBlogDetails();
         }
     }, [id]);
 
-    if (loading) {
-        return <Spin size="large" style={{ display: 'block', margin: 'auto' }} />;
-    }
-
-    if (!blog) {
-        return <div>Blog not found</div>;
-    }
+    if (loading) return <Spin size="large" style={{ display: 'block', margin: 'auto' }} />;
+    if (!blog) return <div>Blog not found</div>;
 
     return (
         <section style={{ padding: '24px' }}>
@@ -46,15 +49,17 @@ const BlogDetailsPage: React.FC<BlogDetailsProps> = ({ getBlogDetails }) => {
                     <Row gutter={[16, 16]}>
                         <Col xs={24} md={12}>
                             <Image
-                                src={`/assets/uploads/blogimages/${blog.image}`}
                                 alt={blog.title}
+                                src={blog.fileUrl || '/placeholder.png'}
+                                style={{ height: 200, objectFit: 'cover', width: '100%' }}
                                 height={400}
-                                style={{ objectFit: 'cover', width: '100%' }}
                                 preview={false}
                             />
                         </Col>
                         <Col xs={24} md={12}>
                             <Title level={2}>{blog.title}</Title>
+                            <p><strong>Author:</strong> {blog.subtitle}</p>
+                            <p><strong>Published on:</strong> {new Date(blog.createdAt).toDateString()}</p>
                         </Col>
                     </Row>
                 </div>

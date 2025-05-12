@@ -1,13 +1,47 @@
-import React from 'react';
-import { Form, Input, Button, message } from 'antd';
+
+import React, { useEffect, useState } from 'react';
+import { Form, Input, Button, Select, message } from 'antd';
+import axios from 'axios';
+import ApiService from '../services/ApiService';
 
 const RaiseTicketForm: React.FC = () => {
   const [form] = Form.useForm();
+  const [orderIds, setOrderIds] = useState<string[]>([]); // To store the order IDs
+  const [userId, setUserId] = useState<string | null>(null);
 
-  const onFinish = (values: any) => {
-    console.log('Ticket Submitted:', values);
-    message.success('Your ticket has been raised successfully!');
-    form.resetFields();
+  useEffect(() => {
+    // Retrieve userId from localStorage
+    const storedUserId = localStorage.getItem('userId');
+    if (storedUserId) {
+      setUserId(storedUserId);
+      fetchOrderIds(storedUserId);
+    }
+  }, []);
+
+  const fetchOrderIds = async (userId: string) => {
+    try {
+      const response = await ApiService.get(`/raise-ticket/student`);
+      setOrderIds(response.data.map((order: { orderId: string }) => order.orderId));
+      //                   👆 add `.data`
+    } catch (error) {
+      message.error('Failed to fetch order IDs');
+    }
+  };
+
+
+  const onFinish = async (values: any) => {
+    try {
+      // Send the ticket creation request
+      const response = await ApiService.post('/raise-ticket/', {
+        orderId: values.orderId,
+        description: values.description,
+      });
+      alert('Your ticket has been raised successfully!');
+      message.success('Your ticket has been raised successfully!');
+      form.resetFields();
+    } catch (error) {
+      message.error('Failed to raise ticket');
+    }
   };
 
   return (
@@ -20,9 +54,15 @@ const RaiseTicketForm: React.FC = () => {
       <Form.Item
         label="Order ID"
         name="orderId"
-        rules={[{ required: true, message: 'Please enter your order ID' }]}
+        rules={[{ required: true, message: 'Please select your order ID' }]}
       >
-        <Input placeholder="Enter your order ID" />
+        <Select placeholder="Select your order ID">
+          {orderIds.map((orderId) => (
+            <Select.Option key={orderId} value={orderId}>
+              {orderId}
+            </Select.Option>
+          ))}
+        </Select>
       </Form.Item>
 
       <Form.Item

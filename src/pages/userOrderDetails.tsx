@@ -1,0 +1,164 @@
+// import React, { useEffect, useState } from 'react';
+// import { Table, Spin, message } from 'antd';
+// import { useParams } from 'react-router-dom';
+// import ApiService from '../services/ApiService';
+
+// interface Order {
+//     id: number;
+//     orderStatus: string;
+//     subject: string;
+//     university: string;
+//     deadline: string;
+//     wordCount: number;
+//     pages: number;
+//     description: string;
+//     agreement: boolean;
+//     orderId: string;
+//     userId: string;
+// }
+
+// const OrderDetailsComponent: React.FC = () => {
+//     const { userId } = useParams<{ userId: string }>();
+//     const [orders, setOrders] = useState<Order[]>([]);
+//     const [loading, setLoading] = useState(false);
+
+//     const fetchOrders = async (userId: string) => {
+//         setLoading(true);
+//         try {
+//             const response: any = await ApiService.get(`/assignments/orders/${userId}`);
+//             console.log('Orders response:', response);
+
+//             if (response.success) {
+//                 setOrders(response.data || []);
+//             } else {
+//                 message.error(response.message || 'Failed to fetch orders.');
+//             }
+//         } catch (error) {
+//             console.error('Fetch error:', error);
+//             message.error('An error occurred while fetching orders.');
+//         } finally {
+//             setLoading(false);
+//         }
+//     };
+
+//     useEffect(() => {
+//         if (userId) {
+//             fetchOrders(userId);
+//         }
+//     }, [userId]);
+
+//     const columns = [
+//         { title: 'Order ID', dataIndex: 'orderId', key: 'orderId' },
+//         { title: 'Subject', dataIndex: 'subject', key: 'subject' },
+//         { title: 'University', dataIndex: 'university', key: 'university' },
+//         { title: 'Deadline', dataIndex: 'deadline', key: 'deadline' },
+//         { title: 'Word Count', dataIndex: 'wordCount', key: 'wordCount' },
+//         { title: 'Pages', dataIndex: 'pages', key: 'pages' },
+//         { title: 'Description', dataIndex: 'description', key: 'description' },
+//         { title: 'File Path', dataIndex: 'filePath', key: 'filePath' },
+//         { title: 'Status', dataIndex: 'orderStatus', key: 'orderStatus' },
+//     ];
+
+//     return (
+//         <div style={{ padding: '24px' }}>
+//             <h2>User Orders</h2>
+//             {loading ? (
+//                 <Spin size="large" />
+//             ) : (
+//                 <Table
+//                     dataSource={orders}
+//                     columns={columns}
+//                     rowKey="id"
+//                     pagination={{ pageSize: 5 }}
+//                 />
+//             )}
+//         </div>
+//     );
+// };
+
+// export default OrderDetailsComponent;
+import React, { useEffect, useState } from 'react';
+import { Table, Spin, message } from 'antd';
+import { useParams } from 'react-router-dom';
+import ApiService from '../services/ApiService';
+
+interface Order {
+    id: number;
+    orderStatus: string;
+    subject: string;
+    university: string;
+    deadline: string;
+    wordCount: number;
+    pages: number;
+    description: string;
+    agreement: boolean;
+    orderId: string;
+    userId: string;
+}
+
+interface Props {
+    userIdProp?: string; // Optional prop
+}
+
+const OrderDetailsComponent: React.FC<Props> = ({ userIdProp }) => {
+    const { userId: userIdFromParams } = useParams<{ userId: string }>();
+    const [orders, setOrders] = useState<Order[]>([]);
+    const [loading, setLoading] = useState(false);
+
+    const finalUserId = userIdProp || userIdFromParams || localStorage.getItem('userId') || '';
+
+    const fetchOrders = async (userId: string) => {
+        setLoading(true);
+        try {
+            const response: any = await ApiService.get(`/assignments/orders/${userId}`);
+            if (response.success) {
+                const sortedOrders = (response.data || []).sort((a: Order, b: Order) =>
+                    new Date(b.deadline).getTime() - new Date(a.deadline).getTime()
+                );
+                setOrders(sortedOrders);
+            } else {
+                message.error(response.message || 'Failed to fetch orders.');
+            }
+        } catch (error) {
+            console.error('Fetch error:', error);
+            message.error('An error occurred while fetching orders.');
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        if (finalUserId) {
+            fetchOrders(finalUserId);
+        }
+    }, [finalUserId]);
+
+    const columns = [
+        { title: 'Order ID', dataIndex: 'orderId', key: 'orderId' },
+        { title: 'Subject', dataIndex: 'subject', key: 'subject' },
+        { title: 'University', dataIndex: 'university', key: 'university' },
+        { title: 'Deadline', dataIndex: 'deadline', key: 'deadline' },
+        { title: 'Word Count', dataIndex: 'wordCount', key: 'wordCount' },
+        { title: 'Pages', dataIndex: 'pages', key: 'pages' },
+        { title: 'Description', dataIndex: 'description', key: 'description' },
+        { title: 'Status', dataIndex: 'orderStatus', key: 'orderStatus' },
+    ];
+
+    return (
+        <div style={{ padding: '24px' }}>
+            {/* <h2>User Orders</h2> */}
+            {loading ? (
+                <Spin size="large" />
+            ) : (
+                <Table
+                    dataSource={orders}
+                    columns={columns}
+                    rowKey="id"
+                    pagination={{ pageSize: 5 }}
+                />
+            )}
+        </div>
+    );
+};
+
+export default OrderDetailsComponent;

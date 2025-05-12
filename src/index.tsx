@@ -1,18 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { BrowserRouter } from 'react-router-dom'; // <-- import BrowserRouter
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-// ✅ Import Ant Design reset styles for v5
-import 'antd/dist/reset.css';
-
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
-
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
 );
 
-reportWebVitals();
+root.render(
+  // <React.StrictMode>
+  <BrowserRouter> {/* <-- wrap App inside BrowserRouter */}
+    <App />
+  </BrowserRouter>
+  // </React.StrictMode>
+);

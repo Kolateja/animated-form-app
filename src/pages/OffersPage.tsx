@@ -78,7 +78,7 @@ const OfferCard = ({ title, points, bg }: any) => (
             {points.map((text: string, idx: number) => (
                 <Paragraph key={idx}><PercentageOutlined /> {text}</Paragraph>
             ))}
-            <a href="/userdashboard/orderassignment">
+            <a href="/auth/login-signup">
                 <Button className="order-button">Order Now</Button>
             </a>
         </Card>
@@ -87,13 +87,13 @@ const OfferCard = ({ title, points, bg }: any) => (
 
 const DissertationCard = ({ title, point, bg }: any) => (
     <Col xs={24} sm={12} lg={8}>
-        <Card className="dissertation-offer-card" style={{ background: bg }}>
+        <Card id='main' className="dissertion-offer-card" style={{ background: bg }}>
             <div className="offer-badge">
                 <img src="/assets/img/offers/cartoon.png" alt="badge" width="70px" />
             </div>
             <Title level={4} className="text-center">{title}</Title>
             <Paragraph><PercentageOutlined /> {point}</Paragraph>
-            <a href="/userdashboard/orderassignment">
+            <a href="/auth/login-signup">
                 <Button className="order-button">Order Now</Button>
             </a>
         </Card>
@@ -102,22 +102,24 @@ const DissertationCard = ({ title, point, bg }: any) => (
 
 const OffersPage: React.FC = () => {
     return (
-        <div className="container">
+        <div id='main'>
+            {/* <Header /> */}
             <section className="offer-card-section">
-                <Title level={4}><span>Assignment Offers</span></Title>
+                <Title level={4} style={{ textAlign: 'center', marginBottom: 20, color: '#f5f9f9' }}><span>Assignment Offers</span></Title>
                 <Row gutter={[16, 16]}>
                     {offers.map((offer, idx) => (
                         <OfferCard key={idx} {...offer} />
                     ))}
                 </Row>
 
-                <Title level={4} className="mt-5"><span>Dissertation Offers</span></Title>
+                <Title level={4} className="dissertion-offer-card" style={{ textAlign: 'center', marginBottom: 20, marginTop: 20, color: '#f5f9f9' }}><span>Dissertation Offers</span></Title>
                 <Row gutter={[16, 16]}>
                     {dissertationOffers.map((offer, idx) => (
                         <DissertationCard key={idx} {...offer} />
                     ))}
                 </Row>
             </section>
+            {/* <Footer /> */}
         </div>
     );
 };

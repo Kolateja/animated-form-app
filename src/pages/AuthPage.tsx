@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Register from './Register';
 import Login from './Login';
 import './AuthPage.css';
 
-const AuthPage = () => {
+interface AuthPageProps {
+    handleLoginFlag: (role: string) => void;
+}
+
+const AuthPage: React.FC<AuthPageProps> = ({ handleLoginFlag }) => {
+    const [isLogin, setIsLogin] = useState(true);
+
+    const toggleForm = () => {
+        setIsLogin(prev => !prev);
+    };
+
     return (
-        <div className="auth-container">
-            <div className="auth-form">
-                <Login />
-            </div>
-            <div className="auth-form">
-                <Register />
+        <div>
+            <div>
+                {isLogin ? (
+                    <Login handleLoginFlag={handleLoginFlag} onToggleForm={toggleForm} />
+                ) : (
+                    <Register onToggleForm={toggleForm} />
+                )}
             </div>
         </div>
     );

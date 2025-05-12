@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout, Typography, Button, Space } from 'antd';
 import { Helmet } from 'react-helmet';
-import './RefundPolicy.css'; // Your custom styles
+// import './RefundPolicy.css'; // Your custom styles
 
 const { Header, Footer, Content } = Layout;
 const { Title, Paragraph } = Typography;
@@ -25,9 +25,7 @@ const SatisifactionPolicies: React.FC = () => {
             </Helmet>
 
             {/* Header */}
-            <Header className="header">
-                {/* Insert header content here if necessary */}
-            </Header>
+
 
             {/* Main Content */}
             <Content>
@@ -62,9 +60,6 @@ const SatisifactionPolicies: React.FC = () => {
             </Content>
 
             {/* Footer */}
-            <Footer className="footer">
-                {/* Insert footer content here if necessary */}
-            </Footer>
         </Layout>
     );
 };

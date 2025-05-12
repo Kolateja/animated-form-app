@@ -1,4 +1,19 @@
-.section-header {
+.about-container-why-choose-us {
+    padding: 1rem 1rem;
+    background: linear-gradient(to bottom, #87b6ce, #c9d8e9);
+    min-height: 100vh;
+}
+
+.about-section {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.about-header-why-choose-us {
+    margin-bottom: 2rem;
+}
+
+.section-header-why-choose-us {
     text-align: center;
     margin-bottom: 30px;
 }
@@ -7,4 +22,70 @@
     font-weight: bold;
     color: #fff;
     margin-top: 10px;
+}
+
+.animated-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.animated-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.animated-card img {
+    transition: transform 0.4s ease-in-out;
+}
+
+.animated-card:hover img {
+    transform: scale(1.15) rotate(2deg);
+}
+
+.card-title-why-choose-us {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Animate on scroll */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-up {
+    opacity: 0;
+    animation: fadeUp 0.6s ease-out forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+
+.about-card-feature-why-choose-us {
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.about-card-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+}
+
+
+.feature-title {
+    margin-top: 1rem;
+    font-weight: 500;
 }
