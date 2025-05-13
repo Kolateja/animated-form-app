@@ -54,6 +54,11 @@ import { Button, Divider } from 'antd';
 import bag from '../assets/img/bgg.png';
 import reg from '../assets/img/remining.png'
 import FreeQuote from './getFreeQuote';
+import FeedbackCard from './writersReviews';
+import HowItWorks from './HowItWorks';
+import FeaturesComponent from './FeaturesComponent';
+import AssignmentTypes from './AssignmentTypes';
+import Tools from './Tools';
 
 const contentSectionStyle: React.CSSProperties = {
   backgroundColor: '#b1d0e2', // light, professional background
@@ -83,7 +88,11 @@ const Home: React.FC = () => {
         </h1>
         <p style={{ fontSize: '20px', maxWidth: '700px', margin: '0 auto 30px', color: '#252221' }}>
           Top-quality assignment help from experts — trusted by 2000+ students worldwide.
+          Comprehensive Assignment Assistance With a No-AI Guarantee!
         </p>
+        {/* <p style={{ fontSize: '20px', maxWidth: '700px', margin: '0 auto 30px', color: '#252221' }}>
+          Comprehensive Assignment Assistance With a No-AI Guarantee!
+        </p> */}
         <Link to="/auth/login-signup">
           <Button
             type="primary"
@@ -104,10 +113,17 @@ const Home: React.FC = () => {
           </Button>
         </Link>
       </div>
-      {/* Why Choose Us Section */}
-      <section style={contentSectionStyle} data-aos="fade-up">
-        <WhyChooseUs />
+      <FeedbackCard />
+      <section style={{ padding: '4rem 2rem', backgroundColor: '#f0f2f5' }}>
+        <HowItWorks />
       </section>
+      <FeaturesComponent />
+      <AssignmentTypes />
+      <Tools />
+      {/* Why Choose Us Section */}
+      {/* <section style={contentSectionStyle} data-aos="fade-up">
+        <WhyChooseUs />
+      </section> */}
 
       {/* Consultancy Section */}
       <section style={contentSectionStyle} data-aos="fade-up">

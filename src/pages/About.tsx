@@ -184,32 +184,32 @@
 //       <HowItWorks />
 //       {/* </section> */}
 
-//       <FaqPage />
+    //   <FaqPage />
 
-//       <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
-//         <motion.div
-//           className="about-header"
-//           initial={{ opacity: 0, y: -20 }}
-//           whileInView={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.6 }}
-//         >
-//           <Title level={3} style={{ textAlign: 'center', marginBottom: '2rem' }}>Our Presence</Title>
-//         </motion.div>
-//         <motion.div
-//           className="about-global-img"
-//           initial={{ opacity: 0, scale: 0.95 }}
-//           whileInView={{ opacity: 1, scale: 1 }}
-//           transition={{ duration: 0.6 }}
-//           style={{ textAlign: 'center' }}
-//         >
-//           <img
-//             src="/assets/img/aboutus/globalpresence.png"
-//             alt="Global Presence"
-//             style={{ width: '100%', maxWidth: 800 }}
-//           />
-//         </motion.div>
-//       </section>
-//     </AnimatedPage>
+    //   <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
+    //     <motion.div
+    //       className="about-header"
+    //       initial={{ opacity: 0, y: -20 }}
+    //       whileInView={{ opacity: 1, y: 0 }}
+    //       transition={{ duration: 0.6 }}
+    //     >
+    //       <Title level={3} style={{ textAlign: 'center', marginBottom: '2rem' }}>Our Presence</Title>
+    //     </motion.div>
+    //     <motion.div
+    //       className="about-global-img"
+    //       initial={{ opacity: 0, scale: 0.95 }}
+    //       whileInView={{ opacity: 1, scale: 1 }}
+    //       transition={{ duration: 0.6 }}
+    //       style={{ textAlign: 'center' }}
+    //     >
+    //       <img
+    //         src="/assets/img/aboutus/globalpresence.png"
+    //         alt="Global Presence"
+    //         style={{ width: '100%', maxWidth: 800 }}
+    //       />
+    //     </motion.div>
+    //   </section>
+    // </AnimatedPage>
 //   );
 // };
 
@@ -224,6 +224,7 @@ import Achievements from './Achievements';
 import Advantages from './Advantages';
 import Slider from 'react-slick';
 import images from '../assets/img/image.png'
+import FaqPage from './FaqPage';
 const { Title, Paragraph } = Typography;
 
 const features = [
@@ -407,7 +408,32 @@ const About: React.FC = () => {
       <section style={{ padding: '4rem 2rem', backgroundColor: '#f0f2f5' }}>
         <HowItWorks />
       </section>
-    </AnimatedPage>
+      <FaqPage />
+
+<section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
+  <motion.div
+    className="about-header"
+    initial={{ opacity: 0, y: -20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+  >
+    <Title level={3} style={{ textAlign: 'center', marginBottom: '2rem' }}>Our Presence</Title>
+  </motion.div>
+  <motion.div
+    className="about-global-img"
+    initial={{ opacity: 0, scale: 0.95 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.6 }}
+    style={{ textAlign: 'center' }}
+  >
+    <img
+      src="/assets/img/aboutus/globalpresence.png"
+      alt="Global Presence"
+      style={{ width: '100%', maxWidth: 800 }}
+    />
+  </motion.div>
+</section>
+</AnimatedPage>
   );
 };
 
