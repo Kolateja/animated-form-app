@@ -64,6 +64,7 @@ import Reviews from './Reviews';
 import ConsultancyForm from './ConsultancyForm';
 import Consultancy from './Consultanices';
 import ResetPassword from './ResetPassword';
+import AssessmentHelpPage from './AssessmentHelpPage';
 
 
 // import './BodyLayout.css'; 
@@ -85,6 +86,7 @@ const BodyLayout: React.FC = () => {
                         <Route path="/" element={<Home />} />
                         <Route path="/home" element={<Home />} />
                         <Route path="/about" element={<About />} />
+                        <Route path="/assignment-help" element={<AssessmentHelpPage />} />
                         <Route path="/auth/login-signup" element={<AuthPage handleLoginFlag={handleLoginFlag} />} />
                         <Route path="/academicdetails" element={<AcademicDetailsForm />} />
                         <Route path="/orderassignment" element={<OrderAssignmentForm />} />
