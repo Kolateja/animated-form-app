@@ -200,7 +200,7 @@ const FaqPage = () => {
     const [activeKey, setActiveKey] = useState('assignment');
 
     return (
-        <div style={{ padding: '32px 16px', background: '#f5f7fa' }}>
+        <div style={{ padding: '32px 62px', background: '#f5f7fa' }}>
             {/* <Header /> */}
 
             <Row justify="center" style={{ marginBottom: 24 }}>

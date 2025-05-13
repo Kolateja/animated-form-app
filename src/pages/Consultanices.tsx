@@ -31,16 +31,16 @@ const Consultancy: React.FC = () => {
         speed: 5000, // very slow animation
         autoplay: true,
         autoplaySpeed: 0, // no wait between slides
-        cssEase: 'linear', // smooth continuous effect
+        // cssEase: 'linear', // smooth continuous effect
         slidesToShow: 3,
         slidesToScroll: 1,
-        pauseOnHover: true,
+        pauseOnHover: false,
         arrows: false,
         centerMode: false,
         centerPadding: '0px',
         responsive: [
             { breakpoint: 1024, settings: { slidesToShow: 2 } },
-            { breakpoint: 768, settings: { slidesToShow: 1 } },
+            { breakpoint: 600, settings: { slidesToShow: 1 } },
         ],
     };
 
@@ -65,14 +65,14 @@ const Consultancy: React.FC = () => {
 
     return (
 
-        <div style={{ padding: 50, marginBottom: '16px', width: '100vw', margin: '0 auto' }}>
-            <Typography.Title level={4} style={{ marginBottom: 24, marginRight: 16 }}>
-                Educational Consultancies Associated With Us:
-            </Typography.Title>
+        <div style={{ padding: '40px 20px', width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
+        <Typography.Title level={3} style={{ textAlign: 'center', marginBottom: 32, color: '#fff' }}>
+            Educational Consultancies Associated With Us
+        </Typography.Title>
 
             {loading ? (
                 <div style={{ padding: '20px', marginBottom: '16px', width: '100%' }}>
-                    <Spin size="small" />
+                    <Spin size="large" />
                 </div>
             ) : consultancies.length > 0 ? (
                 <StyledSlider  {...sliderSettings}>
@@ -97,8 +97,8 @@ const Consultancy: React.FC = () => {
                                 src={item.fileUrl}
                                 alt={item.title}
                                 style={{
-                                    width: '50px',
-                                    height: '50px',
+                                    width: '100px',
+                                    height: '100px',
                                     objectFit: 'cover',
                                     borderRadius: '50%',
                                     marginRight: '8px',

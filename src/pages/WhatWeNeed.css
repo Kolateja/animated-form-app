@@ -1,8 +1,12 @@
 /* WhatWeNeed.css */
-
 #client-quote {
-    background: #3f72af;
-}
+    position: relative;
+    min-height: 100vh; /* full viewport height */
+    background-color: transparent; /* don't override background image */
+    z-index: 0;
+    color: white; /* default text color for better readability */
+  }
+  
 
 #client-quote .row {
     display: flex;
@@ -18,23 +22,32 @@
     padding: 20px;
 }
 
+
 #what-we-need-from-clients {
     margin-bottom: 30px;
 }
 
 .What-need-from-clients-card .card-title {
-    color: white;
-    font-size: 18px;
+    color: #fff;
     margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
+
 @media screen and (max-width: 480px) {
     .What-need-from-clients-card .card-title {
-        font-size: 12px;
+      font-size: 14px;
     }
-}
-
+  }
+  
+  #what-we-need-from-clients .client-card {
+    background: rgba(208, 227, 228, 0.4); /* transparent black */
+    border-radius: 12px;
+    padding: 10px;
+  }
+  
 .client-quote-background {
     background-color: #6799c7;
     /* Example: light blue */
@@ -57,6 +70,11 @@
     position: relative;
     padding-bottom: 0.3rem;
 }
+#client-quote-section {
+    position: relative;
+    overflow: hidden;
+  }
+  
 
 #what-we-need-from-clients .section-header h4::after {
     content: '';

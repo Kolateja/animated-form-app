@@ -259,7 +259,15 @@ const Footer: React.FC = () => {
     };
 
     return (
-        <div id="footer">
+        <div id="footer" style={{
+            backgroundColor: '#001529',
+            backgroundImage: 'url("https://www.transparenttextures.com/patterns/paper-fibers.png")',
+            backgroundBlendMode: 'multiply',
+            backgroundRepeat: 'repeat',
+            color: '#fff',
+            padding: '40px 20px',
+            borderTop: '2px solid #eaeaea'
+        }}>
             <div className="container">
                 <Row>
                     {/* Our Policies */}

@@ -106,50 +106,6 @@ const App = () => {
     </div>
   );
 
-  // return (
-  //   <div className="flex h-screen" style={{ display: "flex" }}>
-  //     <div className="layout-container" style={{ display: "flex", flexDirection: "column" }}>
-
-  //       {/* Show Header and Footer only BEFORE login */}
-  //       {!isLoggedIn && <Header />}
-
-  //       <div className="layout-main flex">
-  //         {/* Sidebar with fixed width and position */}
-  //         {isLoggedIn && role && (
-  //           <div
-  //             style={{
-  //               position: 'fixed',
-  //               top: 0,
-  //               left: 0,
-  //               width: '250px',
-  //               height: '100vh',
-  //               backgroundColor: '#f8f9fa', // optional background
-  //               zIndex: 1000
-  //             }}
-  //           >
-  //             <Sidebar role={role} handleLogoutFlag={handleLogoutFlag} />
-  //           </div>
-  //         )}
-
-  //         {/* Main content shifted to the right of the sidebar */}
-  //         <div
-  //           className="flex-1 overflow-y-auto"
-  //           style={{
-  //             marginLeft: isLoggedIn && role ? '250px' : '0',
-  //             padding: '20px',
-  //             width: '100%'
-  //           }}
-  //         >
-  //           <BodyLayout />
-  //         </div>
-  //       </div>
-
-
-  //       {/* Show Footer only BEFORE login */}
-  //       {!isLoggedIn && <Footer />}
-  //     </div>
-  //   </div>
-  // );
 };
 
 export default App;

@@ -55,7 +55,7 @@ const Header: React.FC = () => {
                     <Menu.Item key="contactus"><Link to="/contactus">Contact Us</Link></Menu.Item>
                     <Menu.Item key="offers"><Link to="/offers">Offers</Link></Menu.Item>
                     <Menu.Item key="reviews"><Link to="/reviews">Reviews</Link></Menu.Item>
-                    <Menu.Item key="faq"><Link to="/faq">FAQ</Link></Menu.Item>
+                    {/* <Menu.Item key="faq"><Link to="/faq">FAQ</Link></Menu.Item> */}
                     <Menu.Item key="login"><Link to="/auth/login-signup">Login/Signup</Link></Menu.Item>
                     <Menu.Item key="others">
                         <Dropdown overlay={OthersMenu}>
