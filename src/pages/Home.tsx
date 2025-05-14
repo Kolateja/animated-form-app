@@ -60,6 +60,7 @@ import FeaturesComponent from './FeaturesComponent';
 import AssignmentTypes from './AssignmentTypes';
 import Tools from './Tools';
 import bg from '../assets/img/remining.png'
+import ChatWidget from './ChatWidget';
 const { Text, Paragraph, Title } = Typography;
 
 const contentSectionStyle: React.CSSProperties = {
@@ -73,7 +74,7 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ fontFamily: "Roboto, sans-serif" }}>
+    <div style={{ fontFamily: "Roboto, sans-serif"}}>
       {/* Hero Section */}
       <div
         style={{
@@ -85,7 +86,8 @@ const Home: React.FC = () => {
           textAlign: 'center',
         }}
       >
-
+        
+     
         <h1
           style={{
             fontSize: "52px",
@@ -171,6 +173,7 @@ const Home: React.FC = () => {
       {/* <section style={contentSectionStyle} data-aos="fade-up">
         <ClientQuote />
       </section> */}
+       <ChatWidget />
     </div>
   );
 };

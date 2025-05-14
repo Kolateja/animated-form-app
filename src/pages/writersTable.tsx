@@ -292,7 +292,7 @@ const WritersTable: React.FC = () => {
         <>
 
             <Card
-                title={<span style={{ color: '#eb987d', display: 'flex', justifyContent: 'center' }} >Samples</span>}
+                title={<span style={{ color: '#eb987d', display: 'flex', justifyContent: 'center' }} >Writers Table</span>}
 
                 style={{ width: 900, margin: '0 auto' }}
             >

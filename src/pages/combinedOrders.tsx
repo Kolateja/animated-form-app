@@ -26,7 +26,7 @@ const CombinedOrderDetailsComponent = () => {
                 background: '#f0f2f5',
                 borderRadius: '16px',
                 boxShadow: '0 8px 24px rgba(0, 0, 0, 0.06)',
-                width: '100vw'
+                // width: '100vw'
             }}
         >
             <Title

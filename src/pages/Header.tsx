@@ -134,9 +134,9 @@ const Header: React.FC = () => {
               </a>
             </Dropdown>
           </Menu.Item>
-          <Menu.Item key="subjects">
+          {/* <Menu.Item key="subjects">
             <Link to="/subjects">Subjects</Link>
-          </Menu.Item>
+          </Menu.Item> */}
           <Menu.Item key="contactus">
             <Link to="/contactus">Contact Us</Link>
           </Menu.Item>
