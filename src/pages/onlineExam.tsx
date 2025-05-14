@@ -72,46 +72,45 @@ interface CoreValue {
 
 const coreValues: CoreValue[] = [
     {
-        title: 'Top-Notch Quality:',
+        title: 'Expert Assistance:',
         description:
-            'When you request assessment help, we assure the paper is full of excellence. We make sure you get great vocabulary, structure and uniqueness in all orders.',
-        icon: 'https://img.icons8.com/ios-filled/100/prize.png', // Represents quality and excellence
+            'Get guidance from subject matter experts who help craft well-researched and high-quality assessments tailored to your academic needs.',
+        icon: 'https://img.icons8.com/ios-filled/96/expert.png', // Represents expertise
     },
     {
-        title: 'Infinite Free Samples:',
+        title: 'Customised Learnings:',
         description:
-            'We understand the stress of buying multiple books for assessment writing. Here, students can get top-notch grades even with our ready-to-use free samples.',
-        icon: 'https://img.icons8.com/ios-filled/100/open-book--v1.png', // Represents learning material/free samples
+            'Receive personalized solutions and learning support that aligns with your course, goals, and individual learning pace.',
+        icon: 'https://img.icons8.com/ios-filled/96/learning.png', // Represents learning customization
     },
     {
-        title: 'Unlimited Free Revisions:',
+        title: 'Score Improvement:',
         description:
-            'The need for assessment support never ends. If you find any requirement that we did not meet, call us to get free revisions until you are satisfied.',
-        icon: 'https://img.icons8.com/ios-filled/100/edit--v1.png', // Represents editing/revision
+            'Enhance your academic performance with strategically written content designed to help you achieve better grades.',
+        icon: 'https://img.icons8.com/ios-filled/96/goal.png', // Represents improvement/goal achievement
     },
     {
-        title: 'Easy Communication:',
+        title: 'Convenient & Flexible:',
         description:
-            'Every student needs a friend’s help during tough projects and study hours. We can help you with that. Avail of our 24x7 calling services to clear your doubts.',
-        icon: 'https://img.icons8.com/ios-filled/100/chat--v1.png', // Represents communication/support
+            'Access academic support anytime, anywhere, with flexible services that adapt to your schedule and preferences.',
+        icon: 'https://img.icons8.com/ios-filled/96/around-the-globe.png', // Represents accessibility/flexibility
     },
     {
-        title: 'Discounts All Season:',
+        title: '24/7 Support:',
         description:
-            'It’s exciting when you get a great offer, right? Our reliable assessment writing service offers amazing student-friendly prices on all orders!',
-        icon: 'https://img.icons8.com/ios-filled/100/price-tag--v1.png', // Discount/price icon
+            'Reach out to our friendly customer service team at any hour — we’re here to assist you whenever you need help.',
+        icon: 'https://img.icons8.com/ios-filled/96/customer-support.png', // Represents 24/7 support
     },
     {
-        title: 'Amazing Referral Schemes:',
+        title: 'Time and Cost-Efficient:',
         description:
-            'Get a reward if students you know use our academic assistance. Your e-wallet will be credited with the referral bonus when your friend joins.',
-        icon: 'https://img.icons8.com/ios-filled/100/gift.png', // Gift/referral bonus icon
-    }
-
-
+            'Save time and money with our affordable services that deliver high-quality results within your deadlines.',
+        icon: 'https://img.icons8.com/ios-filled/96/time-money.png', // Represents time & cost efficiency
+    },
 ];
 
-const AcademicWriting = () => {
+
+const OnlineExam = () => {
     return (
         <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
             {/* First Section */}
@@ -138,10 +137,10 @@ const AcademicWriting = () => {
                             marginBottom: '20px',
                         }}
                     >
-                        Academic Writing Services
+                        Take My Exam — Get Online Expert Help
                     </h1>
                     <p style={{ fontSize: '20px', color: '#444', marginBottom: '10px' }}>
-                        Step Up Your Academic Writing Game With Our Services
+                        Boost Your Success with Our Online Exam Help – Ace It Today!
                     </p>
                     <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
                         Trusted by 1.5M+ happy customers
@@ -166,8 +165,8 @@ const AcademicWriting = () => {
 
             {/* Second Section */}
             <div style={{ marginBottom: '40px', textAlign: 'center' }}>
-                <h2>Our Top Academic Writers</h2>
-                <p>Meet Our Talented Professional Academic Writers.</p>
+                <h2>Choose Professional Who Will Take Your Online Exam</h2>
+                <p>Meet Our Exam Helpers: Your Academic Success Partners</p>
                 <div
                     style={{
                         display: 'flex',
@@ -214,7 +213,7 @@ const AcademicWriting = () => {
 
             {/* Third Section - Services */}
             <div style={{ marginBottom: '40px' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Our Top Services</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>How to Hire an Expert to Take Your Online Exam</h2>
                 <Row gutter={[24, 24]} justify="center">
                     {coreValues.map((value, index) => (
                         <Col xs={24} sm={12} md={12} lg={6} key={index}>
@@ -296,13 +295,13 @@ const AcademicWriting = () => {
                         color: '#34495e'
                     }}
                 >
-                    <li style={{ marginBottom: '10px' }}>✔️  Essay Writing</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Research Papers</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Dissertation Writing</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Dissertation Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Proofreading Services</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Subject-Specific Q&As</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Online Exam Help</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Full Exam Proctoring</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Mock Exam Simulations</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Exam Review and Analysis</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Question Bank Access</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Live Tutoring Sessions</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Score Improvement Plans</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Personalised Exam Strategies</li>
 
                 </ul>
             </div>
@@ -311,4 +310,4 @@ const AcademicWriting = () => {
     );
 };
 
-export default AcademicWriting;
+export default OnlineExam;

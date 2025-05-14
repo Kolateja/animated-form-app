@@ -72,46 +72,44 @@ interface CoreValue {
 
 const coreValues: CoreValue[] = [
     {
-        title: 'Top-Notch Quality:',
-        description:
-            'When you request assessment help, we assure the paper is full of excellence. We make sure you get great vocabulary, structure and uniqueness in all orders.',
-        icon: 'https://img.icons8.com/ios-filled/100/prize.png', // Represents quality and excellence
+        "title": "Comprehensive PPTs:",
+        "description": "Professionally designed PowerPoint presentations that simplify complex concepts with clear visuals and organized content.",
+        "icon": "https://icons8.com/icon/12416/microsoft-powerpoint"
     },
     {
-        title: 'Infinite Free Samples:',
+        title: 'Original Contents:',
         description:
-            'We understand the stress of buying multiple books for assessment writing. Here, students can get top-notch grades even with our ready-to-use free samples.',
-        icon: 'https://img.icons8.com/ios-filled/100/open-book--v1.png', // Represents learning material/free samples
+            'Get plagiarism-free, uniquely crafted content tailored to your academic requirements, ensuring complete authenticity.',
+        icon: 'https://img.icons8.com/ios-filled/100/approve-and-update.png', // Represents originality
     },
     {
-        title: 'Unlimited Free Revisions:',
+        title: 'Free Revisions:',
         description:
-            'The need for assessment support never ends. If you find any requirement that we did not meet, call us to get free revisions until you are satisfied.',
-        icon: 'https://img.icons8.com/ios-filled/100/edit--v1.png', // Represents editing/revision
+            'Enjoy unlimited revisions until you’re fully satisfied — we’re committed to delivering content that meets your expectations.',
+        icon: 'https://img.icons8.com/ios-filled/100/refresh.png', // Represents revision/flexibility
     },
     {
-        title: 'Easy Communication:',
+        title: 'On Timely Delivery:',
         description:
-            'Every student needs a friend’s help during tough projects and study hours. We can help you with that. Avail of our 24x7 calling services to clear your doubts.',
-        icon: 'https://img.icons8.com/ios-filled/100/chat--v1.png', // Represents communication/support
+            'Never miss a deadline — our team ensures that every task is completed and delivered on or before the agreed time.',
+        icon: 'https://img.icons8.com/ios-filled/100/clock--v1.png', // Represents punctuality
     },
     {
-        title: 'Discounts All Season:',
+        title: 'Affordable Prices:',
         description:
-            'It’s exciting when you get a great offer, right? Our reliable assessment writing service offers amazing student-friendly prices on all orders!',
-        icon: 'https://img.icons8.com/ios-filled/100/price-tag--v1.png', // Discount/price icon
+            'Get top-quality academic assistance at budget-friendly prices designed to support students without breaking the bank.',
+        icon: 'https://img.icons8.com/ios-filled/100/cheap.png', // Represents affordability
     },
     {
-        title: 'Amazing Referral Schemes:',
+        title: 'Engaging Slides:',
         description:
-            'Get a reward if students you know use our academic assistance. Your e-wallet will be credited with the referral bonus when your friend joins.',
-        icon: 'https://img.icons8.com/ios-filled/100/gift.png', // Gift/referral bonus icon
+            'Eye-catching slides with visual appeal and concise information to keep your audience interested and engaged.',
+        icon: 'https://img.icons8.com/ios-filled/100/presentation.png', // Represents engaging slides
     }
-
-
 ];
 
-const AcademicWriting = () => {
+
+const PowerPointWriting = () => {
     return (
         <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
             {/* First Section */}
@@ -138,10 +136,10 @@ const AcademicWriting = () => {
                             marginBottom: '20px',
                         }}
                     >
-                        Academic Writing Services
+                        PowerPoint Presentation Writing Services
                     </h1>
                     <p style={{ fontSize: '20px', color: '#444', marginBottom: '10px' }}>
-                        Step Up Your Academic Writing Game With Our Services
+                        Hire Our PowerPoint Presentation Writers for Visually Appealing PPTs
                     </p>
                     <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
                         Trusted by 1.5M+ happy customers
@@ -166,8 +164,8 @@ const AcademicWriting = () => {
 
             {/* Second Section */}
             <div style={{ marginBottom: '40px', textAlign: 'center' }}>
-                <h2>Our Top Academic Writers</h2>
-                <p>Meet Our Talented Professional Academic Writers.</p>
+                <h2>Our Team of PowerPoint Presentation Writers</h2>
+                <p>Here’s Why Our Professional Writers Are Your Best Choice.</p>
                 <div
                     style={{
                         display: 'flex',
@@ -206,7 +204,7 @@ const AcademicWriting = () => {
             </div>
 
             <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
-                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>How to Get Professional Academic Writing Services
+                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>How to Pay for PowerPoint Presentations
                 </Title>
                 <HowItWorks />
             </section>
@@ -214,7 +212,7 @@ const AcademicWriting = () => {
 
             {/* Third Section - Services */}
             <div style={{ marginBottom: '40px' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Our Top Services</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Guarantees of Our PowerPoint Presentation Services</h2>
                 <Row gutter={[24, 24]} justify="center">
                     {coreValues.map((value, index) => (
                         <Col xs={24} sm={12} md={12} lg={6} key={index}>
@@ -282,7 +280,7 @@ const AcademicWriting = () => {
                         color: '#2c3e50'
                     }}
                 >
-                    TTypes of Services We Offer:
+                    Types of Services We Offer:
                 </h2>
                 <ul
                     style={{
@@ -296,13 +294,12 @@ const AcademicWriting = () => {
                         color: '#34495e'
                     }}
                 >
-                    <li style={{ marginBottom: '10px' }}>✔️  Essay Writing</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Research Papers</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Dissertation Writing</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Dissertation Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Proofreading Services</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Subject-Specific Q&As</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Online Exam Help</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Grammar and Spelling Corrections</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Quality of Information Check</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Proper Referencing</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Plagiarism Checking</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Checking Links for Image Sources</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Revisiting Slide transitions</li>
 
                 </ul>
             </div>
@@ -311,4 +308,4 @@ const AcademicWriting = () => {
     );
 };
 
-export default AcademicWriting;
+export default PowerPointWriting;

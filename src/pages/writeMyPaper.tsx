@@ -72,46 +72,45 @@ interface CoreValue {
 
 const coreValues: CoreValue[] = [
     {
-        title: 'Top-Notch Quality:',
+        title: 'Quality Writing',
         description:
-            'When you request assessment help, we assure the paper is full of excellence. We make sure you get great vocabulary, structure and uniqueness in all orders.',
-        icon: 'https://img.icons8.com/ios-filled/100/prize.png', // Represents quality and excellence
+            'We offer complete guidance across all subjects with end-to-end case study solutions. Get everything you need in one place with expert assistance.',
+        icon: 'https://img.icons8.com/ios-filled/100/help.png', // Support icon
     },
     {
-        title: 'Infinite Free Samples:',
+        title: 'Authentic Paper',
         description:
-            'We understand the stress of buying multiple books for assessment writing. Here, students can get top-notch grades even with our ready-to-use free samples.',
-        icon: 'https://img.icons8.com/ios-filled/100/open-book--v1.png', // Represents learning material/free samples
+            'Access complimentary plagiarism reports, samples, and drafts with every order. Enjoy full transparency in our case study help services.',
+        icon: 'https://img.icons8.com/ios-filled/100/document--v1.png', // Free report/documents icon
     },
     {
-        title: 'Unlimited Free Revisions:',
+        title: 'Timely Delivery',
         description:
-            'The need for assessment support never ends. If you find any requirement that we did not meet, call us to get free revisions until you are satisfied.',
-        icon: 'https://img.icons8.com/ios-filled/100/edit--v1.png', // Represents editing/revision
+            'Speak directly with your assigned expert. Skip the hassle and clarify your requirements instantly for a seamless case study writing experience.',
+        icon: 'https://img.icons8.com/ios-filled/100/communication.png', // Communication icon
     },
     {
-        title: 'Easy Communication:',
+        title: 'Reputed Scholars',
         description:
-            'Every student needs a friend’s help during tough projects and study hours. We can help you with that. Avail of our 24x7 calling services to clear your doubts.',
-        icon: 'https://img.icons8.com/ios-filled/100/chat--v1.png', // Represents communication/support
+            'Not satisfied with the draft? Request as many revisions as you need until it’s perfect. We’re here to meet your expectations every time.',
+        icon: 'https://img.icons8.com/ios-filled/100/refresh.png', // Revision icon
     },
     {
-        title: 'Discounts All Season:',
+        title: 'Affordable Prices',
         description:
-            'It’s exciting when you get a great offer, right? Our reliable assessment writing service offers amazing student-friendly prices on all orders!',
-        icon: 'https://img.icons8.com/ios-filled/100/price-tag--v1.png', // Discount/price icon
+            'Get premium-quality case study help at student-friendly prices. Enjoy exclusive discounts, seasonal offers, and loyalty rewards.',
+        icon: 'https://img.icons8.com/ios-filled/100/discount.png', // Discount icon
     },
     {
-        title: 'Amazing Referral Schemes:',
+        title: '100% Confidentiality',
         description:
-            'Get a reward if students you know use our academic assistance. Your e-wallet will be credited with the referral bonus when your friend joins.',
-        icon: 'https://img.icons8.com/ios-filled/100/gift.png', // Gift/referral bonus icon
+            'Have a query or need help urgently? Our dedicated support team is available around the clock to assist you instantly.',
+        icon: 'https://img.icons8.com/ios-filled/100/online-support.png', // 24/7 customer support icon
     }
-
-
 ];
 
-const AcademicWriting = () => {
+
+const WriteMyPaper = () => {
     return (
         <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
             {/* First Section */}
@@ -138,10 +137,10 @@ const AcademicWriting = () => {
                             marginBottom: '20px',
                         }}
                     >
-                        Academic Writing Services
+                        Write My Paper for Me
                     </h1>
                     <p style={{ fontSize: '20px', color: '#444', marginBottom: '10px' }}>
-                        Step Up Your Academic Writing Game With Our Services
+                        Wondering “Can someone write paper for me?” Yes, we can!
                     </p>
                     <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
                         Trusted by 1.5M+ happy customers
@@ -166,8 +165,8 @@ const AcademicWriting = () => {
 
             {/* Second Section */}
             <div style={{ marginBottom: '40px', textAlign: 'center' }}>
-                <h2>Our Top Academic Writers</h2>
-                <p>Meet Our Talented Professional Academic Writers.</p>
+                <h2>Meet Our Professional Paper Writers</h2>
+                <p>Book qualified writers to guarantee an A+ in academic papers..</p>
                 <div
                     style={{
                         display: 'flex',
@@ -206,7 +205,7 @@ const AcademicWriting = () => {
             </div>
 
             <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
-                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>How to Get Professional Academic Writing Services
+                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>How To Get My Paper Written?
                 </Title>
                 <HowItWorks />
             </section>
@@ -214,7 +213,7 @@ const AcademicWriting = () => {
 
             {/* Third Section - Services */}
             <div style={{ marginBottom: '40px' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Our Top Services</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Key Benefits Of Our “Write My Paper” Service</h2>
                 <Row gutter={[24, 24]} justify="center">
                     {coreValues.map((value, index) => (
                         <Col xs={24} sm={12} md={12} lg={6} key={index}>
@@ -282,7 +281,7 @@ const AcademicWriting = () => {
                         color: '#2c3e50'
                     }}
                 >
-                    TTypes of Services We Offer:
+                    What Subjects Are Covered in our Online Thesis Writing Service?
                 </h2>
                 <ul
                     style={{
@@ -296,14 +295,15 @@ const AcademicWriting = () => {
                         color: '#34495e'
                     }}
                 >
-                    <li style={{ marginBottom: '10px' }}>✔️  Essay Writing</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Research Papers</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Dissertation Writing</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Dissertation Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Proofreading Services</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Subject-Specific Q&As</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Online Exam Help</li>
-
+                    <li style={{ marginBottom: '10px' }}>✔️ Accounting</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Biology</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Nursing</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Law</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Mathematics</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Sociology</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Computer</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Psychology
+                    </li>
                 </ul>
             </div>
 
@@ -311,4 +311,4 @@ const AcademicWriting = () => {
     );
 };
 
-export default AcademicWriting;
+export default WriteMyPaper;

@@ -72,37 +72,37 @@ interface CoreValue {
 
 const coreValues: CoreValue[] = [
     {
-        title: 'All Subjects Under One Roof:',
+        title: '5000+ Stalwarts:',
         description:
             'Get case study assignment help for all subjects. We ensure you get everything under one roof. Our professional case study writers will help you craft flawless papers.',
         icon: 'https://img.icons8.com/ios-filled/100/prize.png', // Represents quality and excellence
     },
     {
-        title: 'Qualified Experts:',
+        title: '24/7 Assistance:',
         description:
             'Hire from a team of 5000+ academic stalwarts. Pave your way to success with case study help from one of the best websites. Ask us for case study writing help today!.',
         icon: 'https://img.icons8.com/ios-filled/100/open-book--v1.png', // Represents learning material/free samples
     },
     {
-        title: 'Simple Order Process:',
+        title: 'Affordable Prices:',
         description:
             'Hire one of our case study writers without wasting time on ordering process. We have the simplest ordering process. Get your work done here without any hurdles..',
         icon: 'https://img.icons8.com/ios-filled/100/edit--v1.png', // Represents editing/revision
     },
     {
-        title: 'Easy Communication:',
+        title: 'EFree Samples:',
         description:
             'Every student needs a friend’s help during tough projects and study hours. We can help you with that. Avail of our 24x7 calling services to clear your doubts.',
         icon: 'https://img.icons8.com/ios-filled/100/chat--v1.png', // Represents communication/support
     },
     {
-        title: 'Affordable Prices:',
+        title: 'Originality Guaranteed:',
         description:
             'Sign up with us to get case study help at the best prices. We offer students case study assignment writing services at affordable prices along with discounts.',
         icon: 'https://img.icons8.com/ios-filled/100/price-tag--v1.png', // Discount/price icon
     },
     {
-        title: 'Amazing Referral Schemes:',
+        title: 'Prompt Service:',
         description:
             'Get a reward if students you know use our academic assistance. Your e-wallet will be credited with the referral bonus when your friend joins.',
         icon: 'https://img.icons8.com/ios-filled/100/gift.png', // Gift/referral bonus icon
@@ -111,7 +111,7 @@ const coreValues: CoreValue[] = [
 
 ];
 
-const CaseStudy = () => {
+const ProposalWriting = () => {
     return (
         <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
             {/* First Section */}
@@ -138,10 +138,10 @@ const CaseStudy = () => {
                             marginBottom: '20px',
                         }}
                     >
-                        Case Study Help For Your Academic Success
+                        Research Proposal Writing Service
                     </h1>
                     <p style={{ fontSize: '20px', color: '#444', marginBottom: '10px' }}>
-                        Sign up for quick and affordable case study assignment help from the best minds today!
+                        Get the perfect research proposal written by PhD experts.
                     </p>
                     <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
                         Trusted by 1.5M+ happy customers
@@ -166,8 +166,8 @@ const CaseStudy = () => {
 
             {/* Second Section */}
             <div style={{ marginBottom: '40px', textAlign: 'center' }}>
-                <h2>Our Team of Expert Case Study Writers at MyAssignmentHelp</h2>
-                <p>Meet Our Talented Professional Case Study.</p>
+                <h2>Top PhD Research Proposal Writers</h2>
+                <p>A team of elite writers are here to take your worries away.</p>
                 <div
                     style={{
                         display: 'flex',
@@ -206,7 +206,7 @@ const CaseStudy = () => {
             </div>
 
             <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
-                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>Access Online Case Study Help Efficiently
+                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>How to Place an Order for PhD Proposal Help?
                 </Title>
                 <HowItWorks />
             </section>
@@ -214,7 +214,8 @@ const CaseStudy = () => {
 
             {/* Third Section - Services */}
             <div style={{ marginBottom: '40px' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Unlock The Benefits of Our Case Study Help</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Share your requirements
+                    Advantages of Our Dissertation Proposal Writing Services</h2>
                 <Row gutter={[24, 24]} justify="center">
                     {coreValues.map((value, index) => (
                         <Col xs={24} sm={12} md={12} lg={6} key={index}>
@@ -282,7 +283,7 @@ const CaseStudy = () => {
                         color: '#2c3e50'
                     }}
                 >
-                    TTypes of Services We Offer:
+                    Research Proposal Writing Service Prices & Free Features
                 </h2>
                 <ul
                     style={{
@@ -296,13 +297,18 @@ const CaseStudy = () => {
                         color: '#34495e'
                     }}
                 >
-                    <li style={{ marginBottom: '10px' }}>✔️   Explanatory case studies</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Research Papers</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Collective case reports</li>
-                    <li style={{ marginBottom: '10px' }}>✔️  Descriptive case studies</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Instrumental case studies</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Intrinsic case studies</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Exploratory case reports</li>
+                    <li style={{ marginBottom: '10px' }}>✔️   Law</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Engineering</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Commerce</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Business</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Finance</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Psychology</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Science</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Programming</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Tax</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Nursing</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Management</li>
+
 
                 </ul>
             </div>
@@ -311,4 +317,4 @@ const CaseStudy = () => {
     );
 };
 
-export default CaseStudy;
+export default ProposalWriting;

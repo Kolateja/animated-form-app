@@ -72,44 +72,43 @@ interface CoreValue {
 
 const coreValues: CoreValue[] = [
     {
-        title: 'Top-Notch Quality:',
+        title: '100% Original Papers',
         description:
-            'When you request assessment help, we assure the paper is full of excellence. We make sure you get great vocabulary, structure and uniqueness in all orders.',
-        icon: 'https://img.icons8.com/ios-filled/100/prize.png', // Represents quality and excellence
+            'All our assessments are crafted from scratch to ensure originality and zero plagiarism, backed by proper research and academic integrity.',
+        icon: 'https://img.icons8.com/material-sharp/96/certificate.png', // Represents originality and certification
     },
     {
-        title: 'Infinite Free Samples:',
+        title: '24×7 Availability:',
         description:
-            'We understand the stress of buying multiple books for assessment writing. Here, students can get top-notch grades even with our ready-to-use free samples.',
-        icon: 'https://img.icons8.com/ios-filled/100/open-book--v1.png', // Represents learning material/free samples
+            'Our team is available around the clock to resolve your queries and provide academic help whenever you need it.',
+        icon: 'https://img.icons8.com/fluency-systems-filled/96/online-support.png', // Represents support/availability
     },
     {
-        title: 'Unlimited Free Revisions:',
+        title: 'Amazing Referral Bonus:',
         description:
-            'The need for assessment support never ends. If you find any requirement that we did not meet, call us to get free revisions until you are satisfied.',
-        icon: 'https://img.icons8.com/ios-filled/100/edit--v1.png', // Represents editing/revision
+            'Invite friends and earn exciting referral rewards. Share the benefits and get bonuses directly into your wallet.',
+        icon: 'https://img.icons8.com/ios-filled/96/gift.png', // Represents gift/referral
     },
     {
-        title: 'Easy Communication:',
+        title: 'Best Industry Price:',
         description:
-            'Every student needs a friend’s help during tough projects and study hours. We can help you with that. Avail of our 24x7 calling services to clear your doubts.',
-        icon: 'https://img.icons8.com/ios-filled/100/chat--v1.png', // Represents communication/support
+            'Get top-quality writing services at the most competitive rates in the industry, tailored to fit every student’s budget.',
+        icon: 'https://img.icons8.com/ios-filled/96/cheap-2.png', // Represents affordability
     },
     {
-        title: 'Discounts All Season:',
+        title: 'Solutions On Time:',
         description:
-            'It’s exciting when you get a great offer, right? Our reliable assessment writing service offers amazing student-friendly prices on all orders!',
-        icon: 'https://img.icons8.com/ios-filled/100/price-tag--v1.png', // Discount/price icon
+            'We value deadlines and ensure timely delivery of every order, even under tight schedules — no delays, guaranteed.',
+        icon: 'https://img.icons8.com/ios-filled/96/time.png', // Represents punctuality
     },
     {
-        title: 'Amazing Referral Schemes:',
+        title: 'Samples and Blogs:',
         description:
-            'Get a reward if students you know use our academic assistance. Your e-wallet will be credited with the referral bonus when your friend joins.',
-        icon: 'https://img.icons8.com/ios-filled/100/gift.png', // Gift/referral bonus icon
-    }
-
-
+            'Access a rich library of free samples and expert-written blogs to support your academic journey and writing development.',
+        icon: 'https://img.icons8.com/ios-filled/96/blog.png', // Represents blog/samples
+    },
 ];
+
 
 const HomeWork = () => {
     return (
@@ -138,10 +137,10 @@ const HomeWork = () => {
                             marginBottom: '20px',
                         }}
                     >
-                        Academic Writing Services
+                        Homework Help Online
                     </h1>
                     <p style={{ fontSize: '20px', color: '#444', marginBottom: '10px' }}>
-                        Step Up Your Academic Writing Game With Our Services
+                        Get homework help online today and revamp your career like never before!
                     </p>
                     <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
                         Trusted by 1.5M+ happy customers
@@ -166,8 +165,8 @@ const HomeWork = () => {
 
             {/* Second Section */}
             <div style={{ marginBottom: '40px', textAlign: 'center' }}>
-                <h2>Our Top Academic Writers</h2>
-                <p>Meet Our Talented Professional Academic Writers.</p>
+                <h2>Top Homework Helpers</h2>
+                <p>Know Our Certified Writers Before You Hire Them.</p>
                 <div
                     style={{
                         display: 'flex',
@@ -206,7 +205,7 @@ const HomeWork = () => {
             </div>
 
             <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
-                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>How to Get Professional Academic Writing Services
+                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>Get Online Homework Help in 3 Steps
                 </Title>
                 <HowItWorks />
             </section>
@@ -214,7 +213,7 @@ const HomeWork = () => {
 
             {/* Third Section - Services */}
             <div style={{ marginBottom: '40px' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Our Top Services</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Get Expert Help with Homework Online</h2>
                 <Row gutter={[24, 24]} justify="center">
                     {coreValues.map((value, index) => (
                         <Col xs={24} sm={12} md={12} lg={6} key={index}>
@@ -296,13 +295,12 @@ const HomeWork = () => {
                         color: '#34495e'
                     }}
                 >
-                    <li style={{ marginBottom: '10px' }}>✔️  Essay Writing</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Research Papers</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Dissertation Writing</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Dissertation Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Proofreading Services</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Subject-Specific Q&As</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Online Exam Help</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Unlimited Revision</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Essay Type Tool</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Grammar Checker</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Plagiarism Check</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Referencing Generator</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Spell Checker</li>
 
                 </ul>
             </div>

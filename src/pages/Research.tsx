@@ -72,45 +72,45 @@ interface CoreValue {
 
 const coreValues: CoreValue[] = [
     {
-        title: 'Comprehensive Support',
+        title: 'Custom Research Papers:',
         description:
-            'We offer complete guidance across all subjects with end-to-end case study solutions. Get everything you need in one place with expert assistance.',
-        icon: 'https://img.icons8.com/ios-filled/100/help.png', // Support icon
+            'Receive tailor-made research papers crafted to meet your academic requirements, ensuring originality, relevance, and depth.',
+        icon: 'https://img.icons8.com/ios-filled/100/document--v1.png', // Represents custom academic documents
     },
     {
-        title: 'FREE Reports',
+        title: 'Well-structured Solutions:',
         description:
-            'Access complimentary plagiarism reports, samples, and drafts with every order. Enjoy full transparency in our case study help services.',
-        icon: 'https://img.icons8.com/ios-filled/100/document--v1.png', // Free report/documents icon
+            'Get logically organized, clearly formatted, and easy-to-follow solutions that help you grasp complex concepts effortlessly.',
+        icon: 'https://img.icons8.com/ios-filled/100/flow-chart.png', // Represents structured/organized layout
     },
     {
-        title: 'Direct Communication',
+        title: 'Adherence to Guidelines:',
         description:
-            'Speak directly with your assigned expert. Skip the hassle and clarify your requirements instantly for a seamless case study writing experience.',
-        icon: 'https://img.icons8.com/ios-filled/100/communication.png', // Communication icon
+            'We follow your university’s formatting and submission guidelines to the letter—ensuring no marks are lost over technicalities.',
+        icon: 'https://img.icons8.com/ios-filled/100/rules.png', // Represents compliance with rules/guidelines
     },
     {
-        title: 'Unlimited Revisions',
+        title: 'Superfast Delivery:',
         description:
-            'Not satisfied with the draft? Request as many revisions as you need until it’s perfect. We’re here to meet your expectations every time.',
-        icon: 'https://img.icons8.com/ios-filled/100/refresh.png', // Revision icon
+            'Tight deadline? No problem. Our team delivers high-quality academic content within hours, without compromising quality.',
+        icon: 'https://img.icons8.com/ios-filled/100/fast-cart.png', // Represents speed/express delivery
     },
     {
-        title: 'Low Rates & Offers',
+        title: 'High Affordability:',
         description:
-            'Get premium-quality case study help at student-friendly prices. Enjoy exclusive discounts, seasonal offers, and loyalty rewards.',
-        icon: 'https://img.icons8.com/ios-filled/100/discount.png', // Discount icon
+            'Enjoy premium academic help at rates designed for students. No hidden costs, and great value for your investment.',
+        icon: 'https://img.icons8.com/ios-filled/100/discount--v1.png', // Represents affordability/discount
     },
     {
-        title: '24/7 Support',
+        title: 'Free Revisions:',
         description:
-            'Have a query or need help urgently? Our dedicated support team is available around the clock to assist you instantly.',
-        icon: 'https://img.icons8.com/ios-filled/100/online-support.png', // 24/7 customer support icon
+            'Not happy with the draft? Request unlimited revisions free of charge until you’re completely satisfied with the result.',
+        icon: 'https://img.icons8.com/ios-filled/100/restart--v1.png', // Represents revision/redo
     }
 ];
 
 
-const Thesis = () => {
+const ResearchPaper = () => {
     return (
         <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
             {/* First Section */}
@@ -137,10 +137,10 @@ const Thesis = () => {
                             marginBottom: '20px',
                         }}
                     >
-                        Thesis Help By PhD Experts
+                        Research Paper Writing Service
                     </h1>
                     <p style={{ fontSize: '20px', color: '#444', marginBottom: '10px' }}>
-                        The Best Thesis Writing Service in the UK from Professionals in a Click
+                        Get research paper help from writers with discipline-specific expertise.
                     </p>
                     <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
                         Trusted by 1.5M+ happy customers
@@ -165,8 +165,8 @@ const Thesis = () => {
 
             {/* Second Section */}
             <div style={{ marginBottom: '40px', textAlign: 'center' }}>
-                <h2>Meet Our Team of Thesis Writers</h2>
-                <p>Here are our Top-Rated Writers.</p>
+                <h2>Our Team of Research Paper Writers</h2>
+                <p>Know our writers before requesting, "Please write my research paper.”.</p>
                 <div
                     style={{
                         display: 'flex',
@@ -205,7 +205,7 @@ const Thesis = () => {
             </div>
 
             <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
-                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>Access Online Case Study Help EfficientlyGet Professional Thesis Writing Service in 3 Easy Steps
+                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>Get Professional Research Paper Writing Service In 3 Easy Steps
                 </Title>
                 <HowItWorks />
             </section>
@@ -213,7 +213,7 @@ const Thesis = () => {
 
             {/* Third Section - Services */}
             <div style={{ marginBottom: '40px' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Why Choose Our Thesis Writing Service?</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Why Choose Our Research Paper Writing Service?</h2>
                 <Row gutter={[24, 24]} justify="center">
                     {coreValues.map((value, index) => (
                         <Col xs={24} sm={12} md={12} lg={6} key={index}>
@@ -281,7 +281,7 @@ const Thesis = () => {
                         color: '#2c3e50'
                     }}
                 >
-                    What Subjects Are Covered in our Online Thesis Writing Service?
+                    Research Paper Help for All Subjects
                 </h2>
                 <ul
                     style={{
@@ -295,16 +295,16 @@ const Thesis = () => {
                         color: '#34495e'
                     }}
                 >
-                    <li style={{ marginBottom: '10px' }}>✔️  Language & Literature</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Applied Mathematics</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Data Science & Analytics</li>
-                    <li style={{ marginBottom: '10px' }}>✔️  Natural Sciences</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Social Sciences</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Law</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Psychology</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Philosophy</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Law</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ History</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Education</li>
                     <li style={{ marginBottom: '10px' }}>✔️ Management</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ English</li>
                     <li style={{ marginBottom: '10px' }}>✔️ Nursing</li>
-                    <li style={{ marginBottom: '10px' }}>✔️  Engineering
-                    </li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Literature & more</li>
+
                 </ul>
             </div>
 
@@ -312,4 +312,4 @@ const Thesis = () => {
     );
 };
 
-export default Thesis;
+export default ResearchPaper;

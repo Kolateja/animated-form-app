@@ -71,6 +71,13 @@ import CourseWork from './CourseWork';
 import Dissertation from './dissertations';
 import EasyWriting from './easyWriting';
 import EditingWriting from './editingProfissional';
+import HomeWork from './HomeWork';
+import OnlineExam from './onlineExam';
+import PowerPointWriting from './powerPoint';
+import ProposalWriting from './proposalWork';
+import ResearchPaper from './Research';
+import Thesis from './ThesisWork';
+import WriteMyPaper from './writeMyPaper';
 
 
 // import './BodyLayout.css'; 
@@ -92,8 +99,15 @@ const BodyLayout: React.FC = () => {
                         <Route path="/" element={<Home />} />
                         <Route path="/home" element={<Home />} />
                         <Route path="/about" element={<About />} />
+                        <Route path="/proposal-writing-service" element={<ProposalWriting />} />
                         <Route path="/assignment-help" element={<AssessmentHelpPage />} />
                         <Route path="/case-study-help" element={<CaseStudy />} />
+                        <Route path="/research-paper-writing-help" element={<ResearchPaper />} />
+                        <Route path="/powerpoint-presentation-service" element={<PowerPointWriting />} />
+                        <Route path="/homework-help" element={<HomeWork />} />
+                        <Route path="/take-my-online-exam" element={<OnlineExam />} />
+                        <Route path="/thesis-help" element={<Thesis />} />
+                        <Route path="/write-my-paper" element={<WriteMyPaper />} />
                         <Route path="/coursework-help" element={<CourseWork />} />
                         <Route path="/essay-writing-service" element={<EasyWriting />} />
                         <Route path="/editing-and-proofreading-service" element={<EditingWriting />} />
