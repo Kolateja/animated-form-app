@@ -72,38 +72,46 @@ interface CoreValue {
 
 const coreValues: CoreValue[] = [
     {
-        title: 'Top-Notch Quality:',
+        title: 'Top-Rated Editors:',
         description:
-            'We assure excellence in vocabulary, structure, and uniqueness.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/clock.png',
+            'Collaborate with our top-rated editors who meticulously refine your assessments to ensure clarity, coherence, and academic excellence.',
+        icon: 'https://img.icons8.com/ios-filled/100/edit.png', // Represents editing expertise
     },
     {
-        title: 'Expert Writers:',
+        title: 'Zero Plagiarism:',
         description:
-            'Every writer has expertise in the field.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/lock.png',
+            'We guarantee 100% original content. Every submission is thoroughly scanned using reliable plagiarism detection tools.',
+        icon: 'https://img.icons8.com/ios-filled/100/no-entry.png', // Represents no plagiarism
     },
     {
-        title: 'Plagiarism-Free Work:',
+        title: 'No Spelling Mistakes:',
         description:
-            '100% original content.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/medal.png',
+            'Every document undergoes multiple checks to eliminate spelling errors, ensuring a polished and professional final copy.',
+        icon: 'https://img.icons8.com/ios-filled/100/task.png', // ✅ Loads correctly
     },
     {
-        title: 'On-Time Delivery:',
+        title: 'Zero Grammatical Errors:',
         description:
-            'Guaranteed timely submissions.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+            'Our grammar experts proofread every word to eliminate errors and deliver grammatically accurate content every time.',
+        icon: 'https://img.icons8.com/ios-filled/100/grammar.png', // Represents grammar accuracy
     },
     {
-        title: '24x7 Support:',
+        title: 'Maintain Perfect Syntax:',
         description:
-            'Always available for you.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+            'From sentence flow to proper structure, our team ensures each paper follows perfect syntax for maximum readability and academic impact.',
+        icon: 'https://img.icons8.com/ios-filled/100/code.png', // Represents syntax correctness
     },
+    {
+        title: 'Score Good Grades:',
+        description:
+            'Boost your academic performance with expertly written assessments that help you achieve higher grades and confidence.',
+        icon: 'https://img.icons8.com/ios-filled/100/report-card.png', // Represents good grades
+    }
 ];
 
-const AssessmentHelpPage = () => {
+
+
+const EditingWriting = () => {
     return (
         <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
             {/* First Section */}
@@ -126,14 +134,14 @@ const AssessmentHelpPage = () => {
                             lineHeight: 1.2,
                             background: 'linear-gradient(to right, #ff6600, #800080)',
                             WebkitBackgroundClip: 'text',
-                            color: 'transparent',
+                            color: '#ee174e',
                             marginBottom: '20px',
                         }}
                     >
-                        Online Assessment Help for Students
+                        Essay Editing & Proofreading Service
                     </h1>
                     <p style={{ fontSize: '20px', color: '#444', marginBottom: '10px' }}>
-                        Meet Top Professionals To Get Help For Assessment Solutions & More
+                        Get Top-Notch Paper Editors at Unbeatable Prices at MyAssignmenthelp!
                     </p>
                     <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
                         Trusted by 1.5M+ happy customers
@@ -158,8 +166,8 @@ const AssessmentHelpPage = () => {
 
             {/* Second Section */}
             <div style={{ marginBottom: '40px', textAlign: 'center' }}>
-                <h2>Meet Our Online Assessment Helpers</h2>
-                <p>Zero AI Assessment Help by the Best Minds</p>
+                <h2>Top Essay Editors to Polish Your Papers</h2>
+                <p>Know the Top Minds in the Industry and Hire Them.</p>
                 <div
                     style={{
                         display: 'flex',
@@ -196,16 +204,17 @@ const AssessmentHelpPage = () => {
                     ))}
                 </div>
             </div>
+
             <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
-                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>Place An Order For Assessment Help In 3 Simple Steps
+                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>Expert Paper Editing Service in 3 Easy Steps
                 </Title>
                 <HowItWorks />
             </section>
-            {/* How It Works Section */}
+
 
             {/* Third Section - Services */}
             <div style={{ marginBottom: '40px' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Our Top Services</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Benefits of Our Essay Proofreading Services</h2>
                 <Row gutter={[24, 24]} justify="center">
                     {coreValues.map((value, index) => (
                         <Col xs={24} sm={12} md={12} lg={6} key={index}>
@@ -273,7 +282,7 @@ const AssessmentHelpPage = () => {
                         color: '#2c3e50'
                     }}
                 >
-                    Types of Help with Assessment Tasks We Offer
+                    TTypes of Services We Offer:
                 </h2>
                 <ul
                     style={{
@@ -287,12 +296,10 @@ const AssessmentHelpPage = () => {
                         color: '#34495e'
                     }}
                 >
-                    <li style={{ marginBottom: '10px' }}>✔️ Research Paper Writing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Assignment Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Essay Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Dissertation Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Paper Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Term Paper Writing Service</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Free Customizations</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Free Paper Formatting</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Free reports</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Free Revision & Rewriting</li>
                 </ul>
             </div>
 
@@ -300,4 +307,4 @@ const AssessmentHelpPage = () => {
     );
 };
 
-export default AssessmentHelpPage;
+export default EditingWriting;

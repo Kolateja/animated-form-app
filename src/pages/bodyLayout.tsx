@@ -65,6 +65,12 @@ import ConsultancyForm from './ConsultancyForm';
 import Consultancy from './Consultanices';
 import ResetPassword from './ResetPassword';
 import AssessmentHelpPage from './AssessmentHelpPage';
+import AcademicWriting from './AcademicWriting';
+import CaseStudy from './caseStudy';
+import CourseWork from './CourseWork';
+import Dissertation from './dissertations';
+import EasyWriting from './easyWriting';
+import EditingWriting from './editingProfissional';
 
 
 // import './BodyLayout.css'; 
@@ -87,6 +93,12 @@ const BodyLayout: React.FC = () => {
                         <Route path="/home" element={<Home />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/assignment-help" element={<AssessmentHelpPage />} />
+                        <Route path="/case-study-help" element={<CaseStudy />} />
+                        <Route path="/coursework-help" element={<CourseWork />} />
+                        <Route path="/essay-writing-service" element={<EasyWriting />} />
+                        <Route path="/editing-and-proofreading-service" element={<EditingWriting />} />
+                        <Route path="/academic-writing" element={<AcademicWriting />} />
+                        <Route path="/dissertation-help" element={<Dissertation />} />
                         <Route path="/auth/login-signup" element={<AuthPage handleLoginFlag={handleLoginFlag} />} />
                         <Route path="/academicdetails" element={<AcademicDetailsForm />} />
                         <Route path="/orderassignment" element={<OrderAssignmentForm />} />

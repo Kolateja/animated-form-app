@@ -74,36 +74,44 @@ const coreValues: CoreValue[] = [
     {
         title: 'Top-Notch Quality:',
         description:
-            'We assure excellence in vocabulary, structure, and uniqueness.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/clock.png',
+            'When you request assessment help, we assure the paper is full of excellence. We make sure you get great vocabulary, structure and uniqueness in all orders.',
+        icon: 'https://img.icons8.com/ios-filled/100/prize.png', // Represents quality and excellence
     },
     {
-        title: 'Expert Writers:',
+        title: 'Infinite Free Samples:',
         description:
-            'Every writer has expertise in the field.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/lock.png',
+            'We understand the stress of buying multiple books for assessment writing. Here, students can get top-notch grades even with our ready-to-use free samples.',
+        icon: 'https://img.icons8.com/ios-filled/100/open-book--v1.png', // Represents learning material/free samples
     },
     {
-        title: 'Plagiarism-Free Work:',
+        title: 'Unlimited Free Revisions:',
         description:
-            '100% original content.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/medal.png',
+            'The need for assessment support never ends. If you find any requirement that we did not meet, call us to get free revisions until you are satisfied.',
+        icon: 'https://img.icons8.com/ios-filled/100/edit--v1.png', // Represents editing/revision
     },
     {
-        title: 'On-Time Delivery:',
+        title: 'Easy Communication:',
         description:
-            'Guaranteed timely submissions.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+            'Every student needs a friend’s help during tough projects and study hours. We can help you with that. Avail of our 24x7 calling services to clear your doubts.',
+        icon: 'https://img.icons8.com/ios-filled/100/chat--v1.png', // Represents communication/support
     },
     {
-        title: '24x7 Support:',
+        title: 'Discounts All Season:',
         description:
-            'Always available for you.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+            'It’s exciting when you get a great offer, right? Our reliable assessment writing service offers amazing student-friendly prices on all orders!',
+        icon: 'https://img.icons8.com/ios-filled/100/price-tag--v1.png', // Discount/price icon
     },
+    {
+        title: 'Amazing Referral Schemes:',
+        description:
+            'Get a reward if students you know use our academic assistance. Your e-wallet will be credited with the referral bonus when your friend joins.',
+        icon: 'https://img.icons8.com/ios-filled/100/gift.png', // Gift/referral bonus icon
+    }
+
+
 ];
 
-const AssessmentHelpPage = () => {
+const HomeWork = () => {
     return (
         <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
             {/* First Section */}
@@ -126,14 +134,14 @@ const AssessmentHelpPage = () => {
                             lineHeight: 1.2,
                             background: 'linear-gradient(to right, #ff6600, #800080)',
                             WebkitBackgroundClip: 'text',
-                            color: 'transparent',
+                            color: '#ee174e',
                             marginBottom: '20px',
                         }}
                     >
-                        Online Assessment Help for Students
+                        Academic Writing Services
                     </h1>
                     <p style={{ fontSize: '20px', color: '#444', marginBottom: '10px' }}>
-                        Meet Top Professionals To Get Help For Assessment Solutions & More
+                        Step Up Your Academic Writing Game With Our Services
                     </p>
                     <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
                         Trusted by 1.5M+ happy customers
@@ -158,8 +166,8 @@ const AssessmentHelpPage = () => {
 
             {/* Second Section */}
             <div style={{ marginBottom: '40px', textAlign: 'center' }}>
-                <h2>Meet Our Online Assessment Helpers</h2>
-                <p>Zero AI Assessment Help by the Best Minds</p>
+                <h2>Our Top Academic Writers</h2>
+                <p>Meet Our Talented Professional Academic Writers.</p>
                 <div
                     style={{
                         display: 'flex',
@@ -196,12 +204,13 @@ const AssessmentHelpPage = () => {
                     ))}
                 </div>
             </div>
+
             <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
-                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>Place An Order For Assessment Help In 3 Simple Steps
+                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>How to Get Professional Academic Writing Services
                 </Title>
                 <HowItWorks />
             </section>
-            {/* How It Works Section */}
+
 
             {/* Third Section - Services */}
             <div style={{ marginBottom: '40px' }}>
@@ -273,7 +282,7 @@ const AssessmentHelpPage = () => {
                         color: '#2c3e50'
                     }}
                 >
-                    Types of Help with Assessment Tasks We Offer
+                    TTypes of Services We Offer:
                 </h2>
                 <ul
                     style={{
@@ -287,12 +296,14 @@ const AssessmentHelpPage = () => {
                         color: '#34495e'
                     }}
                 >
-                    <li style={{ marginBottom: '10px' }}>✔️ Research Paper Writing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Assignment Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Essay Editing Service</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Essay Writing</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Research Papers</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Dissertation Writing</li>
                     <li style={{ marginBottom: '10px' }}>✔️ Dissertation Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Paper Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Term Paper Writing Service</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Proofreading Services</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Subject-Specific Q&As</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Online Exam Help</li>
+
                 </ul>
             </div>
 
@@ -300,4 +311,4 @@ const AssessmentHelpPage = () => {
     );
 };
 
-export default AssessmentHelpPage;
+export default HomeWork;

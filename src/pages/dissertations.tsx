@@ -72,38 +72,45 @@ interface CoreValue {
 
 const coreValues: CoreValue[] = [
     {
-        title: 'Top-Notch Quality:',
+        title: 'Pinpoint Deliveries',
         description:
-            'We assure excellence in vocabulary, structure, and uniqueness.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/clock.png',
+            'At our professional dissertation writing services, our experts meet every submission deadline. Get urgent dissertation help online every time from us.',
+        icon: 'https://img.icons8.com/ios-filled/100/delivery-time.png', // Represents on-time delivery
     },
     {
-        title: 'Expert Writers:',
+        title: 'Flawless Solutions:',
         description:
-            'Every writer has expertise in the field.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/lock.png',
+            'Submit the best paper with the help of our professional writers. Our experts offer stellar guidance and are backed by our quality assurance teams.',
+        icon: 'https://img.icons8.com/ios-filled/100/ok.png', // Represents approval and accuracy
     },
     {
-        title: 'Plagiarism-Free Work:',
+        title: 'End-to-End Assistance:',
         description:
-            '100% original content.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/medal.png',
+            'From the dissertation proposal to delivering the final doctoral dissertation, we offer complete dissertation help online to you at the best prices.',
+        icon: 'https://img.icons8.com/ios-filled/100/process.png', // Represents complete/step-by-step service
     },
     {
-        title: 'On-Time Delivery:',
+        title: '100% Original Solutions:',
         description:
-            'Guaranteed timely submissions.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+            'We use the latest plagiarism detection tools to scan and even send a free plagiarism report. Expect nothing but the best from our dissertation writing service.',
+        icon: 'https://img.icons8.com/ios-filled/100/certificate.png', // Represents originality/certified content
     },
     {
-        title: '24x7 Support:',
+        title: 'FREE Revisions:',
         description:
-            'Always available for you.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+            'Not satisfied with our custom dissertations? Get unlimited revisions at our dissertation help services. Just state the reasons why you need a revision.',
+        icon: 'https://img.icons8.com/ios-filled/100/restart.png', // Represents revision/redo
     },
+    {
+        title: '24*7 Customer Supports:',
+        description:
+            'Get 24/7 professional help from our support services. We are always there to provide the best possible dissertation assistance. Connect with us today.',
+        icon: 'https://img.icons8.com/ios-filled/100/online-support.png', // Represents 24/7 support
+    }
 ];
 
-const AssessmentHelpPage = () => {
+
+const Dissertation = () => {
     return (
         <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
             {/* First Section */}
@@ -126,14 +133,14 @@ const AssessmentHelpPage = () => {
                             lineHeight: 1.2,
                             background: 'linear-gradient(to right, #ff6600, #800080)',
                             WebkitBackgroundClip: 'text',
-                            color: 'transparent',
+                            color: '#ee174e',
                             marginBottom: '20px',
                         }}
                     >
-                        Online Assessment Help for Students
+                        Professional Dissertation Writing Services
                     </h1>
                     <p style={{ fontSize: '20px', color: '#444', marginBottom: '10px' }}>
-                        Meet Top Professionals To Get Help For Assessment Solutions & More
+                        Experience World-Class Ph.D. Dissertation Help Service from Post-Graduate Experts
                     </p>
                     <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
                         Trusted by 1.5M+ happy customers
@@ -158,8 +165,8 @@ const AssessmentHelpPage = () => {
 
             {/* Second Section */}
             <div style={{ marginBottom: '40px', textAlign: 'center' }}>
-                <h2>Meet Our Online Assessment Helpers</h2>
-                <p>Zero AI Assessment Help by the Best Minds</p>
+                <h2>Meet Our Online Dissertation Writing Experts</h2>
+                <p>AI-Free Dissertations from the Industry Stalwarts.</p>
                 <div
                     style={{
                         display: 'flex',
@@ -196,16 +203,17 @@ const AssessmentHelpPage = () => {
                     ))}
                 </div>
             </div>
+
             <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
-                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>Place An Order For Assessment Help In 3 Simple Steps
+                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>How Does Our Dissertation Writing Help Work?
                 </Title>
                 <HowItWorks />
             </section>
-            {/* How It Works Section */}
+
 
             {/* Third Section - Services */}
             <div style={{ marginBottom: '40px' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Our Top Services</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Benefits Offered by MyAssignmentHelp Dissertation Writing Service</h2>
                 <Row gutter={[24, 24]} justify="center">
                     {coreValues.map((value, index) => (
                         <Col xs={24} sm={12} md={12} lg={6} key={index}>
@@ -273,7 +281,7 @@ const AssessmentHelpPage = () => {
                         color: '#2c3e50'
                     }}
                 >
-                    Types of Help with Assessment Tasks We Offer
+                    Types of Services We Offer:
                 </h2>
                 <ul
                     style={{
@@ -287,12 +295,13 @@ const AssessmentHelpPage = () => {
                         color: '#34495e'
                     }}
                 >
-                    <li style={{ marginBottom: '10px' }}>✔️ Research Paper Writing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Assignment Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Essay Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Dissertation Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Paper Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Term Paper Writing Service</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Scientific Research</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Case Studies</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Projects</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Traditional Theses</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Manuscript-based Theses</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Research Theses</li>
+
                 </ul>
             </div>
 
@@ -300,4 +309,4 @@ const AssessmentHelpPage = () => {
     );
 };
 
-export default AssessmentHelpPage;
+export default Dissertation;

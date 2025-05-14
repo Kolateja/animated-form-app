@@ -61,7 +61,7 @@ const Services: React.FC = () => {
                     padding: "16px",
                     margin: "0 auto",
                     borderRadius: "22px",
-                    width: "100vw",
+                    width: "1500px",
                     backgroundColor: "#1e1e1e", // dark background
                     color: "white",
                 }}

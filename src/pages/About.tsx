@@ -184,32 +184,32 @@
 //       <HowItWorks />
 //       {/* </section> */}
 
-    //   <FaqPage />
+//   <FaqPage />
 
-    //   <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
-    //     <motion.div
-    //       className="about-header"
-    //       initial={{ opacity: 0, y: -20 }}
-    //       whileInView={{ opacity: 1, y: 0 }}
-    //       transition={{ duration: 0.6 }}
-    //     >
-    //       <Title level={3} style={{ textAlign: 'center', marginBottom: '2rem' }}>Our Presence</Title>
-    //     </motion.div>
-    //     <motion.div
-    //       className="about-global-img"
-    //       initial={{ opacity: 0, scale: 0.95 }}
-    //       whileInView={{ opacity: 1, scale: 1 }}
-    //       transition={{ duration: 0.6 }}
-    //       style={{ textAlign: 'center' }}
-    //     >
-    //       <img
-    //         src="/assets/img/aboutus/globalpresence.png"
-    //         alt="Global Presence"
-    //         style={{ width: '100%', maxWidth: 800 }}
-    //       />
-    //     </motion.div>
-    //   </section>
-    // </AnimatedPage>
+//   <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
+//     <motion.div
+//       className="about-header"
+//       initial={{ opacity: 0, y: -20 }}
+//       whileInView={{ opacity: 1, y: 0 }}
+//       transition={{ duration: 0.6 }}
+//     >
+//       <Title level={3} style={{ textAlign: 'center', marginBottom: '2rem' }}>Our Presence</Title>
+//     </motion.div>
+//     <motion.div
+//       className="about-global-img"
+//       initial={{ opacity: 0, scale: 0.95 }}
+//       whileInView={{ opacity: 1, scale: 1 }}
+//       transition={{ duration: 0.6 }}
+//       style={{ textAlign: 'center' }}
+//     >
+//       <img
+//         src="/assets/img/aboutus/globalpresence.png"
+//         alt="Global Presence"
+//         style={{ width: '100%', maxWidth: 800 }}
+//       />
+//     </motion.div>
+//   </section>
+// </AnimatedPage>
 //   );
 // };
 
@@ -319,75 +319,10 @@ const About: React.FC = () => {
         </motion.div>
       </div>
       {/* Feature Cards */}
-      <section
-  style={{
-    padding: '6rem 2rem',
-    background: 'linear-gradient(135deg, #0f2027, #203a43, #2c5364)',
-    color: '#fff',
-    overflow: 'hidden',
-  }}
->
-  {/* Heading with scroll animation */}
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-    viewport={{ once: true, amount: 0.5 }} // triggers when 50% in view
-  >
-    <Title level={2} style={{ textAlign: 'center', fontSize: '2.5rem', color: '#ffffff' }}>
-      Who We Are
-    </Title>
-    <Paragraph
-      style={{
-        textAlign: 'center',
-        color: '#dcdcdc',
-        fontSize: '1.2rem',
-        maxWidth: 800,
-        margin: '0 auto 3rem',
-      }}
-    >
-      Struggling with assignments? We offer top-notch, reliable academic help to alleviate stress
-      and boost your grades. Trust our expert writers to guide you towards success.
-    </Paragraph>
-  </motion.div>
 
-  {/* Cards with staggered scroll animation */}
-  <Row gutter={[24, 24]} justify="center">
-    {features.map((feature, idx) => (
-      <Col xs={24} sm={12} md={8} lg={6} key={idx}>
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: idx * 0.15 }}
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <Card
-            bordered={false}
-            hoverable
-            style={{
-              background: 'rgba(255, 255, 255, 0.05)',
-              borderRadius: '16px',
-              padding: '2rem 1.5rem',
-              textAlign: 'center',
-              color: '#fff',
-              boxShadow: '0 8px 20px rgba(0, 0, 0, 0.2)',
-              backdropFilter: 'blur(10px)',
-              WebkitBackdropFilter: 'blur(10px)',
-              transition: 'transform 0.3s ease',
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.03)')}
-            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-          >
-            <img src={feature.img} alt={feature.title} style={{ width: 80, marginBottom: 16 }} />
-            <Paragraph style={{ fontWeight: 'bold', color: '#ffffff' }}>
-              {feature.title}
-            </Paragraph>
-          </Card>
-        </motion.div>
-      </Col>
-    ))}
-  </Row>
-</section>
+
+
+
 
 
       {/* Other Sections */}
@@ -406,34 +341,37 @@ const About: React.FC = () => {
       </section>
 
       <section style={{ padding: '4rem 2rem', backgroundColor: '#f0f2f5' }}>
+        <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>How It Works
+        </Title>
         <HowItWorks />
       </section>
+
       <FaqPage />
 
-<section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
-  <motion.div
-    className="about-header"
-    initial={{ opacity: 0, y: -20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6 }}
-  >
-    <Title level={3} style={{ textAlign: 'center', marginBottom: '2rem' }}>Our Presence</Title>
-  </motion.div>
-  <motion.div
-    className="about-global-img"
-    initial={{ opacity: 0, scale: 0.95 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.6 }}
-    style={{ textAlign: 'center' }}
-  >
-    <img
-      src="/assets/img/aboutus/globalpresence.png"
-      alt="Global Presence"
-      style={{ width: '100%', maxWidth: 800 }}
-    />
-  </motion.div>
-</section>
-</AnimatedPage>
+      <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
+        <motion.div
+          className="about-header"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Title level={3} style={{ textAlign: 'center', marginBottom: '2rem' }}>Our Presence</Title>
+        </motion.div>
+        <motion.div
+          className="about-global-img"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          style={{ textAlign: 'center' }}
+        >
+          <img
+            src="/assets/img/aboutus/globalpresence.png"
+            alt="Global Presence"
+            style={{ width: '100%', maxWidth: 800 }}
+          />
+        </motion.div>
+      </section>
+    </AnimatedPage>
   );
 };
 
