@@ -225,7 +225,7 @@ import Advantages from './Advantages';
 import Slider from 'react-slick';
 import images from '../assets/img/image.png'
 import FaqPage from './FaqPage';
-import bg from '../assets/img/aboutBanner.png'
+import bg from '../assets/img/contact/hero-bg.jpg'
 
 const { Title, Paragraph } = Typography;
 
