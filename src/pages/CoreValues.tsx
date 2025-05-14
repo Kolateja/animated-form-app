@@ -7,6 +7,7 @@ interface CoreValue {
     title: string;
     description: string;
     icon: string;
+    color: string
 }
 
 const coreValues: CoreValue[] = [
@@ -15,24 +16,32 @@ const coreValues: CoreValue[] = [
         description:
             'Receive your assignments within the deadline. Our academic scholars can complete complex tasks within the time limit.',
         icon: 'https://img.icons8.com/ios-filled/100/000000/clock.png',
+        color: '#eb2f96',
+
     },
     {
         title: 'Safety & Security',
         description:
             'We use secure SSL-encrypted payment gateways to provide complete security. All your personal details are safe with us.',
         icon: 'https://img.icons8.com/ios-filled/100/000000/lock.png',
+        color: '#13c2c2',
+
     },
     {
         title: 'Quality',
         description:
             'Our academic writers follow all academic guidelines. We promise 100% plagiarism-free assignments devoid of errors.',
         icon: 'https://img.icons8.com/ios-filled/100/000000/medal.png',
+        color: '#722ed1', // Represents time & cost efficiency
+
     },
     {
         title: 'Transparency',
         description:
             'We maintain complete transparency in terms of pricing. Don’t worry about encountering hidden charges on our website.',
         icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+        color: '#52c41a', // Represents improvement/goal achievement
+
     },
 ];
 
@@ -43,34 +52,70 @@ const CoreValues: React.FC = () => {
                 Our Core Values
             </Title>
             <Row gutter={[24, 24]} justify="center">
-                {coreValues.map((value, index) => (
-                    <Col xs={24} sm={12} md={12} lg={6} key={index}>
+
+                {coreValues.map((item, index) => (
+                    <Col xs={24} sm={12} md={6} key={index}>
                         <Card
-                            bordered={false}
                             hoverable
                             style={{
-                                borderRadius: '12px',
-                                padding: '1.5rem',
-                                minHeight: '300px',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center',
-                                justifyContent: 'flex-start',
-                                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                                borderRadius: 12,
+                                boxShadow: `0 6px 20px ${item.color}40`, // add alpha to soften color
+                                transition: 'transform 0.5s',
+                            }}
+                            bodyStyle={{ textAlign: 'center', paddingTop: 0 }}
+                            cover={
+                                <div
+                                    style={{
+                                        textAlign: 'center',
+                                        paddingTop: '1.5rem',
+                                        perspective: '1000px',
+                                    }}
+                                >
+                                    <div
+                                        style={{
+                                            width: 80,
+                                            height: 80,
+                                            margin: '0 auto',
+                                            transformStyle: 'preserve-3d',
+                                            transition: 'transform 0.6s',
+                                        }}
+                                        className="flip-image"
+                                    >
+                                        <img
+                                            alt={item.title}
+                                            src={item.icon}
+                                            style={{
+                                                height: '100%',
+                                                width: '100%',
+                                                borderRadius: '50%',
+                                                border: `2px solid ${item.color}`,
+                                                background: '#fff',
+                                            }}
+                                        />
+                                    </div>
+                                </div>
+                            }
+                            onMouseEnter={(e) => {
+                                const flip = e.currentTarget.querySelector('.flip-image') as HTMLElement;
+                                if (flip) flip.style.transform = 'rotateY(180deg)';
+                            }}
+                            onMouseLeave={(e) => {
+                                const flip = e.currentTarget.querySelector('.flip-image') as HTMLElement;
+                                if (flip) flip.style.transform = 'rotateY(0deg)';
                             }}
                         >
-                            <img
-                                src={value.icon}
-                                alt={value.title}
-                                style={{ width: '64px', height: '64px', marginBottom: '1rem' }}
+                            <Card.Meta
+                                title={
+                                    <Title level={5} style={{ marginBottom: 8 }}>
+                                        {item.title}
+                                    </Title>
+                                }
+                                description={<Paragraph style={{ fontSize: 12 }}>{item.description}</Paragraph>}
                             />
-                            <Title level={4} style={{ color: '#0f52ba' }}>
-                                {value.title}
-                            </Title>
-                            <Paragraph style={{ color: '#555' }}>{value.description}</Paragraph>
                         </Card>
                     </Col>
                 ))}
+
             </Row>
         </div>
     );
