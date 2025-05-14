@@ -226,7 +226,7 @@ import Slider from 'react-slick';
 import images from '../assets/img/image.png'
 import FaqPage from './FaqPage';
 import bg from '../assets/img/contact/hero-bg.jpg'
-import can from '../assets/img/canvas.gif'
+// import can from '../assets/img/canvas.gif'
 const { Title, Paragraph } = Typography;
 
 const features = [
@@ -273,7 +273,7 @@ const About: React.FC = () => {
       {/* Hero Section with Background Image */}
       <div
         style={{
-          backgroundImage: `url(${can})`,
+          // backgroundImage: `url(${can})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: '220px 20px 180px',
