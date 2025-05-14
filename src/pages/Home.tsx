@@ -63,8 +63,8 @@ import bg from '../assets/img/remining.png'
 const { Text, Paragraph, Title } = Typography;
 
 const contentSectionStyle: React.CSSProperties = {
-  backgroundColor: '#b1d0e2', // light, professional background
-  padding: '80px 20px',
+  backgroundColor: "#b1d0e2", // light, professional background
+  padding: "80px 20px",
 };
 
 const Home: React.FC = () => {
@@ -73,7 +73,7 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ fontFamily: 'Roboto, sans-serif', width: '100vw' }}>
+    <div style={{ fontFamily: "Roboto, sans-serif" }}>
       {/* Hero Section */}
       <div
         style={{
@@ -85,28 +85,47 @@ const Home: React.FC = () => {
           textAlign: 'center',
         }}
       >
-        <h1 style={{ fontSize: '20px', maxWidth: '700px', margin: '0 auto 30px', color: '#252221' }}>
+
+        <h1
+          style={{
+            fontSize: "52px",
+            marginBottom: "20px",
+            color: "#252221",
+            fontWeight: "bold",
+          }}
+        >
           Achieve Academic Excellence
         </h1>
-        <p style={{ fontSize: '20px', maxWidth: '700px', margin: '0 auto 30px', color: '#252221' }}>
-          Top-quality assignment help from experts — trusted by 2000+ students worldwide.
-          Comprehensive Assignment Assistance With a No-AI Guarantee!
+        <p
+          style={{
+            fontSize: "20px",
+            maxWidth: "700px",
+            margin: "0 auto 30px",
+            color: "#252221",
+          }}
+        >
+          Top-quality assignment help from experts — trusted by 2000+ students
+          worldwide. Comprehensive Assignment Assistance With a No-AI Guarantee!
         </p>
         <Link to="/auth/login-signup">
           <Button
             type="primary"
             style={{
-              padding: '20px 30px',
-              backgroundColor: '#1890ff',
-              border: 'none',
-              borderRadius: '6px',
-              color: 'white',
-              fontSize: '16px',
-              cursor: 'pointer',
-              transition: 'background 0.3s',
+              padding: "12px 28px",
+              backgroundColor: "#1890ff",
+              border: "none",
+              borderRadius: "6px",
+              color: "white",
+              fontSize: "16px",
+              cursor: "pointer",
+              transition: "background 0.3s",
             }}
-            onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#40a9ff')}
-            onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#1890ff')}
+            onMouseOver={(e) =>
+              (e.currentTarget.style.backgroundColor = "#40a9ff")
+            }
+            onMouseOut={(e) =>
+              (e.currentTarget.style.backgroundColor = "#1890ff")
+            }
           >
             Order now
           </Button>
@@ -157,5 +176,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-
-

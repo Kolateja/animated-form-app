@@ -50,7 +50,7 @@ const App = () => {
       style={{
         display: 'flex',
         flexDirection: 'column',
-        width: '100%',
+        // width: '100%',
         // maxWidth: '1440px',
         minHeight: '100vh',
         justifyContent: 'center', backgroundColor: '#f9f9f9'
@@ -62,7 +62,7 @@ const App = () => {
             position: 'fixed',
             top: 0,
             left: 0,
-            width: '100%',
+            width: '100vw',
             height: '80px',
             zIndex: 999,
             backgroundColor: '#fff'
@@ -94,9 +94,9 @@ const App = () => {
           className="main-content"
           style={{
             marginLeft: isLoggedIn && role ? '250px' : '0',
-            padding: '20px',
-            paddingTop: !isLoggedIn ? '80px' : '20px', // offset if header is fixed
-            width: '100vw'
+            // padding: '20px',
+            // paddingTop: !isLoggedIn ? '80px' : '20px', // offset if header is fixed
+            // width: '100vw'
           }}
         >
           <BodyLayout />

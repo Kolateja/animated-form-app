@@ -1,101 +1,112 @@
-#contact-form-section {
-  background: url('/src/assets/img/contact/wonder.jpg') bottom no-repeat;
+.contact-form-wrapper {
+  background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}
+
+.contact-form-banner {
+  background-image: url("/src/assets/img/contact/wonder.jpg");
   background-size: cover;
-  height: 100vh;
-  padding: 20px;
-}
-
-@media (max-width: 576px) {
-  #contact-form-section {
-    background-position: left;
-    /* Change background position */
-    height: auto;
-    /* Remove fixed height */
-  }
-}
-
-.transparent {
-  background-color: rgba(255, 255, 255, 0.5);
-  /* Transparent white color */
-  background-color: rgba(158, 86, 185, 0.502);
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  /* Shadow effect */
-}
-
-#contact-form-section .social-media-wrapper .social-links {
+  background-position: center;
+  height: 250px;
   display: flex;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
 }
 
-#contact-form-section .social-media-wrapper .social-links img {
-  background-color: white;
-  border-radius: 20px;
+.contact-form-banner-heading {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
-#contact-form-section .call-us-wrapper {
+.contact-form-container {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
 }
 
-#contact-form-section .call-us-wrapper a {
-  color: white;
-  /* font-weight: bold; */
+.contact-form-left {
+  flex: 1;
+  min-width: 300px;
+  max-width: 700px;
 }
 
-@media (max-width: 576px) {
-  #contact-form-section .call-us-wrapper {
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  #contact-form-section .call-us-wrapper i {
-    margin-right: 20px;
-  }
+.contact-form-right {
+  flex: 1;
+  min-width: 300px;
+  max-width: 700px;
+  height: 100%;
 }
 
-#contact-form-section .email-us-wrapper {
+.contact-form-title {
+  text-align: center;
+  color: #0d74b0;
+}
+
+.contact-form-subtitle {
+  display: block;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.contact-form-social {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 2rem;
 }
 
-@media (max-width: 576px) {
-  #contact-form-section .email-us-wrapper {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 20px;
-  }
-
-  #contact-form-section .email-us-wrapper i {
-    margin-right: 20px;
-  }
+.contact-form-social-icon {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-#contact-form-section .email-us-wrapper a {
-  color: white;
-  /* font-weight: bold; */
+.contact-form-quickinfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  font-size: 16px;
+  margin-bottom: 2rem;
 }
 
-#contact-form-section .message .form-group {
-  margin: 20px;
+.contact-form-quickinfo a {
+  color: #0d74b0;
 }
 
-#contact-form-section .message .form-group input {
-  /* width: 200px; */
+.contact-form-form {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-#contact-form-section .message .form-control {
-  background: rgba(205, 143, 239, 0.5);
-  background: rgba(255, 255, 255, 0.5);
-  color: black;
+.contact-form-submit {
+  text-align: center;
+  margin-top: 2rem;
 }
 
-#contact-form-section .message .form-control:focus {
-  box-shadow: none;
-  /* Remove the default box-shadow when focused */
-  background: rgba(255, 255, 255, 0.5);
-  background-color: rgba(228, 183, 245, 0.502);
-  color: white;
-  border: 1px solid black;
+.contact-form-submit-button {
+  padding: 0 2rem;
+  background: #0d74b0;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(13, 116, 176, 0.4);
+}
+
+.contact-form-map {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  border: none;
+  border-radius: 12px;
 }

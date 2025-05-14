@@ -17,6 +17,7 @@
     "@types/react": "^19.1.1",
     "@types/react-dom": "^19.1.2",
     "antd": "^5.24.9",
+    "aos": "^2.3.4",
     "axios": "^1.9.0",
     "framer-motion": "^12.6.5",
     "quill": "^2.0.3",
@@ -58,6 +59,7 @@
     ]
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "@types/react-helmet": "^6.1.11",
     "@types/react-slick": "^0.23.13"
   }

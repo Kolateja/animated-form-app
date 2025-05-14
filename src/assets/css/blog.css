@@ -13,7 +13,7 @@
 
 .blog-wrapper {
     background-image: linear-gradient(to bottom, #E5E5E5, #FFFFFF);
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .blog-item {
