@@ -1,184 +1,144 @@
-#main #hero {
-  background: #3f71af98;
-  padding: 50px 0px;
+.reviewComponent-main {
+  font-family: "Open Sans", sans-serif;
+  
 }
 
-#main #hero .review-form {
-  padding: 50px;
+.reviewComponent-hero {
+  background: #3f71af98;
+  padding: 50px 0;
+}
+
+.reviewComponent-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.reviewComponent-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* margin: 10px; */
+}
+
+.reviewComponent-colLeft {
+  flex: 1;
+  min-width: 300px;
+}
+
+.reviewComponent-imageWrapper {
+  margin-bottom: 20px;
+}
+
+.reviewComponent-mainImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.reviewComponent-reviewImages {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.reviewComponent-reviewImage img {
+  width: 150px;
+}
+
+.reviewComponent-formWrapper {
+  flex: 1;
+  min-width: 300px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 30px;
+  padding-bottom: 10px;
   background: #f8f8f815;
   margin-top: 20px;
-  box-shadow: 0px 0px 10px rgb(255, 255, 255);
+  box-shadow: 0 0 10px #ffffff;
   color: white;
+  max-width: 500px;
+  margin-left: 20px;
+  border-radius: 15px;
 }
 
-#main #hero .review-form h2 {
-  position: relative;
-  /* background: #3498db; */
-  padding: 10px 20px;
+.reviewComponent-formTitle {
+  text-align: center;
+  margin-bottom: 10px;
   color: white;
-  display: inline-block;
-  z-index: 1;
+  font-size: 25px;
 }
 
-#main #hero .review-form .form-group {
-  padding: 10px 0px;
+.reviewComponent-formGroup {
+  margin-bottom: 10px;
 }
 
-.rating-container {
+.reviewComponent-ratingContainer {
   display: flex;
   gap: 10px;
   margin-bottom: 16px;
 }
 
-.rating-star {
-  cursor: pointer;
-  font-size: 26px;
-  color: #ddd;
+.reviewComponent-submitBtnWrapper {
+  text-align: center;
 }
 
-.rating-star:hover,
-.rating-star.active {
-  color: #fdd835;
-}
-#main #reviews {
-  font-family: "Open Sans", sans-serif;
-  background-color: #3f72af;
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
+.reviewComponent-submitBtn {
+  background-color: #28a745;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  color: white;
 }
 
-
-#main #reviews h2 {
-  color: #fff;
-  font-size: 26px;
-  font-weight: 300;
-  position: relative;
-  margin: 0 0 50px 0;
-  text-transform: uppercase;
-  display: inline-block;
+.reviewComponent-feedbackSection {
+  padding: 50px 20px;
+  background: linear-gradient(120deg, #f0f4f8, #d9e2ec);
 }
 
-#main #reviews h2::after {
-  content: "";
-  width: 50%;
-  position: absolute;
-  height: 4px;
-  border-radius: 1px;
-  background: #ff5555;
-  /* background: #3498db; */
-  left: 0;
-  bottom: -20px;
+.reviewComponent-feedbackTitle {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
 }
 
-.carousel {
-  margin: 50px auto;
+.reviewComponent-highlight {
+  color: #1890ff;
 }
 
-.carousel .carousel-item {
+.reviewComponent-cardRow {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.reviewComponent-feedbackCard {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.reviewComponent-feedbackMessage {
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.reviewComponent-feedbackRating {
+  margin-bottom: 16px;
+}
+
+.reviewComponent-feedbackName {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+.reviewComponent-feedbackOrder {
   color: #999;
-  overflow: hidden;
-  min-height: 120px;
-  font-size: 13px;
-}
-
-.carousel .carousel-item .review-card {
-  margin-bottom: 20px;
-}
-
-.carousel .media {
-  position: relative;
-  padding: 0 0 0 20px;
-  margin-left: 20px;
-}
-
-.carousel .media img {
-  width: 75px;
-  height: 75px;
-  display: block;
-  border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  border: 2px solid #fff;
-}
-
-.carousel .testimonial {
-  color: #fff;
-  position: relative;
-  background: #9b9b9b;
-  padding: 15px;
-  margin: 0 0 20px 20px;
-}
-
-.carousel .testimonial::before,
-.carousel .testimonial::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  left: 0;
-  bottom: -20px;
-}
-
-.carousel .testimonial::before {
-  width: 20px;
-  height: 20px;
-  background: #9b9b9b;
-  background: black;
-  box-shadow: inset 12px 0 13px rgba(0, 0, 0, 0.5);
-}
-
-.carousel .testimonial::after {
-  width: 0;
-  height: 0;
-  border: 10px solid transparent;
-  border-bottom-color: black;
-  border-left-color: #fff;
-}
-
-.carousel .carousel-item .row>div:first-child .testimonial {
-  margin: 0 20px 20px 0;
-}
-
-.carousel .carousel-item .row>div:first-child .media {
-  margin-left: 0;
-}
-
-.carousel .testimonial p {
-  text-indent: 40px;
-  line-height: 21px;
-  margin: 0;
-}
-
-.carousel .testimonial p::before {
-  content: "\201D";
-  font-family: Arial, sans-serif;
-  color: #fff;
-  font-weight: bold;
-  font-size: 68px;
-  line-height: 70px;
-  position: absolute;
-  left: -25px;
-  top: 0;
-}
-
-.carousel .overview {
-  padding: 3px 0 0 15px;
-}
-
-.carousel .overview .details {
-  padding: 5px 0 8px;
-}
-
-.carousel .overview b {
-  text-transform: uppercase;
-  color: #ff5555;
-  /* color: #3498db; */
-}
-
-.star-rating li {
-  padding: 0 2px;
-}
-
-.star-rating i {
-  font-size: 14px;
-  color: #ffdc12;
 }
