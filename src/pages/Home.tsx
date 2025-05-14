@@ -43,26 +43,26 @@
 // };
 
 // export default Home;
-import React, { useEffect } from 'react';
-import WhyChooseUs from './WhyChooseUs';
-import ClientQuote from './ClientQuote';
-import Consultancy from './Consultanices';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { Link } from 'react-router-dom';
-import { Button, Divider } from 'antd';
-import bag from '../assets/img/bgg.png';
-import reg from '../assets/img/remining.png'
-import FreeQuote from './getFreeQuote';
-import FeedbackCard from './writersReviews';
-import HowItWorks from './HowItWorks';
-import FeaturesComponent from './FeaturesComponent';
-import AssignmentTypes from './AssignmentTypes';
-import Tools from './Tools';
+import React, { useEffect } from "react";
+import WhyChooseUs from "./WhyChooseUs";
+import ClientQuote from "./ClientQuote";
+import Consultancy from "./Consultanices";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
+import { Button, Divider } from "antd";
+import bag from "../assets/img/bgg.png";
+import reg from "../assets/img/remining.png";
+import FreeQuote from "./getFreeQuote";
+import FeedbackCard from "./writersReviews";
+import HowItWorks from "./HowItWorks";
+import FeaturesComponent from "./FeaturesComponent";
+import AssignmentTypes from "./AssignmentTypes";
+import Tools from "./Tools";
 
 const contentSectionStyle: React.CSSProperties = {
-  backgroundColor: '#b1d0e2', // light, professional background
-  padding: '80px 20px',
+  backgroundColor: "#b1d0e2", // light, professional background
+  padding: "80px 20px",
 };
 
 const Home: React.FC = () => {
@@ -71,24 +71,38 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ fontFamily: 'Roboto, sans-serif', width: '100vw' }}>
+    <div style={{ fontFamily: "Roboto, sans-serif"}}>
       {/* Hero Section */}
       <div
         style={{
           backgroundImage: `url(${bag})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          padding: '260px 20px 180px',
-          color: '#fff',
-          textAlign: 'center',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          padding: "260px 20px 180px",
+          color: "#fff",
+          textAlign: "center",
         }}
       >
-        <h1 style={{ fontSize: '52px', marginBottom: '20px', color: '#252221', fontWeight: 'bold' }}>
+        <h1
+          style={{
+            fontSize: "52px",
+            marginBottom: "20px",
+            color: "#252221",
+            fontWeight: "bold",
+          }}
+        >
           Achieve Academic Excellence
         </h1>
-        <p style={{ fontSize: '20px', maxWidth: '700px', margin: '0 auto 30px', color: '#252221' }}>
-          Top-quality assignment help from experts — trusted by 2000+ students worldwide.
-          Comprehensive Assignment Assistance With a No-AI Guarantee!
+        <p
+          style={{
+            fontSize: "20px",
+            maxWidth: "700px",
+            margin: "0 auto 30px",
+            color: "#252221",
+          }}
+        >
+          Top-quality assignment help from experts — trusted by 2000+ students
+          worldwide. Comprehensive Assignment Assistance With a No-AI Guarantee!
         </p>
         {/* <p style={{ fontSize: '20px', maxWidth: '700px', margin: '0 auto 30px', color: '#252221' }}>
           Comprehensive Assignment Assistance With a No-AI Guarantee!
@@ -97,24 +111,28 @@ const Home: React.FC = () => {
           <Button
             type="primary"
             style={{
-              padding: '12px 28px',
-              backgroundColor: '#1890ff',
-              border: 'none',
-              borderRadius: '6px',
-              color: 'white',
-              fontSize: '16px',
-              cursor: 'pointer',
-              transition: 'background 0.3s',
+              padding: "12px 28px",
+              backgroundColor: "#1890ff",
+              border: "none",
+              borderRadius: "6px",
+              color: "white",
+              fontSize: "16px",
+              cursor: "pointer",
+              transition: "background 0.3s",
             }}
-            onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#40a9ff')}
-            onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#1890ff')}
+            onMouseOver={(e) =>
+              (e.currentTarget.style.backgroundColor = "#40a9ff")
+            }
+            onMouseOut={(e) =>
+              (e.currentTarget.style.backgroundColor = "#1890ff")
+            }
           >
             Order now
           </Button>
         </Link>
       </div>
       <FeedbackCard />
-      <section style={{ padding: '4rem 2rem', backgroundColor: '#f0f2f5' }}>
+      <section style={{ padding: "4rem 2rem", backgroundColor: "#f0f2f5" }}>
         <HowItWorks />
       </section>
       <FeaturesComponent />
@@ -139,5 +157,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-
-

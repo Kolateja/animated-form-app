@@ -2,7 +2,7 @@
   background: url('/src/assets/img/contact/wonder.jpg') bottom no-repeat;
   background-size: cover;
   height: 100vh;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 @media (max-width: 576px) {

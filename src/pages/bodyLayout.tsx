@@ -75,12 +75,9 @@ const BodyLayout: React.FC = () => {
     };
 
     return (
-        <div className="layout-container" style={{ display: "flex", flexDirection: "column" }}>
-            {/* <Header /> */}
-            <div className="layout-main" style={{ display: "flex" }}>
-                {/* < Sidebar role={'super admin'} handleLogoutFlag={function (): void {
-                    throw new Error('Function not implemented.');
-                } } /> */}
+        // <div className="layout-container" style={{ display: "flex", flexDirection: "column" ,width: "100%" }}>
+            // <div className="layout-main" style={{ display: "flex" }}>
+                
                 <div className="layout-content">
                     <Routes>
                         <Route path="/" element={<Home />} />
@@ -150,9 +147,8 @@ const BodyLayout: React.FC = () => {
                         <Route path="/orderDetails/:userId/:orderId" element={<CombinedOrderDetailsComponent />} />
                     </Routes>
                 </div>
-            </div>
-            {/* <Footer /> */}
-        </div>
+            // </div>
+        // </div>
     );
 };
 
