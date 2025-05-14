@@ -78,6 +78,7 @@ import ProposalWriting from "./proposalWork";
 import ResearchPaper from "./Research";
 import Thesis from "./ThesisWork";
 import WriteMyPaper from "./writeMyPaper";
+import ChatWidget from "./ChatWidget";
 
 // import './BodyLayout.css';
 
@@ -149,6 +150,7 @@ const BodyLayout: React.FC = () => {
         <Route path="/ConsultancyForm" element={<ConsultancyForm />} />
         <Route path="/Consultancy" element={<Consultancy />} />
         <Route path="/homereview" element={<Reviews />} />
+        <Route path="/chat" element={<ChatWidget />} />
         <Route path="/refundpolicy" element={<RefundPolicy />} />
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
         <Route path="/viewOrder/:orderId" element={<OrderViewComponent />} />

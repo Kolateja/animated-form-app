@@ -52,7 +52,8 @@ const App = () => {
         flexDirection: 'column',
         // width: '100%',
         // maxWidth: '1440px',
-        minHeight: '100vh',
+        // minHeight: '100vh',
+        // minHeight:"0px !important",
         justifyContent: 'center', backgroundColor: '#f9f9f9'
       }}
     >

@@ -106,6 +106,7 @@ import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import ApiService from '../services/ApiService';
 import axios from 'axios';
+import image from '../assets/img/login.png'
 
 interface LoginProps {
   handleLoginFlag: (role: string) => void;

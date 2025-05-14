@@ -202,7 +202,7 @@ const AdminDashboard: React.FC = () => {
     };
 
     return (
-        <div style={{ padding: 32, fontFamily: "'Poppins', sans-serif", backgroundColor: '#088ba1', minHeight: '100vh', width: '100vw' }}>
+        <div style={{ padding: 32, fontFamily: "'Poppins', sans-serif", backgroundColor: '#088ba1', minHeight: '100vh', }}>
             {/* Header */}
             <div style={{
                 display: 'flex',
