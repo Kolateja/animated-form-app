@@ -161,77 +161,71 @@ const ContactForm: React.FC = () => {
             </Text>
           </div> */}
 
+          {/* <div className=""> */}
+          <h2 className="contact-form-heading">Get in Touch</h2>
+
           <Form
             layout="vertical"
             onFinish={onFinish}
             className="contact-form-form"
           >
-            <Row gutter={[16, 16]}>
-              <Col xs={24} md={12}>
-                <Form.Item
-                  name="name"
-                  label="Name"
-                  rules={[
-                    { required: true, message: "Please enter your name" },
-                  ]}
-                >
-                  <Input size="large" placeholder="Enter your name" />
-                </Form.Item>
-                <Form.Item
-                  name="email"
-                  label="Email"
-                  rules={[
-                    { required: true, message: "Please enter your email" },
-                  ]}
-                >
-                  <Input size="large" placeholder="you@example.com" />
-                </Form.Item>
-              </Col>
+            <Form.Item
+              name="name"
+              label="Name"
+              rules={[{ required: true, message: "Please enter your name" }]}
+            >
+              <Input size="large" placeholder="Enter your name" />
+            </Form.Item>
 
-              <Col xs={24} md={12}>
-                <Form.Item label="Phone">
-                  <Input.Group compact>
-                    <Form.Item
-                      name="countrycode"
-                      noStyle
-                      rules={[{ required: true }]}
-                    >
-                      <Select
-                        size="large"
-                        style={{ width: "35%" }}
-                        options={countryCodes}
-                        defaultValue="+61"
-                      />
-                    </Form.Item>
-                    <Form.Item
-                      name="number"
-                      noStyle
-                      rules={[{ required: true }]}
-                    >
-                      <Input
-                        size="large"
-                        style={{ width: "65%" }}
-                        placeholder="Mobile Number"
-                      />
-                    </Form.Item>
-                  </Input.Group>
-                </Form.Item>
+            <Form.Item
+              name="email"
+              label="Email"
+              rules={[{ required: true, message: "Please enter your email" }]}
+            >
+              <Input size="large" placeholder="you@example.com" />
+            </Form.Item>
 
+            <Form.Item label="Phone">
+              <div
+                style={{ display: "flex", gap: "5px", flexDirection: "row" }}
+              >
                 <Form.Item
-                  name="message"
-                  label="Message"
-                  rules={[
-                    { required: true, message: "Please enter a message" },
-                  ]}
+                  name="countrycode"
+                  noStyle
+                  rules={[{ required: true, message: "Code required" }]}
                 >
-                  <TextArea
-                    rows={4}
+                  <Select
                     size="large"
-                    placeholder="How can we help you?"
+                    style={{ width: "30%" }}
+                    options={countryCodes}
+                    defaultValue="+61"
                   />
                 </Form.Item>
-              </Col>
-            </Row>
+                <Form.Item
+                  name="number"
+                  noStyle
+                  rules={[{ required: true, message: "Number required" }]}
+                >
+                  <Input
+                    size="large"
+                    style={{ width: "70%" }}
+                    placeholder="Mobile Number"
+                  />
+                </Form.Item>
+              </div>
+            </Form.Item>
+
+            <Form.Item
+              name="message"
+              label="Message"
+              rules={[{ required: true, message: "Please enter a message" }]}
+            >
+              <TextArea
+                rows={4}
+                size="large"
+                placeholder="How can we help you?"
+              />
+            </Form.Item>
 
             <Form.Item className="contact-form-submit">
               <motion.div
@@ -249,6 +243,7 @@ const ContactForm: React.FC = () => {
               </motion.div>
             </Form.Item>
           </Form>
+          {/* </div> */}
         </div>
 
         <div className="contact-form-right">
