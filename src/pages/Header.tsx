@@ -19,6 +19,7 @@ const OthersMenu = (
         <Menu.Item key="samples">
             <Link to="/samples">Samples</Link>
         </Menu.Item>
+        <Menu.Item key="faq"><Link to="/faq">FAQ</Link></Menu.Item> 
         <Menu.Item key="membership">
             <Link to="/membership">Membership</Link>
         </Menu.Item>
@@ -51,7 +52,7 @@ const Header: React.FC = () => {
                     <Menu.Item key="home"><Link to="/home">Home</Link></Menu.Item>
                     <Menu.Item key="about"><Link to="/about">About Us</Link></Menu.Item>
                     <Menu.Item key="services"><Link to="/services">Services</Link></Menu.Item>
-                    <Menu.Item key="subjects"><Link to="/subjects">Subjects</Link></Menu.Item>
+                    {/* <Menu.Item key="subjects"><Link to="/subjects">Subjects</Link></Menu.Item> */}
                     <Menu.Item key="contactus"><Link to="/contactus">Contact Us</Link></Menu.Item>
                     <Menu.Item key="offers"><Link to="/offers">Offers</Link></Menu.Item>
                     <Menu.Item key="reviews"><Link to="/reviews">Reviews</Link></Menu.Item>
