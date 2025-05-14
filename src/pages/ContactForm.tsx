@@ -7,10 +7,7 @@ import {
   Row,
   Col,
   Typography,
-  Divider,
-  Space,
   Tooltip,
-  Card,
 } from "antd";
 import {
   PhoneOutlined,
@@ -104,156 +101,160 @@ const ContactForm: React.FC = () => {
           mobilenumber: number,
         }),
       });
-      alert("message created successfully!");
+      alert("Message sent successfully!");
     } catch (error: any) {
       console.error(error);
-      if (error.response && error.response.data && error.response.data.error) {
-        const errorMessage = error.response.data.error.errors?.[0]?.message;
-        if (errorMessage) {
-          alert(errorMessage); // Display the specific error message
-        } else {
-          alert("Error creating user"); // Fallback message
-        }
-      } else {
-        alert("Error creating user");
-      }
+      alert("Error sending message");
     }
   };
 
   return (
-    <div
-      style={{
-        padding: "2rem 1rem 4rem",
-        width: "100vw",
-        background: "linear-gradient(to right, #f0f4f8, #d9e2ec)",
-        minHeight: "100vh",
-      }}
-    >
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <Title
-          level={2}
-          style={{ textAlign: "center", marginBottom: 10, color: "#0d74b0" }}
-        >
-          Let's Get in Touch!
-        </Title>
-        <Text
-          style={{
-            display: "block",
-            textAlign: "center",
-            marginBottom: 40,
-            color: "#333",
-          }}
-        >
-          Fill out the form or reach us directly through our contact methods
-          below.
-        </Text>
-      </motion.div>
-
-      <div className="contact-form-social">
-        {socialLinks.map((item, index) => (
-          <Tooltip title={item.alt} key={index}>
-            <a href={item.href} target="_blank" rel="noopener noreferrer">
-              <motion.img
-                whileHover={{ scale: 1.3 }}
-                src={item.icon}
-                alt={item.alt}
-                className="contact-form-social-icon"
-              />
-            </a>
-          </Tooltip>
-        ))}
+    <div className="contact-form-wrapper">
+      <div className="contact-form-banner">
+        <h2 className="contact-form-banner-heading">Contact Us</h2>
       </div>
 
-      <div className="contact-form-quickinfo">
-        <Text strong>
-          <PhoneOutlined /> <a href="tel:+918309368958">8309368958</a>
-        </Text>
-        <Text strong>
-          <WhatsAppOutlined />{" "}
-          <a href="https://wa.me/+61494311801">+61494311801</a>
-        </Text>
-        <Text strong>
-          <MailOutlined />{" "}
-          <a href="mailto:assignmentlinkers@gmail.com">
-            assignmentlinkers@gmail.com
-          </a>
-        </Text>
-      </div>
-
-      {/* <div className=""> */}
-      <h2 className="contact-form-heading">Get in Touch</h2>
-
-      <Form layout="vertical" onFinish={onFinish} className="contact-form-form">
-        <Form.Item
-          name="name"
-          label="Name"
-          rules={[{ required: true, message: "Please enter your name" }]}
-        >
-          <Input size="large" placeholder="Enter your name" />
-        </Form.Item>
-
-        <Form.Item
-          name="email"
-          label="Email"
-          rules={[{ required: true, message: "Please enter your email" }]}
-        >
-          <Input size="large" placeholder="you@example.com" />
-        </Form.Item>
-
-        <Form.Item label="Phone">
-          <div style={{ display: "flex", gap: "5px", flexDirection: "row" }}>
-            <Form.Item
-              name="countrycode"
-              noStyle
-              rules={[{ required: true, message: "Code required" }]}
-            >
-              <Select
-                size="large"
-                style={{ width: "30%" }}
-                options={countryCodes}
-                defaultValue="+61"
-              />
-            </Form.Item>
-            <Form.Item
-              name="number"
-              noStyle
-              rules={[{ required: true, message: "Number required" }]}
-            >
-              <Input
-                size="large"
-                style={{ width: "70%" }}
-                placeholder="Mobile Number"
-              />
-            </Form.Item>
-          </div>
-        </Form.Item>
-
-        <Form.Item
-          name="message"
-          label="Message"
-          rules={[{ required: true, message: "Please enter a message" }]}
-        >
-          <TextArea rows={4} size="large" placeholder="How can we help you?" />
-        </Form.Item>
-
-        <Form.Item className="contact-form-submit">
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button
-              type="primary"
-              htmlType="submit"
-              size="large"
-              className="contact-form-submit-button"
-            >
-              Send Message
-            </Button>
+      <div className="contact-form-container">
+        <div className="contact-form-left">
+          {/* <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Title level={2} className="contact-form-title">
+              Let's Get in Touch!
+            </Title>
+            <Text className="contact-form-subtitle">
+              Fill out the form or reach us directly through our contact methods
+              below.
+            </Text>
           </motion.div>
-        </Form.Item>
-      </Form>
-      {/* </div> */}
+
+          <div className="contact-form-social">
+            {socialLinks.map((item, index) => (
+              <Tooltip title={item.alt} key={index}>
+                <a href={item.href} target="_blank" rel="noopener noreferrer">
+                  <motion.img
+                    whileHover={{ scale: 1.3 }}
+                    src={item.icon}
+                    alt={item.alt}
+                    className="contact-form-social-icon"
+                  />
+                </a>
+              </Tooltip>
+            ))}
+          </div>
+
+          <div className="contact-form-quickinfo">
+            <Text strong>
+              <PhoneOutlined /> <a href="tel:+918309368958">8309368958</a>
+            </Text>
+            <Text strong>
+              <WhatsAppOutlined />{" "}
+              <a href="https://wa.me/+61494311801">+61494311801</a>
+            </Text>
+            <Text strong>
+              <MailOutlined />{" "}
+              <a href="mailto:assignmentlinkers@gmail.com">
+                assignmentlinkers@gmail.com
+              </a>
+            </Text>
+          </div> */}
+
+          {/* <div className=""> */}
+          <h2 className="contact-form-heading">Get in Touch</h2>
+
+          <Form
+            layout="vertical"
+            onFinish={onFinish}
+            className="contact-form-form"
+          >
+            <Form.Item
+              name="name"
+              label="Name"
+              rules={[{ required: true, message: "Please enter your name" }]}
+            >
+              <Input size="large" placeholder="Enter your name" />
+            </Form.Item>
+
+            <Form.Item
+              name="email"
+              label="Email"
+              rules={[{ required: true, message: "Please enter your email" }]}
+            >
+              <Input size="large" placeholder="you@example.com" />
+            </Form.Item>
+
+            <Form.Item label="Phone">
+              <div
+                style={{ display: "flex", gap: "5px", flexDirection: "row" }}
+              >
+                <Form.Item
+                  name="countrycode"
+                  noStyle
+                  rules={[{ required: true, message: "Code required" }]}
+                >
+                  <Select
+                    size="large"
+                    style={{ width: "30%" }}
+                    options={countryCodes}
+                    defaultValue="+61"
+                  />
+                </Form.Item>
+                <Form.Item
+                  name="number"
+                  noStyle
+                  rules={[{ required: true, message: "Number required" }]}
+                >
+                  <Input
+                    size="large"
+                    style={{ width: "70%" }}
+                    placeholder="Mobile Number"
+                  />
+                </Form.Item>
+              </div>
+            </Form.Item>
+
+            <Form.Item
+              name="message"
+              label="Message"
+              rules={[{ required: true, message: "Please enter a message" }]}
+            >
+              <TextArea
+                rows={4}
+                size="large"
+                placeholder="How can we help you?"
+              />
+            </Form.Item>
+
+            <Form.Item className="contact-form-submit">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  size="large"
+                  className="contact-form-submit-button"
+                >
+                  Send Message
+                </Button>
+              </motion.div>
+            </Form.Item>
+          </Form>
+          {/* </div> */}
+        </div>
+
+        <div className="contact-form-right">
+          <iframe
+            title="Location Map"
+            src="https://maps.google.com/maps?q=MIG%20797,%20Sitamahalakshmi%20Apartments,%20KPHB%20Phase%202,%20500072&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            className="contact-form-map"
+            loading="lazy"
+          />
+        </div>
+      </div>
     </div>
   );
 };
