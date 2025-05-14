@@ -1,134 +1,137 @@
-import React from "react";
+
+import React from 'react';
 import {
-  Form,
-  Input,
-  Button,
-  Select,
-  Row,
-  Col,
-  Typography,
-  Tooltip,
-} from "antd";
+    Form, Input, Button, Select, Row, Col, Typography, Divider, Space, Tooltip,
+    Card
+} from 'antd';
 import {
-  PhoneOutlined,
-  MailOutlined,
-  WhatsAppOutlined,
-} from "@ant-design/icons";
-import { motion } from "framer-motion";
-import "../assets/css/contact.css";
-import ApiService from "../services/ApiService";
+    PhoneOutlined, MailOutlined, WhatsAppOutlined
+} from '@ant-design/icons';
+import { motion } from 'framer-motion';
+import '../assets/css/contact.css';
+import ApiService from '../services/ApiService';
 
 const { TextArea } = Input;
 const { Title, Text } = Typography;
 
 const countryCodes = [
-  { label: "+61 (Australia)", value: "+61" },
-  { label: "+1 (USA)", value: "+1" },
-  { label: "+91 (India)", value: "+91" },
-  { label: "+44 (UK)", value: "+44" },
-  { label: "+81 (Japan)", value: "+81" },
-  { label: "+49 (Germany)", value: "+49" },
-  { label: "+33 (France)", value: "+33" },
-  { label: "+39 (Italy)", value: "+39" },
-  { label: "+86 (China)", value: "+86" },
-  { label: "+7 (Russia)", value: "+7" },
-  { label: "+55 (Brazil)", value: "+55" },
-  { label: "+34 (Spain)", value: "+34" },
-  { label: "+52 (Mexico)", value: "+52" },
-  { label: "+62 (Indonesia)", value: "+62" },
-  { label: "+27 (South Africa)", value: "+27" },
-  { label: "+82 (South Korea)", value: "+82" },
-  { label: "+90 (Turkey)", value: "+90" },
-  { label: "+60 (Malaysia)", value: "+60" },
-  { label: "+64 (New Zealand)", value: "+64" },
-  { label: "+41 (Switzerland)", value: "+41" },
-  { label: "+31 (Netherlands)", value: "+31" },
-  { label: "+46 (Sweden)", value: "+46" },
-  { label: "+63 (Philippines)", value: "+63" },
-  { label: "+966 (Saudi Arabia)", value: "+966" },
-  { label: "+47 (Norway)", value: "+47" },
-  { label: "+32 (Belgium)", value: "+32" },
-  { label: "+94 (Sri Lanka)", value: "+94" },
-  { label: "+65 (Singapore)", value: "+65" },
-  { label: "+98 (Iran)", value: "+98" },
-  { label: "+234 (Nigeria)", value: "+234" },
+    { label: '+61 (Australia)', value: '+61' },
+    { label: '+1 (USA)', value: '+1' },
+    { label: '+91 (India)', value: '+91' },
+    { label: '+44 (UK)', value: '+44' },
+    { label: '+81 (Japan)', value: '+81' },
+    { label: '+49 (Germany)', value: '+49' },
+    { label: '+33 (France)', value: '+33' },
+    { label: '+39 (Italy)', value: '+39' },
+    { label: '+86 (China)', value: '+86' },
+    { label: '+7 (Russia)', value: '+7' },
+    { label: '+55 (Brazil)', value: '+55' },
+    { label: '+34 (Spain)', value: '+34' },
+    { label: '+52 (Mexico)', value: '+52' },
+    { label: '+62 (Indonesia)', value: '+62' },
+    { label: '+27 (South Africa)', value: '+27' },
+    { label: '+82 (South Korea)', value: '+82' },
+    { label: '+90 (Turkey)', value: '+90' },
+    { label: '+60 (Malaysia)', value: '+60' },
+    { label: '+64 (New Zealand)', value: '+64' },
+    { label: '+41 (Switzerland)', value: '+41' },
+    { label: '+31 (Netherlands)', value: '+31' },
+    { label: '+46 (Sweden)', value: '+46' },
+    { label: '+63 (Philippines)', value: '+63' },
+    { label: '+966 (Saudi Arabia)', value: '+966' },
+    { label: '+47 (Norway)', value: '+47' },
+    { label: '+32 (Belgium)', value: '+32' },
+    { label: '+94 (Sri Lanka)', value: '+94' },
+    { label: '+65 (Singapore)', value: '+65' },
+    { label: '+98 (Iran)', value: '+98' },
+    { label: '+234 (Nigeria)', value: '+234' },
 ];
 
 const socialLinks = [
-  {
-    href: "https://wa.me/+61494311801",
-    icon: "/assets/img/socialmedialogos/Digital_Stacked_Green.png",
-    alt: "WhatsApp",
-  },
-  {
-    href: "https://www.instagram.com/assignmentlinkers/",
-    icon: "/assets/img/socialmedialogos/Instagram_Glyph_Gradient.png",
-    alt: "Instagram",
-  },
-  {
-    href: "https://www.facebook.com/people/Assignment-Linkers/61556511496784/",
-    icon: "/assets/img/socialmedialogos/Facebook_Logo_Primary.png",
-    alt: "Facebook",
-  },
-  {
-    href: "https://www.linkedin.com/in/assignmentlinkers/",
-    icon: "/assets/img/socialmedialogos/LI-In-Bug.png",
-    alt: "LinkedIn",
-  },
-  {
-    href: "https://x.com/i/flow/login?redirect_after_login=%2FAssignmentsLink",
-    icon: "/assets/img/socialmedialogos/logo-black.png",
-    alt: "Twitter",
-  },
-  {
-    href: "https://in.pinterest.com/assignmentlinkers/",
-    icon: "/assets/img/socialmedialogos/pinterest-logo.png",
-    alt: "Pinterest",
-  },
+    {
+        href: 'https://wa.me/+61494311801',
+        icon: '/assets/img/socialmedialogos/Digital_Stacked_Green.png',
+        alt: 'WhatsApp',
+    },
+    {
+        href: 'https://www.instagram.com/assignmentlinkers/',
+        icon: '/assets/img/socialmedialogos/Instagram_Glyph_Gradient.png',
+        alt: 'Instagram',
+    },
+    {
+        href: 'https://www.facebook.com/people/Assignment-Linkers/61556511496784/',
+        icon: '/assets/img/socialmedialogos/Facebook_Logo_Primary.png',
+        alt: 'Facebook',
+    },
+    {
+        href: 'https://www.linkedin.com/in/assignmentlinkers/',
+        icon: '/assets/img/socialmedialogos/LI-In-Bug.png',
+        alt: 'LinkedIn',
+    },
+    {
+        href: 'https://x.com/i/flow/login?redirect_after_login=%2FAssignmentsLink',
+        icon: '/assets/img/socialmedialogos/logo-black.png',
+        alt: 'Twitter',
+    },
+    {
+        href: 'https://in.pinterest.com/assignmentlinkers/',
+        icon: '/assets/img/socialmedialogos/pinterest-logo.png',
+        alt: 'Pinterest',
+    },
 ];
 
 const ContactForm: React.FC = () => {
-  const onFinish = async (values: any) => {
-    const { name, email, message, countrycode, number } = values;
 
-    try {
-      const response: any = await ApiService.post("/webPageRoutes/getintouch", {
-        body: JSON.stringify({
-          name,
-          email,
-          message,
-          countrycode,
-          mobilenumber: number,
-        }),
-      });
-      alert("Message sent successfully!");
-    } catch (error: any) {
-      console.error(error);
-      alert("Error sending message");
-    }
-  };
+    const onFinish = async (values: any) => {
+        const { name, email, message, countrycode, number } = values;
 
-  return (
-    <div className="contact-form-wrapper">
-      <div className="contact-form-banner">
-        <h2 className="contact-form-banner-heading">Contact Us</h2>
-      </div>
+        try {
+            const response: any = await ApiService.post("/webPageRoutes/getintouch", {
+                body: JSON.stringify({
+                    name,
+                    email,
+                    message,
+                    countrycode,
+                    mobilenumber: number,
+                }),
+            });
+            alert('message created successfully!');
+        } catch (error: any) {
+            console.error(error);
+            if (error.response && error.response.data && error.response.data.error) {
+                const errorMessage = error.response.data.error.errors?.[0]?.message;
+                if (errorMessage) {
+                    alert(errorMessage);  // Display the specific error message
+                } else {
+                    alert('Error creating user');  // Fallback message
+                }
+            } else {
+                alert('Error creating user');
+            }
+        }
+    };
 
-      <div className="contact-form-container">
-        <div className="contact-form-left">
-          {/* <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Title level={2} className="contact-form-title">
-              Let's Get in Touch!
-            </Title>
-            <Text className="contact-form-subtitle">
-              Fill out the form or reach us directly through our contact methods
-              below.
-            </Text>
-          </motion.div>
+    return (
+        <div
+            style={{
+                padding: '2rem 1rem 4rem',
+                width: '100vw',
+                background: 'linear-gradient(to right, #f0f4f8, #d9e2ec)',
+                minHeight: '100vh',
+            }}
+        >
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+            >
+                <Title level={2} style={{ textAlign: 'center', marginBottom: 10, color: '#0d74b0' }}>
+                    Let's Get in Touch!
+                </Title>
+                <Text style={{ display: 'block', textAlign: 'center', marginBottom: 40, color: '#333' }}>
+                    Fill out the form or reach us directly through our contact methods below.
+                </Text>
+            </motion.div>
 
           <div className="contact-form-social">
             {socialLinks.map((item, index) => (
@@ -159,7 +162,7 @@ const ContactForm: React.FC = () => {
                 assignmentlinkers@gmail.com
               </a>
             </Text>
-          </div> */}
+          </div> 
 
           {/* <div className=""> */}
           <h2 className="contact-form-heading">Get in Touch</h2>
@@ -246,17 +249,8 @@ const ContactForm: React.FC = () => {
           {/* </div> */}
         </div>
 
-        <div className="contact-form-right">
-          <iframe
-            title="Location Map"
-            src="https://maps.google.com/maps?q=MIG%20797,%20Sitamahalakshmi%20Apartments,%20KPHB%20Phase%202,%20500072&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            className="contact-form-map"
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </div>
-  );
+
+    );
 };
 
 export default ContactForm;

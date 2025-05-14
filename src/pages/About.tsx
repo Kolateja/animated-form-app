@@ -225,6 +225,8 @@ import Advantages from './Advantages';
 import Slider from 'react-slick';
 import images from '../assets/img/image.png'
 import FaqPage from './FaqPage';
+import bg from '../assets/img/contact/hero-bg.jpg'
+
 const { Title, Paragraph } = Typography;
 
 const features = [
@@ -271,13 +273,12 @@ const About: React.FC = () => {
       {/* Hero Section with Background Image */}
       <div
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: '5rem 2rem',
-          backgroundColor: '#06d1e1', // fallback background color
-          color: 'white',
-          flexWrap: 'wrap', // responsive fallback
+          backgroundImage: `url(${bg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          padding: '220px 20px 180px',
+          color: '#fff',
+          textAlign: 'center',
         }}
       >
         {/* Left side - Text content */}
@@ -287,35 +288,12 @@ const About: React.FC = () => {
           transition={{ duration: 0.6 }}
           style={{ flex: 1, minWidth: '300px', paddingRight: '2rem' }}
         >
-          <Title level={1} style={{ color: '#ee6517' }}>
+          <Title level={1} style={{ color: '#ee6517', fontWeight: 'bold' }}>
             Assignment Writing Service
           </Title>
           <Paragraph style={{ color: '#ee6517', fontSize: '1.1rem', maxWidth: 600 }}>
             Assignment Junction is an assignment writing company where you can hire experts to write and proofread all academic papers, including essays, research papers, and more.
           </Paragraph>
-        </motion.div>
-
-        {/* Right side - Image */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          style={{
-            flex: 1,
-            minWidth: '300px',
-            display: 'flex',
-            justifyContent: 'center',
-          }}
-        >
-          <img
-            src={images} // pass your image source
-            alt="Assignment Illustration"
-            style={{
-              maxWidth: '100%',
-              height: 'auto',
-              borderRadius: '8px',
-            }}
-          />
         </motion.div>
       </div>
       {/* Feature Cards */}

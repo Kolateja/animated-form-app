@@ -66,9 +66,9 @@ const Consultancy: React.FC = () => {
     return (
 
         <div style={{ padding: '40px 20px', width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
-        <Typography.Title level={3} style={{ textAlign: 'center', marginBottom: 32, color: '#fff' }}>
-            Educational Consultancies Associated With Us
-        </Typography.Title>
+            <Typography.Title level={3} style={{ textAlign: 'center', marginBottom: 32, color: '#fff' }}>
+                Educational Consultancies Associated With Us
+            </Typography.Title>
 
             {loading ? (
                 <div style={{ padding: '20px', marginBottom: '16px', width: '100%' }}>

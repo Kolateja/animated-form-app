@@ -60,7 +60,7 @@ const FeedbackCard: React.FC = () => {
                 </Title>
             }
             bordered
-            style={{ borderRadius: '12px' }}
+            style={{ borderRadius: '12px',marginTop:'30px',marginBottom:'30px' }}
         >
             <div
                 style={{
