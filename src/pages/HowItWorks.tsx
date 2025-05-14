@@ -31,9 +31,9 @@ const steps: Step[] = [
 const HowItWorks: React.FC = () => {
     return (
         <div style={{ padding: '40px 20px', backgroundColor: '#ffffff' }}>
-            <Title level={2} style={{ textAlign: 'center', marginBottom: '40px' }}>
+            {/* <Title level={2} style={{ textAlign: 'center', marginBottom: '40px' }}>
                 How It Works
-            </Title>
+            </Title> */}
             <Row justify="center" align="middle">
                 {steps.map((step, index) => (
                     <React.Fragment key={index}>

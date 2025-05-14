@@ -72,38 +72,45 @@ interface CoreValue {
 
 const coreValues: CoreValue[] = [
     {
-        title: 'Top-Notch Quality:',
+        title: 'All Subjects Under One Roof:',
         description:
-            'We assure excellence in vocabulary, structure, and uniqueness.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/clock.png',
+            'Get case study assignment help for all subjects. We ensure you get everything under one roof. Our professional case study writers will help you craft flawless papers.',
+        icon: 'https://img.icons8.com/ios-filled/100/books.png', // Books representing multiple subjects
     },
     {
-        title: 'Expert Writers:',
+        title: 'Qualified Experts:',
         description:
-            'Every writer has expertise in the field.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/lock.png',
+            'Hire from a team of 5000+ academic stalwarts. Pave your way to success with case study help from one of the best websites. Ask us for case study writing help today!.',
+        icon: 'https://img.icons8.com/ios-filled/100/teacher.png', // Teacher icon to show expertise
     },
     {
-        title: 'Plagiarism-Free Work:',
+        title: 'Simple Order Process:',
         description:
-            '100% original content.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/medal.png',
+            'Hire one of our case study writers without wasting time on ordering process. We have the simplest ordering process. Get your work done here without any hurdles..',
+        icon: 'https://img.icons8.com/ios-filled/100/online-store.png', // Shopping cart/order flow
     },
     {
-        title: 'On-Time Delivery:',
+        title: 'Easy Communication:',
         description:
-            'Guaranteed timely submissions.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+            'Every student needs a friend’s help during tough projects and study hours. We can help you with that. Avail of our 24x7 calling services to clear your doubts.',
+        icon: 'https://img.icons8.com/ios-filled/100/phone.png', // Phone for 24x7 support
     },
     {
-        title: '24x7 Support:',
+        title: 'Affordable Prices:',
         description:
-            'Always available for you.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+            'Sign up with us to get case study help at the best prices. We offer students case study assignment writing services at affordable prices along with discounts.',
+        icon: 'https://img.icons8.com/ios-filled/100/cheap-2.png', // Icon showing affordability
     },
+    {
+        title: 'Amazing Referral Schemes:',
+        description:
+            'Get a reward if students you know use our academic assistance. Your e-wallet will be credited with the referral bonus when your friend joins.',
+            icon: 'https://img.icons8.com/ios-filled/100/gift.png', // Gift/referral bonus icon
+    }
 ];
 
-const AssessmentHelpPage = () => {
+
+const CaseStudy = () => {
     return (
         <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
             {/* First Section */}
@@ -126,14 +133,14 @@ const AssessmentHelpPage = () => {
                             lineHeight: 1.2,
                             background: 'linear-gradient(to right, #ff6600, #800080)',
                             WebkitBackgroundClip: 'text',
-                            color: 'transparent',
+                            color: '#ee174e',
                             marginBottom: '20px',
                         }}
                     >
-                        Online Assessment Help for Students
+                        Case Study Help For Your Academic Success
                     </h1>
                     <p style={{ fontSize: '20px', color: '#444', marginBottom: '10px' }}>
-                        Meet Top Professionals To Get Help For Assessment Solutions & More
+                        Sign up for quick and affordable case study assignment help from the best minds today!
                     </p>
                     <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
                         Trusted by 1.5M+ happy customers
@@ -158,8 +165,8 @@ const AssessmentHelpPage = () => {
 
             {/* Second Section */}
             <div style={{ marginBottom: '40px', textAlign: 'center' }}>
-                <h2>Meet Our Online Assessment Helpers</h2>
-                <p>Zero AI Assessment Help by the Best Minds</p>
+                <h2>Our Team of Expert Case Study Writers at MyAssignmentHelp</h2>
+                <p>Meet Our Talented Professional Case Study.</p>
                 <div
                     style={{
                         display: 'flex',
@@ -196,16 +203,17 @@ const AssessmentHelpPage = () => {
                     ))}
                 </div>
             </div>
+
             <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
-                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>Place An Order For Assessment Help In 3 Simple Steps
+                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>Access Online Case Study Help Efficiently
                 </Title>
                 <HowItWorks />
             </section>
-            {/* How It Works Section */}
+
 
             {/* Third Section - Services */}
             <div style={{ marginBottom: '40px' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Our Top Services</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Unlock The Benefits of Our Case Study Help</h2>
                 <Row gutter={[24, 24]} justify="center">
                     {coreValues.map((value, index) => (
                         <Col xs={24} sm={12} md={12} lg={6} key={index}>
@@ -273,7 +281,7 @@ const AssessmentHelpPage = () => {
                         color: '#2c3e50'
                     }}
                 >
-                    Types of Help with Assessment Tasks We Offer
+                    TTypes of Services We Offer:
                 </h2>
                 <ul
                     style={{
@@ -287,12 +295,14 @@ const AssessmentHelpPage = () => {
                         color: '#34495e'
                     }}
                 >
-                    <li style={{ marginBottom: '10px' }}>✔️ Research Paper Writing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Assignment Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Essay Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Dissertation Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Paper Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Term Paper Writing Service</li>
+                    <li style={{ marginBottom: '10px' }}>✔️   Explanatory case studies</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Research Papers</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Collective case reports</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Descriptive case studies</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Instrumental case studies</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Intrinsic case studies</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Exploratory case reports</li>
+
                 </ul>
             </div>
 
@@ -300,4 +310,4 @@ const AssessmentHelpPage = () => {
     );
 };
 
-export default AssessmentHelpPage;
+export default CaseStudy;

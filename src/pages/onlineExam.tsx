@@ -72,38 +72,45 @@ interface CoreValue {
 
 const coreValues: CoreValue[] = [
     {
-        title: 'Top-Notch Quality:',
+        title: 'Expert Assistance:',
         description:
-            'We assure excellence in vocabulary, structure, and uniqueness.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/clock.png',
+            'Get guidance from subject matter experts who help craft well-researched and high-quality assessments tailored to your academic needs.',
+        icon: 'https://img.icons8.com/ios-filled/96/expert.png', // Represents expertise
     },
     {
-        title: 'Expert Writers:',
+        title: 'Customised Learnings:',
         description:
-            'Every writer has expertise in the field.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/lock.png',
+            'Receive personalized solutions and learning support that aligns with your course, goals, and individual learning pace.',
+        icon: 'https://img.icons8.com/ios-filled/96/learning.png', // Represents learning customization
     },
     {
-        title: 'Plagiarism-Free Work:',
+        title: 'Score Improvement:',
         description:
-            '100% original content.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/medal.png',
+            'Enhance your academic performance with strategically written content designed to help you achieve better grades.',
+        icon: 'https://img.icons8.com/ios-filled/96/goal.png', // Represents improvement/goal achievement
     },
     {
-        title: 'On-Time Delivery:',
+        title: 'Convenient & Flexible:',
         description:
-            'Guaranteed timely submissions.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+            'Access academic support anytime, anywhere, with flexible services that adapt to your schedule and preferences.',
+        icon: 'https://img.icons8.com/ios-filled/96/around-the-globe.png', // Represents accessibility/flexibility
     },
     {
-        title: '24x7 Support:',
+        title: '24/7 Support:',
         description:
-            'Always available for you.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+            'Reach out to our friendly customer service team at any hour — we’re here to assist you whenever you need help.',
+        icon: 'https://img.icons8.com/ios-filled/96/customer-support.png', // Represents 24/7 support
+    },
+    {
+        title: 'Time and Cost-Efficient:',
+        description:
+            'Save time and money with our affordable services that deliver high-quality results within your deadlines.',
+        icon: 'https://img.icons8.com/ios-filled/96/time-money.png', // Represents time & cost efficiency
     },
 ];
 
-const AssessmentHelpPage = () => {
+
+const OnlineExam = () => {
     return (
         <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
             {/* First Section */}
@@ -126,14 +133,14 @@ const AssessmentHelpPage = () => {
                             lineHeight: 1.2,
                             background: 'linear-gradient(to right, #ff6600, #800080)',
                             WebkitBackgroundClip: 'text',
-                            color: 'transparent',
+                            color: '#ee174e',
                             marginBottom: '20px',
                         }}
                     >
-                        Online Assessment Help for Students
+                        Take My Exam — Get Online Expert Help
                     </h1>
                     <p style={{ fontSize: '20px', color: '#444', marginBottom: '10px' }}>
-                        Meet Top Professionals To Get Help For Assessment Solutions & More
+                        Boost Your Success with Our Online Exam Help – Ace It Today!
                     </p>
                     <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
                         Trusted by 1.5M+ happy customers
@@ -158,8 +165,8 @@ const AssessmentHelpPage = () => {
 
             {/* Second Section */}
             <div style={{ marginBottom: '40px', textAlign: 'center' }}>
-                <h2>Meet Our Online Assessment Helpers</h2>
-                <p>Zero AI Assessment Help by the Best Minds</p>
+                <h2>Choose Professional Who Will Take Your Online Exam</h2>
+                <p>Meet Our Exam Helpers: Your Academic Success Partners</p>
                 <div
                     style={{
                         display: 'flex',
@@ -196,16 +203,17 @@ const AssessmentHelpPage = () => {
                     ))}
                 </div>
             </div>
+
             <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
-                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>Place An Order For Assessment Help In 3 Simple Steps
+                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>How to Get Professional Academic Writing Services
                 </Title>
                 <HowItWorks />
             </section>
-            {/* How It Works Section */}
+
 
             {/* Third Section - Services */}
             <div style={{ marginBottom: '40px' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Our Top Services</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>How to Hire an Expert to Take Your Online Exam</h2>
                 <Row gutter={[24, 24]} justify="center">
                     {coreValues.map((value, index) => (
                         <Col xs={24} sm={12} md={12} lg={6} key={index}>
@@ -273,7 +281,7 @@ const AssessmentHelpPage = () => {
                         color: '#2c3e50'
                     }}
                 >
-                    Types of Help with Assessment Tasks We Offer
+                    TTypes of Services We Offer:
                 </h2>
                 <ul
                     style={{
@@ -287,12 +295,14 @@ const AssessmentHelpPage = () => {
                         color: '#34495e'
                     }}
                 >
-                    <li style={{ marginBottom: '10px' }}>✔️ Research Paper Writing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Assignment Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Essay Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Dissertation Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Paper Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Term Paper Writing Service</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Full Exam Proctoring</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Mock Exam Simulations</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Exam Review and Analysis</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Question Bank Access</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Live Tutoring Sessions</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Score Improvement Plans</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Personalised Exam Strategies</li>
+
                 </ul>
             </div>
 
@@ -300,4 +310,4 @@ const AssessmentHelpPage = () => {
     );
 };
 
-export default AssessmentHelpPage;
+export default OnlineExam;

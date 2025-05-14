@@ -43,22 +43,23 @@
 // };
 
 // export default Home;
-import React, { useEffect } from "react";
-import WhyChooseUs from "./WhyChooseUs";
-import ClientQuote from "./ClientQuote";
-import Consultancy from "./Consultanices";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { Link } from "react-router-dom";
-import { Button, Divider } from "antd";
-import bag from "../assets/img/bgg.png";
-import reg from "../assets/img/remining.png";
-import FreeQuote from "./getFreeQuote";
-import FeedbackCard from "./writersReviews";
-import HowItWorks from "./HowItWorks";
-import FeaturesComponent from "./FeaturesComponent";
-import AssignmentTypes from "./AssignmentTypes";
-import Tools from "./Tools";
+import React, { useEffect } from 'react';
+import WhyChooseUs from './WhyChooseUs';
+import ClientQuote from './ClientQuote';
+import Consultancy from './Consultanices';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
+import { Button, Divider, Typography } from 'antd';
+import bag from '../assets/img/bgg.png';
+import reg from '../assets/img/remining.png'
+import FreeQuote from './getFreeQuote';
+import FeedbackCard from './writersReviews';
+import HowItWorks from './HowItWorks';
+import FeaturesComponent from './FeaturesComponent';
+import AssignmentTypes from './AssignmentTypes';
+import Tools from './Tools';
+const { Text, Paragraph, Title } = Typography;
 
 const contentSectionStyle: React.CSSProperties = {
   backgroundColor: "#b1d0e2", // light, professional background
@@ -132,7 +133,9 @@ const Home: React.FC = () => {
         </Link>
       </div>
       <FeedbackCard />
-      <section style={{ padding: "4rem 2rem", backgroundColor: "#f0f2f5" }}>
+      <section style={{ padding: '4rem 2rem', backgroundColor: '#f0f2f5' }}>
+        <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>How It Works
+        </Title>
         <HowItWorks />
       </section>
       <FeaturesComponent />
@@ -149,9 +152,9 @@ const Home: React.FC = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section style={contentSectionStyle} data-aos="fade-up">
+      {/* <section style={contentSectionStyle} data-aos="fade-up">
         <ClientQuote />
-      </section>
+      </section> */}
     </div>
   );
 };

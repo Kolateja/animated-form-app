@@ -72,38 +72,45 @@ interface CoreValue {
 
 const coreValues: CoreValue[] = [
     {
-        title: 'Top-Notch Quality:',
+        title: 'Quality Writing',
         description:
-            'We assure excellence in vocabulary, structure, and uniqueness.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/clock.png',
+            'We offer complete guidance across all subjects with end-to-end case study solutions. Get everything you need in one place with expert assistance.',
+        icon: 'https://img.icons8.com/ios-filled/100/help.png', // Support icon
     },
     {
-        title: 'Expert Writers:',
+        title: 'Authentic Paper',
         description:
-            'Every writer has expertise in the field.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/lock.png',
+            'Access complimentary plagiarism reports, samples, and drafts with every order. Enjoy full transparency in our case study help services.',
+        icon: 'https://img.icons8.com/ios-filled/100/document--v1.png', // Free report/documents icon
     },
     {
-        title: 'Plagiarism-Free Work:',
+        title: 'Timely Delivery',
         description:
-            '100% original content.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/medal.png',
+            'Speak directly with your assigned expert. Skip the hassle and clarify your requirements instantly for a seamless case study writing experience.',
+        icon: 'https://img.icons8.com/ios-filled/100/communication.png', // Communication icon
     },
     {
-        title: 'On-Time Delivery:',
+        title: 'Reputed Scholars',
         description:
-            'Guaranteed timely submissions.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+            'Not satisfied with the draft? Request as many revisions as you need until it’s perfect. We’re here to meet your expectations every time.',
+        icon: 'https://img.icons8.com/ios-filled/100/refresh.png', // Revision icon
     },
     {
-        title: '24x7 Support:',
+        title: 'Affordable Prices',
         description:
-            'Always available for you.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+            'Get premium-quality case study help at student-friendly prices. Enjoy exclusive discounts, seasonal offers, and loyalty rewards.',
+        icon: 'https://img.icons8.com/ios-filled/100/discount.png', // Discount icon
     },
+    {
+        title: '100% Confidentiality',
+        description:
+            'Have a query or need help urgently? Our dedicated support team is available around the clock to assist you instantly.',
+        icon: 'https://img.icons8.com/ios-filled/100/online-support.png', // 24/7 customer support icon
+    }
 ];
 
-const AssessmentHelpPage = () => {
+
+const WriteMyPaper = () => {
     return (
         <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
             {/* First Section */}
@@ -126,14 +133,14 @@ const AssessmentHelpPage = () => {
                             lineHeight: 1.2,
                             background: 'linear-gradient(to right, #ff6600, #800080)',
                             WebkitBackgroundClip: 'text',
-                            color: 'transparent',
+                            color: '#ee174e',
                             marginBottom: '20px',
                         }}
                     >
-                        Online Assessment Help for Students
+                        Write My Paper for Me
                     </h1>
                     <p style={{ fontSize: '20px', color: '#444', marginBottom: '10px' }}>
-                        Meet Top Professionals To Get Help For Assessment Solutions & More
+                        Wondering “Can someone write paper for me?” Yes, we can!
                     </p>
                     <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
                         Trusted by 1.5M+ happy customers
@@ -158,8 +165,8 @@ const AssessmentHelpPage = () => {
 
             {/* Second Section */}
             <div style={{ marginBottom: '40px', textAlign: 'center' }}>
-                <h2>Meet Our Online Assessment Helpers</h2>
-                <p>Zero AI Assessment Help by the Best Minds</p>
+                <h2>Meet Our Professional Paper Writers</h2>
+                <p>Book qualified writers to guarantee an A+ in academic papers..</p>
                 <div
                     style={{
                         display: 'flex',
@@ -196,16 +203,17 @@ const AssessmentHelpPage = () => {
                     ))}
                 </div>
             </div>
+
             <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
-                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>Place An Order For Assessment Help In 3 Simple Steps
+                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>How To Get My Paper Written?
                 </Title>
                 <HowItWorks />
             </section>
-            {/* How It Works Section */}
+
 
             {/* Third Section - Services */}
             <div style={{ marginBottom: '40px' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Our Top Services</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Key Benefits Of Our “Write My Paper” Service</h2>
                 <Row gutter={[24, 24]} justify="center">
                     {coreValues.map((value, index) => (
                         <Col xs={24} sm={12} md={12} lg={6} key={index}>
@@ -273,7 +281,7 @@ const AssessmentHelpPage = () => {
                         color: '#2c3e50'
                     }}
                 >
-                    Types of Help with Assessment Tasks We Offer
+                    What Subjects Are Covered in our Online Thesis Writing Service?
                 </h2>
                 <ul
                     style={{
@@ -287,12 +295,15 @@ const AssessmentHelpPage = () => {
                         color: '#34495e'
                     }}
                 >
-                    <li style={{ marginBottom: '10px' }}>✔️ Research Paper Writing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Assignment Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Essay Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Dissertation Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Paper Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Term Paper Writing Service</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Accounting</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Biology</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Nursing</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Law</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Mathematics</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Sociology</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Computer</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Psychology
+                    </li>
                 </ul>
             </div>
 
@@ -300,4 +311,4 @@ const AssessmentHelpPage = () => {
     );
 };
 
-export default AssessmentHelpPage;
+export default WriteMyPaper;

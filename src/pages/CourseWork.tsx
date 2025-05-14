@@ -72,38 +72,45 @@ interface CoreValue {
 
 const coreValues: CoreValue[] = [
     {
-        title: 'Top-Notch Quality:',
+        title: 'Undisputed Quality:',
         description:
-            'We assure excellence in vocabulary, structure, and uniqueness.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/clock.png',
+            'We hire only PhD-qualified experts at MyAssignmenthelp. So, if you hire a professional coursework writer from us, we ensure top quality..',
+        icon: 'https://img.icons8.com/ios-filled/100/medal2.png', // Represents high quality and achievement
     },
     {
-        title: 'Expert Writers:',
+        title: 'Original Contents:',
         description:
-            'Every writer has expertise in the field.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/lock.png',
+            'Our professional coursework writers write custom papers from scratch, using AI-based tools to ensure unique papers every time.',
+        icon: 'https://img.icons8.com/ios-filled/100/idea.png', // Represents originality and unique thinking
     },
     {
-        title: 'Plagiarism-Free Work:',
+        title: 'Free Samples:',
         description:
-            '100% original content.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/medal.png',
+            'Along with help with coursework papers, you can access a vast collection of free samples, which you can even download for future use..',
+        icon: 'https://img.icons8.com/ios-filled/100/documents.png', // Represents multiple downloadable samples
     },
     {
-        title: 'On-Time Delivery:',
+        title: 'Anytime Availability:',
         description:
-            'Guaranteed timely submissions.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+            'We understand that students need coursework service even after midnight. So, you can find someone for writing assignments anytime..',
+        icon: 'https://img.icons8.com/ios-filled/100/around-the-clock.png', // Represents 24/7 service
     },
     {
-        title: '24x7 Support:',
+        title: 'Free Edits:',
         description:
-            'Always available for you.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+            'You can trust our reliable coursework writing service to do unlimited edits for you. We do not charge anything for this extra service!',
+        icon: 'https://img.icons8.com/ios-filled/100/edit--v1.png', // Represents editing/revision
     },
+    {
+        title: 'Exciting Offers',
+        description:
+            'We offer exciting offers and discounts round the year. So, you can find a coursework writer from us, even if you are low on budget..',
+        icon: 'https://img.icons8.com/ios-filled/100/sale--v1.png', // Represents offers and discounts
+    }
 ];
 
-const AssessmentHelpPage = () => {
+
+const CourseWork = () => {
     return (
         <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
             {/* First Section */}
@@ -126,14 +133,14 @@ const AssessmentHelpPage = () => {
                             lineHeight: 1.2,
                             background: 'linear-gradient(to right, #ff6600, #800080)',
                             WebkitBackgroundClip: 'text',
-                            color: 'transparent',
+                            color: '#ee174e',
                             marginBottom: '20px',
                         }}
                     >
-                        Online Assessment Help for Students
+                        Coursework Help Services: Boost Your Academic Success
                     </h1>
                     <p style={{ fontSize: '20px', color: '#444', marginBottom: '10px' }}>
-                        Meet Top Professionals To Get Help For Assessment Solutions & More
+                        Get A-Rated Professional Coursework Services Without Breaking the Bank
                     </p>
                     <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
                         Trusted by 1.5M+ happy customers
@@ -158,8 +165,8 @@ const AssessmentHelpPage = () => {
 
             {/* Second Section */}
             <div style={{ marginBottom: '40px', textAlign: 'center' }}>
-                <h2>Meet Our Online Assessment Helpers</h2>
-                <p>Zero AI Assessment Help by the Best Minds</p>
+                <h2>Our Top Coursework Writers Ready to Help You</h2>
+                <p>Choose Our Expert Coursework Writers for Coursework Writing Service.</p>
                 <div
                     style={{
                         display: 'flex',
@@ -196,16 +203,17 @@ const AssessmentHelpPage = () => {
                     ))}
                 </div>
             </div>
+
             <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
-                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>Place An Order For Assessment Help In 3 Simple Steps
+                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>How Does Our Coursework Help Services Work?
                 </Title>
                 <HowItWorks />
             </section>
-            {/* How It Works Section */}
+
 
             {/* Third Section - Services */}
             <div style={{ marginBottom: '40px' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Our Top Services</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Advantages of Opting for Our Online Coursework Service</h2>
                 <Row gutter={[24, 24]} justify="center">
                     {coreValues.map((value, index) => (
                         <Col xs={24} sm={12} md={12} lg={6} key={index}>
@@ -273,7 +281,7 @@ const AssessmentHelpPage = () => {
                         color: '#2c3e50'
                     }}
                 >
-                    Types of Help with Assessment Tasks We Offer
+                    Types of Services We Offer:
                 </h2>
                 <ul
                     style={{
@@ -287,12 +295,13 @@ const AssessmentHelpPage = () => {
                         color: '#34495e'
                     }}
                 >
-                    <li style={{ marginBottom: '10px' }}>✔️ Research Paper Writing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Assignment Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Essay Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Dissertation Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Paper Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Term Paper Writing Service</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Term paper</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Thesis</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Research paper</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Academic essay</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Report project</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Dissertations</li>
+
                 </ul>
             </div>
 
@@ -300,4 +309,4 @@ const AssessmentHelpPage = () => {
     );
 };
 
-export default AssessmentHelpPage;
+export default CourseWork;

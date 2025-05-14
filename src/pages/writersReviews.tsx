@@ -66,7 +66,7 @@ const FeedbackCard: React.FC = () => {
                 style={{
                     display: 'flex',
                     overflowX: 'auto',
-                    gap: 16,
+                    gap: 30,
                     paddingBottom: 16,
                 }}
             >
@@ -76,7 +76,7 @@ const FeedbackCard: React.FC = () => {
                         bordered
                         style={{
                             borderRadius: '10px',
-                            flex: '0 0 300px',
+                            flex: '0 0 320px',
                             minWidth: 300,
                             height: '100%',
                         }}

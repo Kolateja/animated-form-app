@@ -72,38 +72,45 @@ interface CoreValue {
 
 const coreValues: CoreValue[] = [
     {
-        title: 'Top-Notch Quality:',
+        title: 'Well-Researched Essays',
         description:
-            'We assure excellence in vocabulary, structure, and uniqueness.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/clock.png',
+            'Our experts craft essays based on in-depth research, precise structure, and academic integrity to ensure top-tier quality every time.',
+        icon: 'https://img.icons8.com/ios-filled/100/read.png', // Represents reading/research
     },
     {
-        title: 'Expert Writers:',
+        title: '1000+ Free Samples',
         description:
-            'Every writer has expertise in the field.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/lock.png',
+            'Access a vast library of free, downloadable essay samples written by academic experts to guide your own writing and boost your grades.',
+        icon: 'https://img.icons8.com/ios-filled/100/documents.png', // Represents a library of documents/samples
     },
     {
-        title: 'Plagiarism-Free Work:',
+        title: 'Diverse Subject Matter',
         description:
-            '100% original content.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/medal.png',
+            'Get expert help across a wide range of subjects, from humanities to technical fields — we cover it all under one roof.',
+        icon: 'https://img.icons8.com/ios-filled/100/task.png', // Represents multiple subjects/tasks
     },
     {
-        title: 'On-Time Delivery:',
+        title: 'Deadline-Oriented',
         description:
-            'Guaranteed timely submissions.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+            'We deliver on time, every time. No matter how tight the deadline, count on us for prompt and punctual submissions.',
+        icon: 'https://img.icons8.com/ios-filled/100/deadline.png', // Represents deadlines and punctuality
     },
     {
-        title: '24x7 Support:',
+        title: 'Comprehensive Support',
         description:
-            'Always available for you.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+            'From choosing a topic to the final proofread — our end-to-end assessment help service ensures you are never left alone.',
+        icon: 'https://img.icons8.com/ios-filled/100/customer-support.png', // Represents full support
     },
+    {
+        title: 'Multiple Revisions',
+        description:
+            'Need adjustments? No problem. We offer unlimited free revisions until your paper meets your expectations.',
+        icon: 'https://img.icons8.com/ios-filled/100/refresh.png', // Represents revisions/redo
+    }
 ];
 
-const AssessmentHelpPage = () => {
+
+const EasyWriting = () => {
     return (
         <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
             {/* First Section */}
@@ -126,14 +133,14 @@ const AssessmentHelpPage = () => {
                             lineHeight: 1.2,
                             background: 'linear-gradient(to right, #ff6600, #800080)',
                             WebkitBackgroundClip: 'text',
-                            color: 'transparent',
+                            color: '#ee174e',
                             marginBottom: '20px',
                         }}
                     >
-                        Online Assessment Help for Students
+                        Essay Writing Help
                     </h1>
                     <p style={{ fontSize: '20px', color: '#444', marginBottom: '10px' }}>
-                        Meet Top Professionals To Get Help For Assessment Solutions & More
+                        Professional, Reliable, and Affordable Essay Writing Services for All Your Writing Needs
                     </p>
                     <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
                         Trusted by 1.5M+ happy customers
@@ -158,8 +165,8 @@ const AssessmentHelpPage = () => {
 
             {/* Second Section */}
             <div style={{ marginBottom: '40px', textAlign: 'center' }}>
-                <h2>Meet Our Online Assessment Helpers</h2>
-                <p>Zero AI Assessment Help by the Best Minds</p>
+                <h2>Get Personalized Essay Writing Help Online from Professional Writers</h2>
+                <p>Hire Professional Academic Writers to Level Up Your Grades.</p>
                 <div
                     style={{
                         display: 'flex',
@@ -196,16 +203,17 @@ const AssessmentHelpPage = () => {
                     ))}
                 </div>
             </div>
+
             <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
-                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>Place An Order For Assessment Help In 3 Simple Steps
+                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>How to Order Online College Essay Writing Help in Easy Steps
                 </Title>
                 <HowItWorks />
             </section>
-            {/* How It Works Section */}
+
 
             {/* Third Section - Services */}
             <div style={{ marginBottom: '40px' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Our Top Services</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Advantages of Choosing an Online Essay Writing Help Service</h2>
                 <Row gutter={[24, 24]} justify="center">
                     {coreValues.map((value, index) => (
                         <Col xs={24} sm={12} md={12} lg={6} key={index}>
@@ -273,7 +281,7 @@ const AssessmentHelpPage = () => {
                         color: '#2c3e50'
                     }}
                 >
-                    Types of Help with Assessment Tasks We Offer
+                    TTypes of Services We Offer:
                 </h2>
                 <ul
                     style={{
@@ -287,12 +295,16 @@ const AssessmentHelpPage = () => {
                         color: '#34495e'
                     }}
                 >
-                    <li style={{ marginBottom: '10px' }}>✔️ Research Paper Writing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Assignment Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Essay Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Dissertation Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Paper Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Term Paper Writing Service</li>
+                    <li style={{ marginBottom: '10px' }}>✔️   Narrative Essay Help</li>
+                    <li style={{ marginBottom: '10px' }}>✔️   Descriptive Essays</li>
+                    <li style={{ marginBottom: '10px' }}>✔️   Persuasive Essay Help</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Argumentative Essays</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Expository Essays</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Compare and Contrast Essays</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Cause and Effect Essays</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Admission Essay Writing Help</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Research Essays & More</li>
+
                 </ul>
             </div>
 
@@ -300,4 +312,4 @@ const AssessmentHelpPage = () => {
     );
 };
 
-export default AssessmentHelpPage;
+export default EasyWriting;

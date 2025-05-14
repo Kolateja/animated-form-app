@@ -72,38 +72,45 @@ interface CoreValue {
 
 const coreValues: CoreValue[] = [
     {
-        title: 'Top-Notch Quality:',
+        title: 'Custom Research Papers:',
         description:
-            'We assure excellence in vocabulary, structure, and uniqueness.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/clock.png',
+            'Receive tailor-made research papers crafted to meet your academic requirements, ensuring originality, relevance, and depth.',
+        icon: 'https://img.icons8.com/ios-filled/100/document--v1.png', // Represents custom academic documents
     },
     {
-        title: 'Expert Writers:',
+        title: 'Well-structured Solutions:',
         description:
-            'Every writer has expertise in the field.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/lock.png',
+            'Get logically organized, clearly formatted, and easy-to-follow solutions that help you grasp complex concepts effortlessly.',
+        icon: 'https://img.icons8.com/ios-filled/100/flow-chart.png', // Represents structured/organized layout
     },
     {
-        title: 'Plagiarism-Free Work:',
+        title: 'Adherence to Guidelines:',
         description:
-            '100% original content.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/medal.png',
+            'We follow your university’s formatting and submission guidelines to the letter—ensuring no marks are lost over technicalities.',
+        icon: 'https://img.icons8.com/ios-filled/100/rules.png', // Represents compliance with rules/guidelines
     },
     {
-        title: 'On-Time Delivery:',
+        title: 'Superfast Delivery:',
         description:
-            'Guaranteed timely submissions.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+            'Tight deadline? No problem. Our team delivers high-quality academic content within hours, without compromising quality.',
+        icon: 'https://img.icons8.com/ios-filled/100/fast-cart.png', // Represents speed/express delivery
     },
     {
-        title: '24x7 Support:',
+        title: 'High Affordability:',
         description:
-            'Always available for you.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+            'Enjoy premium academic help at rates designed for students. No hidden costs, and great value for your investment.',
+        icon: 'https://img.icons8.com/ios-filled/100/discount--v1.png', // Represents affordability/discount
     },
+    {
+        title: 'Free Revisions:',
+        description:
+            'Not happy with the draft? Request unlimited revisions free of charge until you’re completely satisfied with the result.',
+        icon: 'https://img.icons8.com/ios-filled/100/restart--v1.png', // Represents revision/redo
+    }
 ];
 
-const AssessmentHelpPage = () => {
+
+const ResearchPaper = () => {
     return (
         <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
             {/* First Section */}
@@ -126,14 +133,14 @@ const AssessmentHelpPage = () => {
                             lineHeight: 1.2,
                             background: 'linear-gradient(to right, #ff6600, #800080)',
                             WebkitBackgroundClip: 'text',
-                            color: 'transparent',
+                            color: '#ee174e',
                             marginBottom: '20px',
                         }}
                     >
-                        Online Assessment Help for Students
+                        Research Paper Writing Service
                     </h1>
                     <p style={{ fontSize: '20px', color: '#444', marginBottom: '10px' }}>
-                        Meet Top Professionals To Get Help For Assessment Solutions & More
+                        Get research paper help from writers with discipline-specific expertise.
                     </p>
                     <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
                         Trusted by 1.5M+ happy customers
@@ -158,8 +165,8 @@ const AssessmentHelpPage = () => {
 
             {/* Second Section */}
             <div style={{ marginBottom: '40px', textAlign: 'center' }}>
-                <h2>Meet Our Online Assessment Helpers</h2>
-                <p>Zero AI Assessment Help by the Best Minds</p>
+                <h2>Our Team of Research Paper Writers</h2>
+                <p>Know our writers before requesting, "Please write my research paper.”.</p>
                 <div
                     style={{
                         display: 'flex',
@@ -196,16 +203,17 @@ const AssessmentHelpPage = () => {
                     ))}
                 </div>
             </div>
+
             <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
-                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>Place An Order For Assessment Help In 3 Simple Steps
+                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>Get Professional Research Paper Writing Service In 3 Easy Steps
                 </Title>
                 <HowItWorks />
             </section>
-            {/* How It Works Section */}
+
 
             {/* Third Section - Services */}
             <div style={{ marginBottom: '40px' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Our Top Services</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Why Choose Our Research Paper Writing Service?</h2>
                 <Row gutter={[24, 24]} justify="center">
                     {coreValues.map((value, index) => (
                         <Col xs={24} sm={12} md={12} lg={6} key={index}>
@@ -273,7 +281,7 @@ const AssessmentHelpPage = () => {
                         color: '#2c3e50'
                     }}
                 >
-                    Types of Help with Assessment Tasks We Offer
+                    Research Paper Help for All Subjects
                 </h2>
                 <ul
                     style={{
@@ -287,12 +295,16 @@ const AssessmentHelpPage = () => {
                         color: '#34495e'
                     }}
                 >
-                    <li style={{ marginBottom: '10px' }}>✔️ Research Paper Writing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Assignment Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Essay Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Dissertation Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Paper Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Term Paper Writing Service</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Psychology</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Philosophy</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Law</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ History</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Education</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Management</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ English</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Nursing</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Literature & more</li>
+
                 </ul>
             </div>
 
@@ -300,4 +312,4 @@ const AssessmentHelpPage = () => {
     );
 };
 
-export default AssessmentHelpPage;
+export default ResearchPaper;

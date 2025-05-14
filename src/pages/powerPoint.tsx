@@ -72,38 +72,44 @@ interface CoreValue {
 
 const coreValues: CoreValue[] = [
     {
-        title: 'Top-Notch Quality:',
-        description:
-            'We assure excellence in vocabulary, structure, and uniqueness.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/clock.png',
+        "title": "Comprehensive PPTs:",
+        "description": "Professionally designed PowerPoint presentations that simplify complex concepts with clear visuals and organized content.",
+        "icon": "https://icons8.com/icon/12416/microsoft-powerpoint"
     },
     {
-        title: 'Expert Writers:',
+        title: 'Original Contents:',
         description:
-            'Every writer has expertise in the field.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/lock.png',
+            'Get plagiarism-free, uniquely crafted content tailored to your academic requirements, ensuring complete authenticity.',
+        icon: 'https://img.icons8.com/ios-filled/100/approve-and-update.png', // Represents originality
     },
     {
-        title: 'Plagiarism-Free Work:',
+        title: 'Free Revisions:',
         description:
-            '100% original content.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/medal.png',
+            'Enjoy unlimited revisions until you’re fully satisfied — we’re committed to delivering content that meets your expectations.',
+        icon: 'https://img.icons8.com/ios-filled/100/refresh.png', // Represents revision/flexibility
     },
     {
-        title: 'On-Time Delivery:',
+        title: 'On Timely Delivery:',
         description:
-            'Guaranteed timely submissions.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+            'Never miss a deadline — our team ensures that every task is completed and delivered on or before the agreed time.',
+        icon: 'https://img.icons8.com/ios-filled/100/clock--v1.png', // Represents punctuality
     },
     {
-        title: '24x7 Support:',
+        title: 'Affordable Prices:',
         description:
-            'Always available for you.',
-        icon: 'https://img.icons8.com/ios-filled/100/000000/visible.png',
+            'Get top-quality academic assistance at budget-friendly prices designed to support students without breaking the bank.',
+        icon: 'https://img.icons8.com/ios-filled/100/cheap.png', // Represents affordability
     },
+    {
+        title: 'Engaging Slides:',
+        description:
+            'Eye-catching slides with visual appeal and concise information to keep your audience interested and engaged.',
+        icon: 'https://img.icons8.com/ios-filled/100/presentation.png', // Represents engaging slides
+    }
 ];
 
-const AssessmentHelpPage = () => {
+
+const PowerPointWriting = () => {
     return (
         <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
             {/* First Section */}
@@ -126,14 +132,14 @@ const AssessmentHelpPage = () => {
                             lineHeight: 1.2,
                             background: 'linear-gradient(to right, #ff6600, #800080)',
                             WebkitBackgroundClip: 'text',
-                            color: 'transparent',
+                            color: '#ee174e',
                             marginBottom: '20px',
                         }}
                     >
-                        Online Assessment Help for Students
+                        PowerPoint Presentation Writing Services
                     </h1>
                     <p style={{ fontSize: '20px', color: '#444', marginBottom: '10px' }}>
-                        Meet Top Professionals To Get Help For Assessment Solutions & More
+                        Hire Our PowerPoint Presentation Writers for Visually Appealing PPTs
                     </p>
                     <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
                         Trusted by 1.5M+ happy customers
@@ -158,8 +164,8 @@ const AssessmentHelpPage = () => {
 
             {/* Second Section */}
             <div style={{ marginBottom: '40px', textAlign: 'center' }}>
-                <h2>Meet Our Online Assessment Helpers</h2>
-                <p>Zero AI Assessment Help by the Best Minds</p>
+                <h2>Our Team of PowerPoint Presentation Writers</h2>
+                <p>Here’s Why Our Professional Writers Are Your Best Choice.</p>
                 <div
                     style={{
                         display: 'flex',
@@ -196,16 +202,17 @@ const AssessmentHelpPage = () => {
                     ))}
                 </div>
             </div>
+
             <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
-                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>Place An Order For Assessment Help In 3 Simple Steps
+                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>How to Pay for PowerPoint Presentations
                 </Title>
                 <HowItWorks />
             </section>
-            {/* How It Works Section */}
+
 
             {/* Third Section - Services */}
             <div style={{ marginBottom: '40px' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Our Top Services</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Guarantees of Our PowerPoint Presentation Services</h2>
                 <Row gutter={[24, 24]} justify="center">
                     {coreValues.map((value, index) => (
                         <Col xs={24} sm={12} md={12} lg={6} key={index}>
@@ -273,7 +280,7 @@ const AssessmentHelpPage = () => {
                         color: '#2c3e50'
                     }}
                 >
-                    Types of Help with Assessment Tasks We Offer
+                    Types of Services We Offer:
                 </h2>
                 <ul
                     style={{
@@ -287,12 +294,13 @@ const AssessmentHelpPage = () => {
                         color: '#34495e'
                     }}
                 >
-                    <li style={{ marginBottom: '10px' }}>✔️ Research Paper Writing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Assignment Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Essay Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Dissertation Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Paper Editing Service</li>
-                    <li style={{ marginBottom: '10px' }}>✔️ Term Paper Writing Service</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Grammar and Spelling Corrections</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Quality of Information Check</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Proper Referencing</li>
+                    <li style={{ marginBottom: '10px' }}>✔️  Plagiarism Checking</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Checking Links for Image Sources</li>
+                    <li style={{ marginBottom: '10px' }}>✔️ Revisiting Slide transitions</li>
+
                 </ul>
             </div>
 
@@ -300,4 +308,4 @@ const AssessmentHelpPage = () => {
     );
 };
 
-export default AssessmentHelpPage;
+export default PowerPointWriting;
