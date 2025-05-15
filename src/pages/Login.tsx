@@ -100,13 +100,14 @@
 // };
 
 // export default Login;
+
 import React, { useState } from 'react';
 import { Button, Form, Input, message } from 'antd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import ApiService from '../services/ApiService';
 import axios from 'axios';
-import image from '../assets/img/login.png'
+import './Login.css';
 
 interface LoginProps {
   handleLoginFlag: (role: string) => void;
@@ -151,100 +152,67 @@ const Login: React.FC<LoginProps> = ({ handleLoginFlag, onToggleForm }) => {
   };
 
   return (
-    <div
-      style={{
-        height: '100vh',
-        width: '100vw',
-        background: 'linear-gradient(to right, #2C5364, #203A43, #0F2027)',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '20px',
-      }}
-    >
-      <div
-        style={{
-          backgroundColor: '#fff',
-          padding: '50px',
-          borderRadius: '12px',
-          boxShadow: '0 8px 40px rgba(0,0,0,0.3)',
-          width: '100%',
-          maxWidth: '500px',
-        }}
-      >
-        <h2 style={{ textAlign: 'center', marginBottom: '30px', color: '#333' }}>
-          Login to your account
-        </h2>
-
-        <Form form={form} name="login" onFinish={handleLogin} layout="vertical">
-          <Form.Item
-            name="email"
-            label="Email"
-            rules={[{ required: true, message: 'Please input your email!' }]}
-          >
-            <Input
-              prefix={<UserOutlined />}
-              placeholder="Email"
-              style={{ height: '40px', borderRadius: '8px' }}
-            />
-          </Form.Item>
-
-          <Form.Item
-            name="password"
-            label="Password"
-            rules={[{ required: true, message: 'Please input your password!' }]}
-          >
-            <Input.Password
-              prefix={<LockOutlined />}
-              placeholder="Password"
-              style={{ height: '40px', borderRadius: '8px' }}
-            />
-          </Form.Item>
-
-          <div style={{ textAlign: 'right', marginBottom: '10px' }}>
-            <Link to="/forgotpassword" style={{ color: '#1890ff' }}>
-              Forgot Password?
-            </Link>
-          </div>
-
-          <Form.Item>
-            <Button
-              type="primary"
-              htmlType="submit"
-              block
-              loading={loading}
-              style={{
-                height: '40px',
-                borderRadius: '8px',
-                backgroundColor: '#1890ff',
-              }}
+    <div className="login-container">
+      <div className="login-wrapper">
+        <div className="login-left">
+          <img src="/assets/img/login-page2.jpg" alt="Login Illustration" className="login-image" />
+        </div>
+        <div className="login-right">
+          <h2 className="login-title">Login to your account</h2>
+          <Form form={form} name="login" onFinish={handleLogin} layout="vertical">
+            <Form.Item
+              name="email"
+              label="Email"
+              rules={[{ required: true, message: 'Please input your email!' }]}
             >
-              Log In
-            </Button>
-          </Form.Item>
-        </Form>
+              <Input
+                prefix={<UserOutlined />}
+                placeholder="Email"
+                className="login-input"
+              />
+            </Form.Item>
 
-        <p style={{ textAlign: 'center', marginTop: '20px' }}>
-          Don't have an account?{' '}
-          <button
-            onClick={onToggleForm}
-            style={{
-              background: 'none',
-              border: 'none',
-              color: '#1890ff',
-              cursor: 'pointer',
-              fontWeight: 500,
-              padding: 0,
-            }}
-          >
-            Register here
-          </button>
-        </p>
+            <Form.Item
+              name="password"
+              label="Password"
+              rules={[{ required: true, message: 'Please input your password!' }]}
+            >
+              <Input.Password
+                prefix={<LockOutlined />}
+                placeholder="Password"
+                className="login-input"
+              />
+            </Form.Item>
+
+            <div className="login-forgot">
+              <Link to="/forgotpassword" className="login-link">
+                Forgot Password?
+              </Link>
+            </div>
+
+            <Form.Item>
+              <Button
+                type="primary"
+                htmlType="submit"
+                block
+                loading={loading}
+                className="login-button"
+              >
+                Log In
+              </Button>
+            </Form.Item>
+          </Form>
+
+          <p className="login-register-text">
+            Don't have an account?{' '}
+            <button onClick={onToggleForm} className="login-register-button">
+              Register here
+            </button>
+          </p>
+        </div>
       </div>
     </div>
   );
 };
 
 export default Login;
-
-
