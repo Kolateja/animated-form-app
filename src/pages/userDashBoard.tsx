@@ -1,107 +1,255 @@
-import { Card, Col, Row, Spin, message } from 'antd';
-import { HourglassOutlined, CheckCircleOutlined, PlayCircleOutlined } from '@ant-design/icons'; // Importing Ant Design icons
+import React, { useEffect, useState } from 'react';
+import { Card, Col, Row, Spin, Typography, message, Avatar } from 'antd';
+import {
+    HourglassOutlined,
+    CheckCircleOutlined,
+    PlayCircleOutlined,
+    InfoCircleOutlined,
+    UserOutlined,
+} from '@ant-design/icons';
 import ApiService from '../services/ApiService';
-import { useEffect, useState } from 'react';
 import ProfileUser from './Profile';
 import OrderDetailsComponent from './userOrderDetails';
-import AcademicDetailsComponent from './userAcademicDetails';
+import StudentTickets from './userTckets';
+
+const { Title } = Typography;
 
 interface OrderStatusCount {
     orderStatus: string;
     count: number;
 }
 
+interface TicketStatusCount {
+    ticketStatus: string;
+    count: number;
+}
+
+const statusMeta = {
+    pending: { color: '#FFA726', icon: <HourglassOutlined /> },
+    inProgress: { color: '#42A5F5', icon: <PlayCircleOutlined /> },
+    completed: { color: '#66BB6A', icon: <CheckCircleOutlined /> },
+    awaitingClarification: { color: '#FFCA28', icon: <InfoCircleOutlined /> },
+};
+
+const statusMetaTicket = {
+    pending: { color: '#FFA726', icon: <HourglassOutlined /> },
+    inProgress: { color: '#42A5F5', icon: <PlayCircleOutlined /> },
+    resolved: { color: '#66BB6A', icon: <CheckCircleOutlined /> },
+};
+
 const UserDashboard: React.FC = () => {
-    const [orderStatusCounts, setOrderStatusCounts] = useState<OrderStatusCount[]>([]);
+    const [orderStatusCounts, setOrderStatusCounts] = useState<Record<string, number>>({
+        pending: 0,
+        inProgress: 0,
+        completed: 0,
+        awaitingClarification: 0,
+    });
+    const [ticketStatusCounts, setTicketStatusCounts] = useState<Record<string, number>>({
+        pending: 0,
+        inProgress: 0,
+        resolved: 0,
+    });
     const [loading, setLoading] = useState(false);
+    const [showProfile, setShowProfile] = useState(false);
 
     useEffect(() => {
         fetchOrderStatusCounts();
+    }, []);
+
+    useEffect(() => {
+        fetchTicketStatusCounts();
     }, []);
 
     const fetchOrderStatusCounts = async () => {
         setLoading(true);
         try {
             const response: any = await ApiService.get('/assignments/status-counts');
-            console.log('statusCounts response:', response);
-
-            if (response.success) {
-                setOrderStatusCounts(response.data);
-                console.log(response.data, "?????????????");
+            if (response.success && Array.isArray(response.data)) {
+                const defaultCounts = {
+                    pending: 0,
+                    inProgress: 0,
+                    completed: 0,
+                    awaitingClarification: 0,
+                };
+                response.data.forEach((item: OrderStatusCount) => {
+                    defaultCounts[item.orderStatus as keyof typeof defaultCounts] = item.count;
+                });
+                setOrderStatusCounts(defaultCounts);
             } else {
                 message.error(response.message || 'Failed to fetch order status counts.');
             }
-        } catch (error: unknown) {
+        } catch (error) {
             console.error('Fetch error:', error);
             message.error('An error occurred while fetching order status counts.');
         } finally {
             setLoading(false);
         }
     };
-    const getCardColor = (status: string) => {
-        switch (status) {
-            case 'pending':
-                return '#FF8C00'; // Subtle orange for pending
-            case 'completed':
-                return '#28a745'; // Vibrant green for completed
-            case 'inProgress':
-                return '#007bff'; // Calmer blue for inProgress
-            default:
-                return '#dcdcdc'; // Default grey
-        }
-    };
 
-
-    const getCardIcon = (status: string) => {
-        switch (status) {
-            case 'pending':
-                return <HourglassOutlined style={{ fontSize: '32px' }} />;
-            case 'completed':
-                return <CheckCircleOutlined style={{ fontSize: '32px' }} />;
-            case 'inProgress':
-                return <PlayCircleOutlined style={{ fontSize: '32px' }} />;
-            default:
-                return null;
+    const fetchTicketStatusCounts = async () => {
+        setLoading(true);
+        try {
+            const response: any = await ApiService.get('/raise-ticket/ticket-counts');
+            if (response.success && Array.isArray(response.data)) {
+                const defaultCounts = {
+                    pending: 0,
+                    inProgress: 0,
+                    resolved: 0,
+                };
+                response.data.forEach((item: TicketStatusCount) => {
+                    defaultCounts[item.ticketStatus as keyof typeof defaultCounts] = item.count;
+                });
+                setTicketStatusCounts(defaultCounts);
+            } else {
+                message.error(response.message || 'Failed to fetch order status counts.');
+            }
+        } catch (error) {
+            console.error('Fetch error:', error);
+            message.error('An error occurred while fetching order status counts.');
+        } finally {
+            setLoading(false);
         }
     };
 
     return (
-        <div style={{ padding: '24px' }}>
-            <div style={{ marginBottom: '24px' }}>
-                <ProfileUser />
+        <div
+            style={{
+                padding: 32,
+                fontFamily: "'Poppins', sans-serif",
+                backgroundColor: '#f5f7fa',
+                minHeight: '100vh',
+            }}
+        >
+            {/* Header */}
+            <div
+                style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    marginBottom: 20,
+                }}
+            >
+                <Title level={3} style={{ margin: 0 }}>
+                    🎓 User Dashboard
+                </Title>
+                <Avatar
+                    size={20}
+                    icon={<UserOutlined />}
+                    style={{ cursor: 'pointer', backgroundColor: '#1890ff' }}
+                    onClick={() => setShowProfile(!showProfile)}
+                />
             </div>
-            <h2>User Dashboard</h2>
-            {loading ? (
-                <Spin size="large" />
-            ) : (
-                <Row gutter={[16, 16]}>
-                    {/* Show each order status count in a card */}
-                    {orderStatusCounts.map((item) => (
-                        <Col xs={24} sm={12} md={8} key={item.orderStatus}>
-                            <Card
-                                title={item.orderStatus.toUpperCase()}
-                                bordered={false}
-                                style={{
-                                    backgroundColor: getCardColor(item.orderStatus),
-                                    color: '#fff',
-                                    textAlign: 'center',
-                                }}
-                                cover={getCardIcon(item.orderStatus)} // Adding an icon on top of the card
-                            >
-                                <p style={{ fontSize: '24px' }}>{item.count}</p>
-                            </Card>
-                        </Col>
-                    ))}
-                </Row>
 
-
+            {/* Profile */}
+            {showProfile && (
+                <div style={{
+                    marginBottom: 20,
+                    padding: 16,
+                    borderRadius: 12,
+                    // backgroundColor: '#ffffff',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
+                }}>
+                    <Card bordered={false} style={{ borderRadius: 12 }}>
+                        <ProfileUser />
+                    </Card>
+                </div>
             )}
-            <div style={{ marginBottom: '24px' }}>
+
+            {/* Order Status */}
+            <Card
+                title="📦 Order Status"
+                bordered={false}
+                style={{ marginBottom: 34, borderRadius: 16, marginTop: 34 }}
+                headStyle={{ fontSize: 16, backgroundColor: '#e6f7ff' }}
+            >
+                <Row gutter={[24, 24]}>
+                    {loading ? (
+                        <Col span={24} style={{ textAlign: 'center' }}>
+                            <Spin size="large" />
+                        </Col>
+                    ) : (
+                        Object.entries(orderStatusCounts).map(([status, count]) => (
+                            <Col xs={24} sm={12} md={6} key={status}>
+                                <Card
+                                    hoverable
+                                    bordered={false}
+                                    style={{
+                                        backgroundColor: statusMeta[status as keyof typeof statusMeta].color
+                                        ,
+                                        color: '#fff',
+                                        borderRadius: 12,
+                                        textAlign: 'center',
+                                    }}
+                                >
+                                    <div style={{ fontSize: 36, marginBottom: 8 }}>
+                                        {statusMeta[status as keyof typeof statusMeta].icon}
+                                    </div>
+                                    <div style={{ fontSize: 18, fontWeight: 600 }}>
+                                        {status.replace(/([A-Z])/g, ' $1').toUpperCase()}
+                                    </div>
+                                    <div style={{ fontSize: 28, fontWeight: 700 }}>{count}</div>
+                                </Card>
+                            </Col>
+                        ))
+                    )}
+                </Row>
+            </Card>
+
+            {/* Ticket Status */}
+            <Card
+                title="🎫 Ticket Status"
+                bordered={false}
+                style={{ marginBottom: 24, borderRadius: 16 }}
+                headStyle={{ fontSize: 16, backgroundColor: '#fff1f0' }}
+            >
+                <Row gutter={[24, 24]}>
+                    {loading ? (
+                        <Col span={24} style={{ textAlign: 'center' }}>
+                            <Spin size="large" />
+                        </Col>
+                    ) : (
+                        Object.entries(ticketStatusCounts).map(([status, count]) => (
+                            <Col xs={24} sm={12} md={6} key={status}>
+                                <Card
+                                    hoverable
+                                    bordered={false}
+                                    style={{
+
+                                        backgroundColor: statusMetaTicket[status as keyof typeof statusMetaTicket].color,
+                                        color: '#fff',
+                                        borderRadius: 12,
+                                        textAlign: 'center',
+                                    }}
+                                >
+                                    <div style={{ fontSize: 36, marginBottom: 8 }}>
+                                        {statusMetaTicket[status as keyof typeof statusMetaTicket].icon}
+                                    </div>
+                                    <div style={{ fontSize: 18, fontWeight: 600 }}>
+                                        {status.replace(/([A-Z])/g, ' $1').toUpperCase()}
+                                    </div>
+                                    <div style={{ fontSize: 28, fontWeight: 700 }}>{count}</div>
+                                </Card>
+                            </Col>
+                        ))
+                    )}
+                </Row>
+            </Card>
+
+            {/* Order Details */}
+            <div style={{ marginBottom: 24 }}>
+                <Title level={4} style={{ marginBottom: 12 }}>📑 Order Details</Title>
                 <OrderDetailsComponent />
             </div>
 
+            {/* Student Tickets Section */}
+            <div style={{ marginBottom: 24 }}>
+                <Title level={4} style={{ marginBottom: 12 }}>🎟️ Your Tickets</Title>
+                <StudentTickets />
+            </div>
         </div>
     );
 };
 
 export default UserDashboard;
+
+

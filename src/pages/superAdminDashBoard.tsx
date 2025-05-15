@@ -24,6 +24,15 @@ const statusMeta = {
     completed: { color: '#66BB6A', icon: <CheckCircleOutlined /> },
     awaitingClarification: { color: '#FFCA28', icon: <InfoCircleOutlined /> },
 };
+interface TicketStatusCount {
+    ticketStatus: string;
+    count: number;
+}
+const statusMetaTicket = {
+    pending: { color: '#FFA726', icon: <HourglassOutlined /> },
+    inProgress: { color: '#42A5F5', icon: <PlayCircleOutlined /> },
+    resolved: { color: '#66BB6A', icon: <CheckCircleOutlined /> },
+};
 
 const SuperAdminDashboard: React.FC = () => {
     const [orderStatusCounts, setOrderStatusCounts] = useState<Record<string, number>>({
@@ -34,10 +43,41 @@ const SuperAdminDashboard: React.FC = () => {
     });
     const [loading, setLoading] = useState(false);
     const [showProfile, setShowProfile] = useState(false);
-
+    const [ticketStatusCounts, setTicketStatusCounts] = useState<Record<string, number>>({
+        pending: 0,
+        inProgress: 0,
+        resolved: 0,
+    });
     useEffect(() => {
         fetchOrderStatusCounts();
     }, []);
+    useEffect(() => {
+        fetchTicketStatusCounts();
+    }, []);
+    const fetchTicketStatusCounts = async () => {
+        setLoading(true);
+        try {
+            const response: any = await ApiService.get('/raise-ticket/ticket-counts');
+            if (response.success && Array.isArray(response.data)) {
+                const defaultCounts = {
+                    pending: 0,
+                    inProgress: 0,
+                    resolved: 0,
+                };
+                response.data.forEach((item: TicketStatusCount) => {
+                    defaultCounts[item.ticketStatus as keyof typeof defaultCounts] = item.count;
+                });
+                setTicketStatusCounts(defaultCounts);
+            } else {
+                message.error(response.message || 'Failed to fetch order status counts.');
+            }
+        } catch (error) {
+            console.error('Fetch error:', error);
+            message.error('An error occurred while fetching order status counts.');
+        } finally {
+            setLoading(false);
+        }
+    };
 
     const fetchOrderStatusCounts = async () => {
         setLoading(true);
@@ -128,7 +168,7 @@ const SuperAdminDashboard: React.FC = () => {
         //     </Row>
         // </div>
 
-        <div style={{ padding: 32, fontFamily: "'Poppins', sans-serif", backgroundColor: '#088ba1', minHeight: '100vh'}}>
+        <div style={{ padding: 32, fontFamily: "'Poppins', sans-serif", backgroundColor: '#088ba1', minHeight: '100vh' }}>
             {/* Header */}
             <div style={{
                 display: 'flex',
@@ -155,7 +195,7 @@ const SuperAdminDashboard: React.FC = () => {
                     marginBottom: 20,
                     padding: 16,
                     borderRadius: 12,
-                    backgroundColor: '#ffffff',
+                    // backgroundColor: '#ffffff',
                     boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
                 }}>
                     <ProfileUser />
@@ -163,50 +203,84 @@ const SuperAdminDashboard: React.FC = () => {
             )}
 
             {/* Status Cards */}
-            <Row gutter={[24, 24]}>
-                {loading ? (
-                    <Col span={24} style={{ textAlign: 'center' }}>
-                        <Spin size="small" />
-                    </Col>
-                ) : (
-                    Object.entries(orderStatusCounts).map(([status, count]) => (
-                        <Col xs={24} sm={12} md={8} lg={6} key={status}>
-                            <Card
-                                bordered={false}
-                                hoverable
-                                style={{
-                                    background: `linear-gradient(135deg, ${statusMeta[status as keyof typeof statusMeta].color} 0%, #1f1f1f 100%)`,
-                                    color: '#fff',
-                                    textAlign: 'center',
-                                    borderRadius: 16,
-                                    boxShadow: '0 8px 20px rgba(0,0,0,0.15)',
-                                    transition: 'transform 0.3s ease, filter 0.3s ease',
-                                    padding: '24px 16px'
-                                }}
-                                bodyStyle={{ padding: 0 }}
-                                onMouseEnter={(e) => {
-                                    (e.currentTarget.style.transform = 'scale(1.05)');
-                                    (e.currentTarget.style.filter = 'brightness(1.05)');
-                                }}
-                                onMouseLeave={(e) => {
-                                    (e.currentTarget.style.transform = 'scale(1)');
-                                    (e.currentTarget.style.filter = 'brightness(1)');
-                                }}
-                            >
-                                <div style={{ fontSize: '40px', marginBottom: 12 }}>
-                                    {statusMeta[status as keyof typeof statusMeta].icon}
-                                </div>
-                                <div style={{ fontSize: '16px', fontWeight: 600, marginBottom: 4, letterSpacing: 0.5 }}>
-                                    {status.replace(/([A-Z])/g, ' $1').toUpperCase()}
-                                </div>
-                                <div style={{ fontSize: '30px', fontWeight: 700 }}>
-                                    {count}
-                                </div>
-                            </Card>
+            <Card
+                title="📦 Order Status"
+                bordered={false}
+                style={{ marginBottom: 34, borderRadius: 16, marginTop: 34 }}
+                headStyle={{ fontSize: 16, backgroundColor: '#e6f7ff' }}
+            >
+                <Row gutter={[24, 24]}>
+                    {loading ? (
+                        <Col span={24} style={{ textAlign: 'center' }}>
+                            <Spin size="large" />
                         </Col>
-                    ))
-                )}
-            </Row>
+                    ) : (
+                        Object.entries(orderStatusCounts).map(([status, count]) => (
+                            <Col xs={24} sm={12} md={6} key={status}>
+                                <Card
+                                    hoverable
+                                    bordered={false}
+                                    style={{
+                                        backgroundColor: statusMeta[status as keyof typeof statusMeta].color
+                                        ,
+                                        color: '#fff',
+                                        borderRadius: 12,
+                                        textAlign: 'center',
+                                    }}
+                                >
+                                    <div style={{ fontSize: 36, marginBottom: 8 }}>
+                                        {statusMeta[status as keyof typeof statusMeta].icon}
+                                    </div>
+                                    <div style={{ fontSize: 18, fontWeight: 600 }}>
+                                        {status.replace(/([A-Z])/g, ' $1').toUpperCase()}
+                                    </div>
+                                    <div style={{ fontSize: 28, fontWeight: 700 }}>{count}</div>
+                                </Card>
+                            </Col>
+                        ))
+                    )}
+                </Row>
+            </Card>
+
+            {/* Ticket Status */}
+            <Card
+                title="🎫 Ticket Status"
+                bordered={false}
+                style={{ marginBottom: 24, borderRadius: 16 }}
+                headStyle={{ fontSize: 16, backgroundColor: '#fff1f0' }}
+            >
+                <Row gutter={[24, 24]}>
+                    {loading ? (
+                        <Col span={24} style={{ textAlign: 'center' }}>
+                            <Spin size="large" />
+                        </Col>
+                    ) : (
+                        Object.entries(ticketStatusCounts).map(([status, count]) => (
+                            <Col xs={24} sm={12} md={6} key={status}>
+                                <Card
+                                    hoverable
+                                    bordered={false}
+                                    style={{
+
+                                        backgroundColor: statusMetaTicket[status as keyof typeof statusMetaTicket].color,
+                                        color: '#fff',
+                                        borderRadius: 12,
+                                        textAlign: 'center',
+                                    }}
+                                >
+                                    <div style={{ fontSize: 36, marginBottom: 8 }}>
+                                        {statusMetaTicket[status as keyof typeof statusMetaTicket].icon}
+                                    </div>
+                                    <div style={{ fontSize: 18, fontWeight: 600 }}>
+                                        {status.replace(/([A-Z])/g, ' $1').toUpperCase()}
+                                    </div>
+                                    <div style={{ fontSize: 28, fontWeight: 700 }}>{count}</div>
+                                </Card>
+                            </Col>
+                        ))
+                    )}
+                </Row>
+            </Card>
         </div>
 
     );

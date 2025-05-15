@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { Form, Input, Button, Select, message } from 'antd';
+import { Form, Input, Button, Select, message, Card } from 'antd';
 import axios from 'axios';
 import ApiService from '../services/ApiService';
 
@@ -45,40 +45,89 @@ const RaiseTicketForm: React.FC = () => {
   };
 
   return (
-    <Form
-      form={form}
-      layout="vertical"
-      onFinish={onFinish}
-      style={{ maxWidth: 500, margin: '0 auto' }}
+    // <Form
+    //   form={form}
+    //   layout="vertical"
+    //   onFinish={onFinish}
+    //   style={{ maxWidth: 500, margin: '0 auto' }}
+    // >
+    //   <Form.Item
+    //     label="Order ID"
+    //     name="orderId"
+    //     rules={[{ required: true, message: 'Please select your order ID' }]}
+    //   >
+    //     <Select placeholder="Select your order ID">
+    //       {orderIds.map((orderId) => (
+    //         <Select.Option key={orderId} value={orderId}>
+    //           {orderId}
+    //         </Select.Option>
+    //       ))}
+    //     </Select>
+    //   </Form.Item>
+
+    //   <Form.Item
+    //     label="Description"
+    //     name="description"
+    //     rules={[{ required: true, message: 'Please describe your issue' }]}
+    //   >
+    //     <Input.TextArea rows={4} placeholder="Describe the issue you're facing" />
+    //   </Form.Item>
+
+    //   <Form.Item>
+    //     <Button type="primary" htmlType="submit">
+    //       Submit Ticket
+    //     </Button>
+    //   </Form.Item>
+    // </Form>
+
+    <Card
+      title="📝 Submit Support Ticket"
+      bordered={false}
+      style={{
+        maxWidth: 600,
+        margin: '40px auto',
+        padding: 24,
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+        borderRadius: 12,
+      }}
     >
-      <Form.Item
-        label="Order ID"
-        name="orderId"
-        rules={[{ required: true, message: 'Please select your order ID' }]}
+      <Form
+        form={form}
+        layout="vertical"
+        onFinish={onFinish}
       >
-        <Select placeholder="Select your order ID">
-          {orderIds.map((orderId) => (
-            <Select.Option key={orderId} value={orderId}>
-              {orderId}
-            </Select.Option>
-          ))}
-        </Select>
-      </Form.Item>
+        <Form.Item
+          label="Order ID"
+          name="orderId"
+          rules={[{ required: true, message: 'Please select your order ID' }]}
+        >
+          <Select placeholder="Select your order ID">
+            {orderIds.map((orderId) => (
+              <Select.Option key={orderId} value={orderId}>
+                {orderId}
+              </Select.Option>
+            ))}
+          </Select>
+        </Form.Item>
 
-      <Form.Item
-        label="Description"
-        name="description"
-        rules={[{ required: true, message: 'Please describe your issue' }]}
-      >
-        <Input.TextArea rows={4} placeholder="Describe the issue you're facing" />
-      </Form.Item>
+        <Form.Item
+          label="Description"
+          name="description"
+          rules={[{ required: true, message: 'Please describe your issue' }]}
+        >
+          <Input.TextArea
+            rows={4}
+            placeholder="Describe the issue you're facing"
+          />
+        </Form.Item>
 
-      <Form.Item>
-        <Button type="primary" htmlType="submit">
-          Submit Ticket
-        </Button>
-      </Form.Item>
-    </Form>
+        <Form.Item style={{ textAlign: 'center' }}>
+          <Button type="primary" htmlType="submit">
+            Submit Ticket
+          </Button>
+        </Form.Item>
+      </Form>
+    </Card>
   );
 };
 

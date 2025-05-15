@@ -79,6 +79,7 @@ import ResearchPaper from "./Research";
 import Thesis from "./ThesisWork";
 import WriteMyPaper from "./writeMyPaper";
 import ChatWidget from "./ChatWidget";
+import Ticket from "./AllTicketsTable";
 
 // import './BodyLayout.css';
 
@@ -129,6 +130,8 @@ const BodyLayout: React.FC = () => {
         <Route path="/changepassword" element={<ChangePasswordForm />} />
         <Route path="/adduser" element={<AddUser />} />
         <Route path="/createblog" element={<BlogForm />} />
+        <Route path="/allTickets" element={<Ticket />} />
+
         <Route path="/sampleTable" element={<SampleTable />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/editblog/:id" element={<BlogForm />} />

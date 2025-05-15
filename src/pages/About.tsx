@@ -273,7 +273,7 @@ const About: React.FC = () => {
       {/* Hero Section with Background Image */}
       <div
         style={{
-          // backgroundImage: `url(${can})`,
+          backgroundImage: `url(${bg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: '220px 20px 180px',
@@ -288,10 +288,10 @@ const About: React.FC = () => {
           transition={{ duration: 0.6 }}
           style={{ flex: 1, minWidth: '300px', paddingRight: '2rem' }}
         >
-          <Title level={1} style={{ color: '#41383b', fontWeight: 'bold' }}>
+          <Title level={1} style={{ color: '#fff', fontWeight: 'bold' }}>
             Assignment Writing Service
           </Title>
-          <Paragraph style={{ color: '#41383b', fontSize: '1.1rem', maxWidth: 600 }}>
+          <Paragraph style={{ color: '#fff', fontSize: '2rem',fontWeight:'bold'}}>
             Assignment Junction is an assignment writing company where you can hire experts to write and proofread all academic papers, including essays, research papers, and more.
           </Paragraph>
         </motion.div>

@@ -1,15 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {
-  Form,
-  Input,
-  DatePicker,
-  InputNumber,
-  Upload,
-  Checkbox,
-  Button,
-  message,
-} from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
+import { Form, Input, InputNumber, DatePicker, Upload, Button, Checkbox, Row, Col, message, Card } from 'antd';
+import { UploadOutlined } from '@ant-design/icons'
 import { RcFile } from 'antd/es/upload';
 import axios from 'axios'; // Use Axios or Fetch for making HTTP requests
 import ApiService from '../services/ApiService';
@@ -77,83 +68,208 @@ const OrderAssignmentForm: React.FC = () => {
   };
 
   return (
-    <Form
-      form={form}
-      layout="vertical"
-      onFinish={onFinish}
-      initialValues={{ agreement: false }}
+    // <Form
+    //   form={form}
+    //   layout="vertical"
+    //   onFinish={onFinish}
+    //   initialValues={{ agreement: false }}
+    // >
+    //   <Form.Item
+    //     label="Subject"
+    //     name="subject"
+    //     rules={[{ required: true, message: 'Please enter the subject' }]}>
+    //     <Input />
+    //   </Form.Item>
+
+    //   <Form.Item
+    //     label="University"
+    //     name="university"
+    //     rules={[{ required: true, message: 'Please enter your university' }]}>
+    //     <Input />
+    //   </Form.Item>
+
+    //   <Form.Item
+    //     label="Deadline"
+    //     name="deadline"
+    //     rules={[{ required: true, message: 'Please select a deadline' }]}>
+    //     <DatePicker showTime style={{ width: '100%' }} />
+    //   </Form.Item>
+
+    //   <Form.Item
+    //     label="Word Count"
+    //     name="wordCount"
+    //     rules={[{ required: true, message: 'Please enter word count' }]}>
+    //     <InputNumber
+    //       min={1}
+    //       style={{ width: '100%' }}
+    //       onChange={(value) => setWordCount(value || 0)}
+    //     />
+    //   </Form.Item>
+
+    //   <Form.Item label="No. of Pages (1 page = 250 words)" name="pages">
+    //     <InputNumber value={pageCount} disabled style={{ width: '100%' }} />
+    //   </Form.Item>
+
+    //   <Form.Item
+    //     label="Assignment Description"
+    //     name="description"
+    //     rules={[{ required: true, message: 'Please describe your assignment' }]}>
+    //     <Input.TextArea rows={4} />
+    //   </Form.Item>
+
+    //   <Form.Item
+    //     label="Attach Files"
+    //     name="files"
+    //     valuePropName="fileList"
+    //     getValueFromEvent={normFile}
+    //   >
+    //     <Upload name="files" multiple beforeUpload={() => false}>
+    //       <Button icon={<UploadOutlined />}>Click to Upload</Button>
+    //     </Upload>
+    //   </Form.Item>
+
+
+    //   <Form.Item
+    //     name="agreement"
+    //     valuePropName="checked"
+    //     rules={[{ validator: (_, value) => value ? Promise.resolve() : Promise.reject(new Error('You must accept the terms and conditions')) }]}>
+    //     <Checkbox>
+    //       I accept the T&C and other policies of the website and agree to
+    //       receive updates.
+    //     </Checkbox>
+    //   </Form.Item>
+
+    //   <Form.Item>
+    //     <Button type="primary" htmlType="submit">
+    //       Submit Assignment
+    //     </Button>
+    //   </Form.Item>
+    // </Form>
+
+    <Card
+      title="📄 Submit Assignment"
+      bordered={false}
+      style={{
+        maxWidth: 1000,
+        margin: '0 auto',
+        boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+        borderRadius: 12,
+      }}
     >
-      <Form.Item
-        label="Subject"
-        name="subject"
-        rules={[{ required: true, message: 'Please enter the subject' }]}>
-        <Input />
-      </Form.Item>
-
-      <Form.Item
-        label="University"
-        name="university"
-        rules={[{ required: true, message: 'Please enter your university' }]}>
-        <Input />
-      </Form.Item>
-
-      <Form.Item
-        label="Deadline"
-        name="deadline"
-        rules={[{ required: true, message: 'Please select a deadline' }]}>
-        <DatePicker showTime style={{ width: '100%' }} />
-      </Form.Item>
-
-      <Form.Item
-        label="Word Count"
-        name="wordCount"
-        rules={[{ required: true, message: 'Please enter word count' }]}>
-        <InputNumber
-          min={1}
-          style={{ width: '100%' }}
-          onChange={(value) => setWordCount(value || 0)}
-        />
-      </Form.Item>
-
-      <Form.Item label="No. of Pages (1 page = 250 words)" name="pages">
-        <InputNumber value={pageCount} disabled style={{ width: '100%' }} />
-      </Form.Item>
-
-      <Form.Item
-        label="Assignment Description"
-        name="description"
-        rules={[{ required: true, message: 'Please describe your assignment' }]}>
-        <Input.TextArea rows={4} />
-      </Form.Item>
-
-      <Form.Item
-        label="Attach Files"
-        name="files"
-        valuePropName="fileList"
-        getValueFromEvent={normFile}
+      <Form
+        form={form}
+        layout="vertical"
+        onFinish={onFinish}
+        initialValues={{ agreement: false }}
       >
-        <Upload name="files" multiple beforeUpload={() => false}>
-          <Button icon={<UploadOutlined />}>Click to Upload</Button>
-        </Upload>
-      </Form.Item>
+        <Row gutter={16}>
+          <Col span={12}>
+            <Form.Item
+              label="Subject"
+              name="subject"
+              rules={[{ required: true, message: 'Please enter the subject' }]}
+            >
+              <Input placeholder="e.g. Computer Science" />
+            </Form.Item>
+          </Col>
+          <Col span={12}>
+            <Form.Item
+              label="University"
+              name="university"
+              rules={[{ required: true, message: 'Please enter your university' }]}
+            >
+              <Input placeholder="e.g. Oxford University" />
+            </Form.Item>
+          </Col>
+        </Row>
 
+        <Row gutter={16}>
+          <Col span={12}>
+            <Form.Item
+              label="Word Count"
+              name="wordCount"
+              rules={[{ required: true, message: 'Please enter word count' }]}
+            >
+              <InputNumber
+                min={1}
+                style={{ width: '100%' }}
+                onChange={(value) => setWordCount(value || 0)}
+                placeholder="e.g. 1500"
+              />
+            </Form.Item>
+          </Col>
+          <Col span={12}>
+            <Form.Item
+              label="No. of Pages (1 page = 250 words)"
+              name="pages"
+            >
+              <InputNumber
+                value={pageCount}
+                disabled
+                style={{ width: '100%' }}
+              />
+            </Form.Item>
+          </Col>
+        </Row>
 
-      <Form.Item
-        name="agreement"
-        valuePropName="checked"
-        rules={[{ validator: (_, value) => value ? Promise.resolve() : Promise.reject(new Error('You must accept the terms and conditions')) }]}>
-        <Checkbox>
-          I accept the T&C and other policies of the website and agree to
-          receive updates.
-        </Checkbox>
-      </Form.Item>
+        <Row gutter={16}>
+          <Col span={12}>
+            <Form.Item
+              label="Deadline"
+              name="deadline"
+              rules={[{ required: true, message: 'Please select a deadline' }]}
+            >
+              <DatePicker showTime style={{ width: '100%' }} />
+            </Form.Item>
+          </Col>
+        </Row>
 
-      <Form.Item>
-        <Button type="primary" htmlType="submit">
-          Submit Assignment
-        </Button>
-      </Form.Item>
-    </Form>
+        <Form.Item
+          label="Assignment Description"
+          name="description"
+          rules={[{ required: true, message: 'Please describe your assignment' }]}
+        >
+          <Input.TextArea rows={4} placeholder="Describe your assignment..." />
+        </Form.Item>
+
+        <Form.Item
+          label="Attach Files"
+          name="files"
+          valuePropName="fileList"
+          getValueFromEvent={normFile}
+        >
+          <Upload name="files" multiple beforeUpload={() => false}>
+            <Button icon={<UploadOutlined />}>Click to Upload</Button>
+          </Upload>
+        </Form.Item>
+
+        <Form.Item
+          name="agreement"
+          valuePropName="checked"
+          rules={[
+            {
+              validator: (_, value) =>
+                value
+                  ? Promise.resolve()
+                  : Promise.reject(
+                    new Error('You must accept the terms and conditions')
+                  ),
+            },
+          ]}
+        >
+          <Checkbox>
+            I accept the T&C and other policies of the website and agree to receive updates.
+          </Checkbox>
+        </Form.Item>
+
+        <Form.Item style={{ textAlign: 'right' }}>
+          <Button type="primary" htmlType="submit">
+            Submit Assignment
+          </Button>
+        </Form.Item>
+      </Form>
+    </Card>
+
   );
 };
 

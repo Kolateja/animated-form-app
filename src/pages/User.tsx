@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Form, Input, Button, Typography, Select, Row, Col } from 'antd';
+import { Form, Input, Button, Typography, Select, Row, Col, Card } from 'antd';
 import AnimatedPage from '../components/AnimatedPage';
 import ApiService from '../services/ApiService';
 
@@ -38,19 +38,16 @@ const AddUser: React.FC = () => {
     };
 
     return (
-        <AnimatedPage>
+       
             <div
-                style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    minHeight: '100vh',
-                    background: '#f0f2f5',
-                    padding: '20px',
-                    width: '800px'
-                }}
             >
-                <div style={{ width: '100%', maxWidth: 1700 }}>
+                <Card     style={{
+                    maxWidth: 800,
+                    margin: '40px auto',
+                    padding: 24,
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+                    borderRadius: 12,
+                }}>
                     <Title level={2} style={{ textAlign: 'center', marginBottom: 30 }}>
                         Create an Account
                     </Title>
@@ -123,9 +120,9 @@ const AddUser: React.FC = () => {
                             </Col>
                         </Row>
                     </Form>
-                </div>
+                </Card>
             </div>
-        </AnimatedPage>
+       
     );
 };
 

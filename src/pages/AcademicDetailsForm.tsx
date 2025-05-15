@@ -138,7 +138,7 @@
 
 // export default AcademicDetailsForm;
 import React, { useEffect, useState } from 'react';
-import { Form, Input, DatePicker, Button, message, Row, Col } from 'antd';
+import { Form, Input, DatePicker, Button, message, Row, Col, Space, Card } from 'antd';
 import ApiService from '../services/ApiService';
 import dayjs from 'dayjs';
 
@@ -215,34 +215,148 @@ const AcademicDetailsForm: React.FC = () => {
   );
 
   return (
-    <Form form={form} layout="vertical" onFinish={onFinish}>
-      <h2 style={{ textAlign: 'center', color: '#f28c00' }}>Academic Details</h2>
-      <Row gutter={24}>
-        {renderItem('University', 'university')}
-        {renderItem('Date of Birth', 'dateOfBirth', true)}
-        {renderItem('Semester', 'semester')}
-        {renderItem('Course', 'course')}
-        {renderItem('State/Province of Origin', 'stateProvinceOfOrigin')}
-        {renderItem('Country of Origin', 'countryOfOrigin')}
-        {renderItem('Current Country of Study', 'currentCountryOfStudy')}
-        {renderItem('Current State/Province of Study', 'currentStateProvinceOfStudy')}
-      </Row>
+    // <Form form={form} layout="vertical" onFinish={onFinish}>
+    //   <h2 style={{ textAlign: 'center', color: '#f28c00' }}>Academic Details</h2>
+    //   <Row gutter={24}>
+    //     {renderItem('University', 'university')}
+    //     {renderItem('Date of Birth', 'dateOfBirth', true)}
+    //     {renderItem('Semester', 'semester')}
+    //     {renderItem('Course', 'course')}
+    //     {renderItem('State/Province of Origin', 'stateProvinceOfOrigin')}
+    //     {renderItem('Country of Origin', 'countryOfOrigin')}
+    //     {renderItem('Current Country of Study', 'currentCountryOfStudy')}
+    //     {renderItem('Current State/Province of Study', 'currentStateProvinceOfStudy')}
+    //   </Row>
 
-      <Form.Item>
-        {isEditMode ? (
-          <div style={{ display: 'flex', gap: 8 }}>
-            <Button type="primary" htmlType="submit">
-              Save
+    //   <Form.Item>
+    //     {isEditMode ? (
+    //       <div style={{ display: 'flex', gap: 8 }}>
+    //         <Button type="primary" htmlType="submit">
+    //           Save
+    //         </Button>
+    //         <Button onClick={() => setIsEditMode(false)}>Cancel</Button>
+    //       </div>
+    //     ) : (
+    //       <Button type="primary" onClick={() => setIsEditMode(true)}>
+    //         Edit
+    //       </Button>
+    //     )}
+    //   </Form.Item>
+    // </Form>
+    <Card
+      title="🎓 Academic Details"
+      bordered={false}
+      style={{
+        maxWidth: 1000,
+        margin: '0 auto',
+        boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+        borderRadius: 12,
+      }}
+    >
+      <Form form={form} layout="vertical" onFinish={onFinish}>
+        <h2 style={{ textAlign: 'center', color: '#f28c00', marginBottom: 24 }}>
+          Academic Details
+        </h2>
+
+        <Row gutter={[16, 16]}>
+          <Col xs={24} sm={12}>
+            <Form.Item
+              label="University"
+              name="university"
+              rules={[{ required: true, message: 'Please enter your university' }]}
+            >
+              <Input placeholder="e.g. University of XYZ" />
+            </Form.Item>
+          </Col>
+
+          <Col xs={24} sm={12}>
+            <Form.Item
+              label="Date of Birth"
+              name="dateOfBirth"
+              rules={[{ required: true, message: 'Please select your birth date' }]}
+            >
+              <DatePicker style={{ width: '100%' }} />
+            </Form.Item>
+          </Col>
+
+          <Col xs={24} sm={12}>
+            <Form.Item
+              label="Semester"
+              name="semester"
+              rules={[{ required: true, message: 'Please enter your semester' }]}
+            >
+              <Input placeholder="e.g. 4th Semester" />
+            </Form.Item>
+          </Col>
+
+          <Col xs={24} sm={12}>
+            <Form.Item
+              label="Course"
+              name="course"
+              rules={[{ required: true, message: 'Please enter your course' }]}
+            >
+              <Input placeholder="e.g. B.Sc. Computer Science" />
+            </Form.Item>
+          </Col>
+
+          <Col xs={24} sm={12}>
+            <Form.Item
+              label="State/Province of Origin"
+              name="stateProvinceOfOrigin"
+              rules={[{ required: true, message: 'Please enter state/province of origin' }]}
+            >
+              <Input />
+            </Form.Item>
+          </Col>
+
+          <Col xs={24} sm={12}>
+            <Form.Item
+              label="Country of Origin"
+              name="countryOfOrigin"
+              rules={[{ required: true, message: 'Please enter country of origin' }]}
+            >
+              <Input />
+            </Form.Item>
+          </Col>
+
+          <Col xs={24} sm={12}>
+            <Form.Item
+              label="Current Country of Study"
+              name="currentCountryOfStudy"
+              rules={[{ required: true, message: 'Please enter your current country of study' }]}
+            >
+              <Input />
+            </Form.Item>
+          </Col>
+
+          <Col xs={24} sm={12}>
+            <Form.Item
+              label="Current State/Province of Study"
+              name="currentStateProvinceOfStudy"
+              rules={[{ required: true, message: 'Please enter your current state/province of study' }]}
+            >
+              <Input />
+            </Form.Item>
+          </Col>
+        </Row>
+
+        <Form.Item style={{ textAlign: 'center', marginTop: 24 }}>
+          {isEditMode ? (
+            <Space>
+              <Button type="primary" htmlType="submit">
+                Save
+              </Button>
+              <Button onClick={() => setIsEditMode(false)}>Cancel</Button>
+            </Space>
+          ) : (
+            <Button type="primary" onClick={() => setIsEditMode(true)}>
+              Edit
             </Button>
-            <Button onClick={() => setIsEditMode(false)}>Cancel</Button>
-          </div>
-        ) : (
-          <Button type="primary" onClick={() => setIsEditMode(true)}>
-            Edit
-          </Button>
-        )}
-      </Form.Item>
-    </Form>
+          )}
+        </Form.Item>
+      </Form>
+    </Card>
+
   );
 };
 

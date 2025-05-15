@@ -164,7 +164,7 @@ const faqs = {
     ],
 };
 const renderFaqs = (faqList: { question: string; answer: string }[]) => (
-    <div style={{ width: 1300 /* or any fixed value you want */ }}>
+    <div style={{ width: 1300 }}>
         <Collapse
             accordion
             bordered={false}
@@ -173,15 +173,13 @@ const renderFaqs = (faqList: { question: string; answer: string }[]) => (
                 borderRadius: 22,
                 boxShadow: '0 2px 12px rgba(0,0,0,0.05)',
                 padding: 16,
-                width: '100%' // make it fill the wrapper
+                width: '100%',
             }}
         >
             {faqList.map((faq, index) => (
-                <Panel header={faq.question} key={index}>
+                <Panel header={<b>{faq.question}</b>} key={index}>
                     <div style={{ height: 100 }}>
-                        <Title level={5} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                            <MessageOutlined style={{ color: '#1890ff' }} />
-                        </Title>
+                        <MessageOutlined style={{ color: '#1890ff' }} />
                         <Paragraph style={{ marginTop: 8, color: '#595959' }}>
                             {faq.answer}
                         </Paragraph>
@@ -191,6 +189,7 @@ const renderFaqs = (faqList: { question: string; answer: string }[]) => (
         </Collapse>
     </div>
 );
+
 
 
 
@@ -206,11 +205,12 @@ const FaqPage = () => {
             <Row justify="center" style={{ marginBottom: 24 }}>
                 <Col>
                     <Title level={2} style={{ textAlign: 'center', marginBottom: 0 }}>
-                        Frequently Asked Questions
+                        <b>Frequently Asked Questions</b>
                     </Title>
                     <Paragraph style={{ textAlign: 'center', color: '#777' }}>
-                        Get answers to the most common questions our students ask.
+                        <b>Get answers to the most common questions our students ask.</b>
                     </Paragraph>
+
                 </Col>
             </Row>
 
@@ -222,7 +222,7 @@ const FaqPage = () => {
                 size="large"
                 type="line"
             >
-                <TabPane tab="Assignment Enquiries" key="assignment">
+                <TabPane tab="Assignment Enquiries" key="assignment" style={{ textAlign: 'center', color: '#777', fontWeight: 'bold' }}>
                     {renderFaqs(faqs.assignment)}
                 </TabPane>
                 <TabPane tab="Payment Enquiries" key="payment">

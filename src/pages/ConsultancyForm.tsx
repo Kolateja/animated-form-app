@@ -36,11 +36,13 @@ const ConsultancyForm: React.FC = () => {
         <div>
             <Card
                 title={<span style={{ fontSize: '20px', fontWeight: '600' }}>Create Consultancy</span>}
+                bordered={false}
                 style={{
-                    width: '500px', // You can increase this further if needed
-                    padding: '30px',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-                    borderRadius: '10px',
+                    maxWidth: 600,
+                    margin: '40px auto',
+                    padding: 24,
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+                    borderRadius: 12,
                 }}
             >
                 <Form
