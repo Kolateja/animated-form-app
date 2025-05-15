@@ -26,15 +26,15 @@ interface TicketStatusCount {
 
 const statusMeta = {
     pending: { color: '#FFA726', icon: <HourglassOutlined /> },
-    inProgress: { color: '#42A5F5', icon: <PlayCircleOutlined /> },
-    completed: { color: '#66BB6A', icon: <CheckCircleOutlined /> },
-    awaitingClarification: { color: '#FFCA28', icon: <InfoCircleOutlined /> },
+    inProgress: { color: '#1E90FF', icon: <PlayCircleOutlined /> },
+    completed: { color: '#FF6B6B', icon: <CheckCircleOutlined /> },
+    awaitingClarification: { color: '#00C49F', icon: <InfoCircleOutlined /> },
 };
 
 const statusMetaTicket = {
-    pending: { color: '#FFA726', icon: <HourglassOutlined /> },
-    inProgress: { color: '#42A5F5', icon: <PlayCircleOutlined /> },
-    resolved: { color: '#66BB6A', icon: <CheckCircleOutlined /> },
+    pending: { color: '#7C4DFF', icon: <HourglassOutlined /> },
+    inProgress: { color: '#FF6B6B', icon: <PlayCircleOutlined /> },
+    resolved: { color: '#FFB300', icon: <CheckCircleOutlined /> },
 };
 
 const UserDashboard: React.FC = () => {

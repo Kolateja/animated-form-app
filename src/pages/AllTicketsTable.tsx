@@ -66,13 +66,14 @@ const Ticket: React.FC = () => {
         setUpdating(true);
         try {
             const response: any = await ApiService.put(`/raise-ticket/editTickets/${id}`, { ticketStatus: ticketStatus });
-            if (response.status) {
+            console.log(response, "???????")
+            if (response.success) {
                 alert('ticket status updated successfully');
                 message.success('ticket status updated successfully');
                 setOrders((prevData) =>
                     prevData.map((order) =>
                         order.id === id
-                            ? { ...order, orderStatus: ticketStatus as Ticket['ticketStatus'] }
+                            ? { ...order, ticketStatus: ticketStatus as Ticket['ticketStatus'] }
                             : order
                     )
                 );

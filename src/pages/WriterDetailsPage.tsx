@@ -29,14 +29,6 @@ interface WriterDetails {
     languageProficiency: string[];
     userId: string;
 }
-
-
-// const fadeIn = {
-//     initial: { opacity: 0, y: 20 },
-//     animate: { opacity: 1, y: 0 },
-//     exit: { opacity: 0, y: -20 },
-//     transition: { duration: 0.3 }
-// };
 interface FeedbackDetails {
     id: number;
     orderCode: string;
@@ -62,11 +54,32 @@ const WriterDetailsPage: React.FC = () => {
             try {
                 const writerRes: any = await ApiService.get(`/writer-details/${userId}`);
                 const feedbackRes: any = await ApiService.get(`/writer-feedback/${userId}`);
-                console.log(writerRes.data, ":::::::::::::")
+
+                console.log('✅ Full writer response:', writerRes);
+                console.log('✅ writerRes.data:', writerRes.data);
+
                 if (writerRes.success) {
-                    setWriterDetails(writerRes.data); // Set the writer details
+                    const data = writerRes.data;
+
+                    try {
+                        const parsedWriterDetails: WriterDetails = {
+                            ...data,
+                            workedCountries: Array.isArray(JSON.parse(data.workedCountries || '[]'))
+                                ? JSON.parse(data.workedCountries || '[]')
+                                : [JSON.parse(data.workedCountries || '[]')],
+                            educationalDetails: JSON.parse(data.educationalDetails || '[]'),
+                            subjectProficiency: JSON.parse(data.subjectProficiency || '[]'),
+                            languageProficiency: JSON.parse(data.languageProficiency || '[]'),
+                        };
+
+                        console.log('✅ Parsed writer details:', parsedWriterDetails);
+                        setWriterDetails(parsedWriterDetails);
+                    } catch (e) {
+                        console.error('🔥 Error parsing writer details:', e);
+                    }
                 }
-                console.log(feedbackRes.data, "??")
+
+                console.log('✅ feedbackRes.data:', feedbackRes.data);
                 if (feedbackRes.success) {
                     setFeedbackDetails(feedbackRes.data);
                 }
@@ -77,6 +90,7 @@ const WriterDetailsPage: React.FC = () => {
 
         fetchDetails();
     }, [userId]);
+
 
     return (
         <div style={{ padding: 24, width: '700px' }}>
@@ -190,62 +204,6 @@ const WriterDetailsPage: React.FC = () => {
                     )}
                 </AnimatePresence>
             </Card>
-
-            {/* <Card
-                title={
-                    <div
-                        style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}
-                        onClick={() =>
-                            setOpenSection(openSection === 'rating' ? null : 'rating')
-                        }
-                    >
-                        Writer Rating
-                        {openSection === 'rating'
-                            ? <MinusSquareOutlined style={{ marginLeft: 8 }} />
-                            : <PlusSquareOutlined style={{ marginLeft: 8 }} />}
-                    </div>
-                }
-                style={{ borderRadius: 8 }}
-                headStyle={{ backgroundColor: '#f0f2f5' }}
-                bodyStyle={{ padding: 0 }}
-            >
-                <AnimatePresence>
-                    {openSection === 'rating' && (
-                        <motion.div
-                            key="writerRating"
-                            initial="initial"
-                            animate="animate"
-                            exit="exit"
-                            variants={fadeIn}
-                            style={{ padding: 16 }}
-                        >
-                            {feedbackDetails ? (
-                                <motion.div key="feedbackDetails" {...fadeIn}>
-                                    <div><strong>Order Code:</strong> {feedbackDetails.orderCode}</div>
-                                    <div><strong>Writer Rating:</strong> {feedbackDetails.writerRating}</div>
-                                    <div><strong>Number of Edits:</strong> {feedbackDetails.numberOfEdits}</div>
-                                    <div><strong>Failed to Deliver:</strong> {feedbackDetails.failedToDeliver}</div>
-                                    <div><strong>Later Price Demanding:</strong> {feedbackDetails.laterPriceDemanding}</div>
-                                    <div><strong>Late Deliveries:</strong> {feedbackDetails.lateDeliveries}</div>
-                                    <div><strong>Assignment Failed:</strong> {feedbackDetails.assignmentFailed}</div>
-                                    <div><strong>Issues:</strong> {feedbackDetails.issues}</div>
-                                </motion.div>
-                            ) : (
-                                <motion.div
-                                    key="noFeedbackDetails"
-                                    {...fadeIn}
-                                    style={{ backgroundColor: '#ffff66', padding: 10 }}
-                                >
-                                    <strong>
-                                        !! Writer rating not available, kindly add the writer rating by clicking Add Feedback button
-                                    </strong>
-                                </motion.div>
-                            )}
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-            </Card> */}
-
             <Card
                 title={
                     <div

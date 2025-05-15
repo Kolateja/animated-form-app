@@ -56,16 +56,58 @@ const WriterEditDetailsPage: React.FC = () => {
     const [writerDetails, setWriterDetails] = useState<WriterDetails | null>(null);
     const [feedbackDetails, setFeedbackDetails] = useState<FeedbackDetails | null>(null);
 
+    // useEffect(() => {
+    //     const fetchDetails = async () => {
+    //         try {
+    //             const writerRes: any = await ApiService.get(`/writer-details/${userId}`);
+    //             const feedbackRes: any = await ApiService.get(`/writer-feedback/${userId}`);
+    //             console.log(writerRes.data, ":::::::::::::")
+    //             if (writerRes.success) {
+    //                 setWriterDetails(writerRes.data); // Set the writer details
+    //             }
+    //             console.log(feedbackRes.data, "??")
+    //             if (feedbackRes.success) {
+    //                 setFeedbackDetails(feedbackRes.data);
+    //             }
+    //         } catch (error) {
+    //             console.error('Error fetching writer data:', error);
+    //         }
+    //     };
+
+    //     fetchDetails();
+    // }, [userId]);
+
     useEffect(() => {
         const fetchDetails = async () => {
             try {
                 const writerRes: any = await ApiService.get(`/writer-details/${userId}`);
                 const feedbackRes: any = await ApiService.get(`/writer-feedback/${userId}`);
-                console.log(writerRes.data, ":::::::::::::")
+
+                console.log('✅ Full writer response:', writerRes);
+                console.log('✅ writerRes.data:', writerRes.data);
+
                 if (writerRes.success) {
-                    setWriterDetails(writerRes.data); // Set the writer details
+                    const data = writerRes.data;
+
+                    try {
+                        const parsedWriterDetails: WriterDetails = {
+                            ...data,
+                            workedCountries: Array.isArray(JSON.parse(data.workedCountries || '[]'))
+                                ? JSON.parse(data.workedCountries || '[]')
+                                : [JSON.parse(data.workedCountries || '[]')],
+                            educationalDetails: JSON.parse(data.educationalDetails || '[]'),
+                            subjectProficiency: JSON.parse(data.subjectProficiency || '[]'),
+                            languageProficiency: JSON.parse(data.languageProficiency || '[]'),
+                        };
+
+                        console.log('✅ Parsed writer details:', parsedWriterDetails);
+                        setWriterDetails(parsedWriterDetails);
+                    } catch (e) {
+                        console.error('🔥 Error parsing writer details:', e);
+                    }
                 }
-                console.log(feedbackRes.data, "??")
+
+                console.log('✅ feedbackRes.data:', feedbackRes.data);
                 if (feedbackRes.success) {
                     setFeedbackDetails(feedbackRes.data);
                 }
