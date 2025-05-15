@@ -1,14 +1,14 @@
-.forgot-container {
+.register-container {
   height: 100vh;
   width: 100%;
-  background: linear-gradient(to right, rgb(116, 144, 156), rgb(109, 147, 160), rgb(111, 162, 184));
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
   display: flex;
   justify-content: center;
   align-items: center;
   /* padding: 20px; */
 }
 
-.forgot-wrapper {
+.register-wrapper {
   display: flex;
   background-color: #fff;
   border-radius: 12px;
@@ -18,7 +18,7 @@
   width: 100%;
 }
 
-.forgot-left {
+.register-left {
   flex: 1;
   background-color: #f0f2f5;
   display: flex;
@@ -27,51 +27,45 @@
   /* padding: 30px; */
 }
 
-.forgot-image {
+.register-image {
   width: 100%;
   /* max-width: 350px; */
   object-fit: contain;
 }
 
-.forgot-right {
+.register-right {
   flex: 1;
   padding: 50px;
 }
 
-.forgot-title {
-  text-align: left;
-  margin-bottom: 20px;
+.register-title {
+  text-align: center;
+  margin-bottom: 30px;
   color: #333;
 }
 
-.forgot-subtitle {
-  text-align: left;
-  margin-bottom: 30px;
-  color: #555;
-}
-
-.forgot-input {
+.register-input {
   height: 40px;
   border-radius: 8px;
 }
 
-.forgot-button {
+.register-button {
   height: 40px;
   border-radius: 8px;
   background-color: #1890ff;
 }
 
-.forgot-alert {
-  margin-bottom: 20px;
-}
-
-.forgot-login-link {
+.register-login-text {
   text-align: center;
-  margin-top: 24px;
+  margin-top: 20px;
 }
 
-.forgot-login-link a {
+.register-login-button {
+  background: none;
+  border: none;
   color: #1890ff;
+  cursor: pointer;
   font-weight: 500;
+  padding: 0;
   text-decoration: underline;
 }
