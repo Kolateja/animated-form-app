@@ -80,6 +80,17 @@ import Thesis from "./ThesisWork";
 import WriteMyPaper from "./writeMyPaper";
 import ChatWidget from "./ChatWidget";
 import Ticket from "./AllTicketsTable";
+import Narrative from "./Narrative";
+import { Statistic } from "antd";
+import StatisticalAnalysis from "./Statistic";
+import ManuscriptWritingService from "./Manuscript";
+import PracticalAssignmentWriting from "./PracticalAssignment";
+import CapsStoneWriting from "./CapsStone";
+import CDRReport from "./CDRreport";
+import LabReport from "./LabReport";
+import VideoSolution from "./VideoSolution";
+import SpeechWritingComponent from "./SpeechWriting";
+import ProjectReportWriting from "./ProjectReportWriting";
 
 // import './BodyLayout.css';
 
@@ -100,6 +111,12 @@ const BodyLayout: React.FC = () => {
         <Route path="/proposal-writing-service" element={<ProposalWriting />} />
         <Route path="/assignment-help" element={<AssessmentHelpPage />} />
         <Route path="/case-study-help" element={<CaseStudy />} />
+        <Route path="/video-solutions" element={<VideoSolution />} />
+        <Route path="/speech-writing" element={<SpeechWritingComponent />} />
+        <Route path="/project-report-writing" element={<ProjectReportWriting />} />
+
+
+
         <Route
           path="/research-paper-writing-help"
           element={<ResearchPaper />}
@@ -109,8 +126,23 @@ const BodyLayout: React.FC = () => {
           element={<PowerPointWriting />}
         />
         <Route path="/homework-help" element={<HomeWork />} />
+        <Route path="/lab-report" element={<LabReport />} />
+
+        <Route path="/capstone-projects" element={<CapsStoneWriting />} />
+        <Route path="/cdr-reports" element={<CDRReport />} />
+
+
+
         <Route path="/take-my-online-exam" element={<OnlineExam />} />
         <Route path="/thesis-help" element={<Thesis />} />
+        <Route path="/narrative-writing" element={<Narrative />} />
+        <Route path="/statistical-analysis" element={<StatisticalAnalysis />} />
+        <Route path="/manuscript-writing-service" element={<ManuscriptWritingService />} />
+        <Route path="/practical-assignments-help" element={<PracticalAssignmentWriting />} />
+
+
+
+
         <Route path="/write-my-paper" element={<WriteMyPaper />} />
         <Route path="/coursework-help" element={<CourseWork />} />
         <Route path="/essay-writing-service" element={<EasyWriting />} />

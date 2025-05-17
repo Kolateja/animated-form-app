@@ -12,9 +12,9 @@
   /* display: flex;
     align-items: center;
     justify-content: space-between; */
-  padding: 10px 0;
+  /* padding: 10px 0; */
   /* Adjust padding to ensure proper space */
-  height: 80px;
+  /* height: 80px; */
   /* border-bottom: 1px solid #f0f0f0; */
   /* Reduced height for a more compact header */
 }
@@ -46,7 +46,7 @@
   display: block;
   height: auto;
   width: 100px;
-  max-height: 60px;
+  /* max-height: 60px; */
 
   /* Adjust logo size */
 }
@@ -113,4 +113,35 @@
 
 .services-link:hover {
   color: #1890ff;
+}
+
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.desktop-menu {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.mobile-menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Show hamburger on small screens */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
 }

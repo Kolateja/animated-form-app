@@ -111,25 +111,19 @@ const ContactForm: React.FC = () => {
   return (
     <div className="contact-form-wrapper">
       <div className="contact-form-banner">
-        <h2 className="contact-form-banner-heading">Contact Us</h2>
-      </div>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="contact-form-banner-header"
+        >
+          <h2 className="contact-form-banner-heading" style={{ textAlign: 'left', marginRight: '15rem', marginBottom: '30px' }}>
+            Contact us
+          </h2>
 
-      <div className="contact-form-container">
-        <div className="contact-form-left">
-          {/* <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Title level={2} className="contact-form-title">
-              Let's Get in Touch!
-            </Title>
-            <Text className="contact-form-subtitle">
-              Fill out the form or reach us directly through our contact methods
-              below.
-            </Text>
-          </motion.div>
+        </motion.div>
 
+        <div className="contact-form-banner-content">
           <div className="contact-form-social">
             {socialLinks.map((item, index) => (
               <Tooltip title={item.alt} key={index}>
@@ -147,20 +141,33 @@ const ContactForm: React.FC = () => {
 
           <div className="contact-form-quickinfo">
             <Text strong>
-              <PhoneOutlined /> <a href="tel:+918309368958">8309368958</a>
+              <PhoneOutlined style={{ marginRight: 8, color: '#0d74b0' }} /> <strong style={{ marginRight: 8, color: '#0d74b0' }}>Phone:</strong><br />
+              <a href="tel:+9177801 80946" style={{ color: '#0d74b0' }}>+91 77801 80946</a>
+
             </Text>
             <Text strong>
-              <WhatsAppOutlined />{" "}
-              <a href="https://wa.me/+61494311801">+61494311801</a>
+              <WhatsAppOutlined style={{ marginRight: 8, color: '#25D366' }} /> <strong style={{ marginRight: 8, color: '#25D366' }}>Whatsapp:</strong><br />
+              <a href="https://wa.me/+61494311801" style={{ color: '#25D366' }}>+61 494 311 801</a>
             </Text>
             <Text strong>
-              <MailOutlined />{" "}
-              <a href="mailto:assignmentlinkers@gmail.com">
+              <MailOutlined style={{ marginRight: 8, color: '#1a73e8' }} />
+              <strong style={{ marginRight: 8, color: '#1a73e8' }}>Mail</strong><br />
+              <a
+                href="mailto:assignmentlinkers@gmail.com"
+                style={{ color: '#1a73e8', textDecoration: 'none' }}
+              >
                 assignmentlinkers@gmail.com
               </a>
-            </Text>
-          </div> */}
 
+            </Text>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div className="contact-form-container">
+        <div className="contact-form-left">
           {/* <div className=""> */}
           <h2 className="contact-form-heading">Get in Touch</h2>
 
@@ -249,13 +256,18 @@ const ContactForm: React.FC = () => {
         <div className="contact-form-right">
           <iframe
             title="Location Map"
-            src="https://maps.google.com/maps?q=MIG%20797,%20Sitamahalakshmi%20Apartments,%20KPHB%20Phase%202,%20500072&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            src="https://maps.google.com/maps?q=146%2C%20Masjid%20Banda%20Main%20Rd%2C%20Masjid%20Banda%2C%20Sri%20Maruthi%20Nagar%20Colony%2C%20Serilingampalle%20(M)%2C%20Shivalik%20Block%20504%2C%20Telangana%20500019&t=&z=13&ie=UTF8&iwloc=&output=embed"
             className="contact-form-map"
             loading="lazy"
           />
         </div>
+
       </div>
     </div>
+
+
+
+
   );
 };
 

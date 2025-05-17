@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Row, Col, Typography } from 'antd';
 
 const { Title, Paragraph } = Typography;
@@ -46,6 +46,8 @@ const coreValues: CoreValue[] = [
 ];
 
 const CoreValues: React.FC = () => {
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
     return (
         <div style={{ padding: '2rem 1rem', textAlign: 'center' }}>
             <Title level={2} style={{ color: '#0f52ba', marginBottom: '2rem' }}>
@@ -57,6 +59,8 @@ const CoreValues: React.FC = () => {
                     <Col xs={24} sm={12} md={6} key={index}>
                         <Card
                             hoverable
+                            onMouseEnter={() => setHoveredIndex(index)}
+                            onMouseLeave={() => setHoveredIndex(null)}
                             style={{
                                 borderRadius: 12,
                                 boxShadow: `0 6px 20px ${item.color}40`, // add alpha to soften color
@@ -78,6 +82,8 @@ const CoreValues: React.FC = () => {
                                             margin: '0 auto',
                                             transformStyle: 'preserve-3d',
                                             transition: 'transform 0.6s',
+                                            transform:
+                                                hoveredIndex === index ? 'rotateY(180deg)' : 'rotateY(0deg)',
                                         }}
                                         className="flip-image"
                                     >
@@ -95,22 +101,23 @@ const CoreValues: React.FC = () => {
                                     </div>
                                 </div>
                             }
-                            onMouseEnter={(e) => {
-                                const flip = e.currentTarget.querySelector('.flip-image') as HTMLElement;
-                                if (flip) flip.style.transform = 'rotateY(180deg)';
-                            }}
-                            onMouseLeave={(e) => {
-                                const flip = e.currentTarget.querySelector('.flip-image') as HTMLElement;
-                                if (flip) flip.style.transform = 'rotateY(0deg)';
-                            }}
+
                         >
                             <Card.Meta
                                 title={
-                                    <Title level={5} style={{ marginBottom: 8 }}>
+                                    <Title level={5} style={{
+                                        marginBottom: 8,
+                                        color: hoveredIndex === index ? item.color : 'inherit',
+                                        transition: 'color 0.3s',
+                                    }}>
                                         {item.title}
                                     </Title>
                                 }
-                                description={<Paragraph style={{ fontSize: 12 }}>{item.description}</Paragraph>}
+                                description={<Paragraph style={{
+                                    marginBottom: 12,
+                                    color: hoveredIndex === index ? item.color : 'inherit',
+                                    transition: 'color 0.3s',
+                                }}>{item.description}</Paragraph>}
                             />
                         </Card>
                     </Col>

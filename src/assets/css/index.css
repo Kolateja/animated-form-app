@@ -476,23 +476,52 @@ h6 {
 #get-a-free-quote-now {
   margin-top: 30px;
 }
+
 #get-a-free-quote-now form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#footer {
+/* #footer {
   background: #112d4e;
-
   padding-top: 20px;
+} */
+
+#footer {
+  background-color: #dbdad9;
+  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  color: #fff;
+  padding: 40px 20px;
+  border-top: 2px solid #eaeaea;
+  text-align: center;
 }
+
+.footer-main-section {
+  display: flex;
+}
+
+
+@media (max-width: 600px) {
+  .footer-main-section {
+    flex-direction: column;
+  }
+}
+
 
 #footer .footer-links {
   margin-bottom: 30px;
 }
 #footer .footer-links .our-policies {
   margin-top: 45px;
+}
+
+@media (max-width:600px) {
+  #footer .footer-links .our-policies {
+    
+  }
 }
 
 #footer .footer-links ul {

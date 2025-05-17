@@ -56,7 +56,7 @@ const FeaturesComponent: React.FC = () => {
     return (
         <div style={{ padding: '40px 24px', background: '#fff' }}>
             <Title level={2} style={{ textAlign: 'center', fontWeight: 'bold' }}>
-                AssignmentJunction: Top Assignment Help Features
+                Assignment Junction: Top Assignment Help Features
             </Title>
             <Text style={{ display: 'block', textAlign: 'center', marginBottom: 32 }}>
                 Discover why we’re the top choice for professional writing assistance.
@@ -83,12 +83,27 @@ const FeaturesComponent: React.FC = () => {
                                     marginBottom: 16,
                                     transform: hoveredIndex === index ? 'rotateY(180deg)' : 'rotateY(0deg)',
                                     transition: 'transform 0.6s',
+                                    color: hoveredIndex === index ? feature.color : '#666',
                                 }}
                             >
+                                {/* Clone the icon with the updated color */}
                                 {feature.icon}
+                                   
                             </div>
-                            <Title level={4}>{feature.title}</Title>
-                            <Text type="secondary">{feature.description}</Text>
+                            <Title
+                                level={4}
+                                style={{
+                                    color: hoveredIndex === index ? feature.color : undefined,
+                                    transition: 'color 0.3s',
+                                }}
+                            >
+                                {feature.title}
+                            </Title>
+                            <Text type="secondary" style={{
+                                color: hoveredIndex === index ? feature.color : undefined,
+                                transition: 'color 0.3s',
+                            }}>{feature.description}</Text>
+
                         </Card>
                     </Col>
                 ))}

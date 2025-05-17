@@ -67,17 +67,17 @@ const AssignmentTypes: React.FC = () => {
                 {assignmentTypes.map((type, idx) => (
                     <Col key={idx} xs={24} sm={12} md={12} lg={6}>
                         <Card
-                              bordered
-                              hoverable
-                              onMouseEnter={() => setHoveredIndex(idx)}
-                              onMouseLeave={() => setHoveredIndex(null)}
-                              style={{
-                                  minHeight: 200,
-                                  textAlign: 'center',
-                                  boxShadow: `0 4px 20px ${type.color}33`,
-                                  borderRadius: 10,
-                                  transition: 'transform 0.3s',
-                              }}
+                            bordered
+                            hoverable
+                            onMouseEnter={() => setHoveredIndex(idx)}
+                            onMouseLeave={() => setHoveredIndex(null)}
+                            style={{
+                                minHeight: 200,
+                                textAlign: 'center',
+                                boxShadow: `0 4px 20px ${type.color}33`,
+                                borderRadius: 10,
+                                transition: 'transform 0.3s',
+                            }}
                         >
                             <div
                                 style={{
@@ -90,8 +90,14 @@ const AssignmentTypes: React.FC = () => {
                                 {type.icon}
                             </div>
 
-                            <Title level={4}>{type.title}</Title>
-                            <Text type="secondary">{type.description}</Text>
+                            <Title level={4} style={{
+                                color: hoveredIndex === idx ? type.color : undefined,
+                                transition: 'color 0.3s',
+                            }}>{type.title}</Title>
+                            <Text type="secondary" style={{
+                                color: hoveredIndex === idx ? type.color : undefined,
+                                transition: 'color 0.3s',
+                            }}>{type.description}</Text>
                         </Card>
                     </Col>
                 ))}

@@ -10,3 +10,62 @@
     justify-content: center;
     height: auto !important;
 }
+
+.client-section {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+  }
+  
+  .scroll-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 20px 0;
+  }
+  
+  .scroll-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-left 27s linear infinite alternate;
+  }
+  
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .scroll-card {
+    margin: 0 20px;
+    flex-shrink: 0;
+    width: 140px;
+    height: 120px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+  
+  .scroll-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  }
+  
+  .scroll-card img {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+  }
+  
+  .scroll-card:hover img {
+    filter: grayscale(0%);
+  }
+  

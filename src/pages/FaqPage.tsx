@@ -222,7 +222,7 @@ const FaqPage = () => {
                 size="large"
                 type="line"
             >
-                <TabPane tab="Assignment Enquiries" key="assignment" style={{ textAlign: 'center', color: '#777', fontWeight: 'bold' }}>
+                <TabPane tab="Assignment Enquiries" key="assignment" >
                     {renderFaqs(faqs.assignment)}
                 </TabPane>
                 <TabPane tab="Payment Enquiries" key="payment">

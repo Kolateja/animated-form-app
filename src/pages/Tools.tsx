@@ -86,8 +86,14 @@ const Tools: React.FC = () => {
                             >
                                 {tool.icon}
                             </div>
-                            <Title level={4}>{tool.title}</Title>
-                            <Text type="secondary" style={{ display: 'block', marginBottom: 16 }}>
+                            <Title level={4} style={{
+                                color: hoveredIndex === idx ? tool.color : undefined,
+                                transition: 'color 0.3s',
+                            }}>{tool.title}</Title>
+                            <Text type="secondary" style={{
+                                display: 'block', marginBottom: 16, color: hoveredIndex === idx ? tool.color : undefined,
+                                transition: 'color 0.3s',
+                            }}>
                                 {tool.description}
                             </Text>
                         </Card>

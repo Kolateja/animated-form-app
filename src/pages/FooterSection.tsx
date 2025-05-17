@@ -183,15 +183,12 @@
 //     </Row>
 // </div>
 
-// <section style={{ marginTop: 30, textAlign: "center", color: "#fff" }}>
-//     <p>&copy; Copyright <strong>Assignment Linkers</strong>. All Rights Reserved</p>
-// </section>
+
 //         </footer>
 //     );
 // };
 
-// export default Footer;
-import React from "react";
+// export default Footer;import React from "react";
 import { Row, Col, Form, Input, Button, Select, Typography } from "antd";
 import {
     PhoneOutlined,
@@ -200,7 +197,8 @@ import {
     EnvironmentOutlined,
 } from "@ant-design/icons";
 import ApiService from "../services/ApiService";
-import '../assets/css/index.css'
+import "../assets/css/FooterSection.css";
+
 const { TextArea } = Input;
 const { Title, Paragraph } = Typography;
 const { Option } = Select;
@@ -251,29 +249,22 @@ const Footer: React.FC = () => {
                     mobilenumber: number,
                 }),
             });
-            alert('Message created successfully!');
+            alert("Message created successfully!");
         } catch (error: any) {
             const msg = error?.response?.data?.error?.errors?.[0]?.message;
-            alert(msg || 'Error creating user');
+            alert(msg || "Error creating user");
         }
     };
 
     return (
-        <div id="footer" style={{
-            backgroundColor: '#001529',
-            backgroundImage: 'url("https://www.transparenttextures.com/patterns/paper-fibers.png")',
-            backgroundBlendMode: 'multiply',
-            backgroundRepeat: 'repeat',
-            color: '#fff',
-            padding: '40px 20px',
-            borderTop: '2px solid #eaeaea'
-        }}>
-            <div className="container">
-                <Row>
+        <>
+            <div className="footer-container">
+                <Row className="footer-main-section" gutter={[32, 32]}>
                     {/* Our Policies */}
-                    <Col span={7} offset={1} className="footer-links" style={{ padding: '19px', paddingRight: '50px', color: "#fff", fontWeight: 400, fontSize: '14px', marginBottom: '16px' }}>
-                        <Title level={4} style={{ color: "#fff", fontWeight: 600, fontSize: '24px', marginBottom: '16px' }}>Our Policies</Title>
-                        <ul className="our-policies">
+
+                    <Col xs={24} md={12} lg={6} className="footer-section footer-policies">
+                        <Title level={4} className="footer-title">Our Policies</Title>
+                        <ul className="footer-list">
                             {[
                                 ["Privacy Policy", "/privacypolicy"],
                                 ["Terms & Conditions", "/terms&conditions"],
@@ -284,19 +275,21 @@ const Footer: React.FC = () => {
                                 ["Satisfaction Policy", "/satisfactionpolicy"],
                                 ["Value for Money", "/valueformoney"],
                             ].map(([text, link]) => (
-                                <li key={link}>
-                                    <a href={link}>› {text}</a>
+                                <li key={link} className="footer-list-item">
+                                    <a href={link} className="footer-link" aria-label={text}>
+                                        &rsaquo; {text}
+                                    </a>
                                 </li>
                             ))}
                         </ul>
                     </Col>
 
                     {/* Contact Section */}
-                    <Col span={10} className="footer-contact" >
-                        <Title level={4} style={{ color: "#fff", fontWeight: 600, fontSize: '24px', marginBottom: '16px', justifyContent: 'center' }}>Contact Us</Title>
+                    <Col xs={24} md={24} lg={12} className="footer-section footer-contact">
+                        <Title level={4} className="footer-title">Contact Us</Title>
                         <Row>
-                            <Col span={8} offset={0} >
-                                <div className="social-links" >
+                            <Col xs={24} md={12} className="footer-social">
+                                <div className="footer-social-links">
                                     {[
                                         ["https://wa.me/+61494311801", "/assets/img/socialmedialogos/Digital_Stacked_Green.png"],
                                         ["https://www.instagram.com/assignmentlinkers/", "/assets/img/socialmedialogos/Instagram_Glyph_Gradient.png"],
@@ -312,96 +305,103 @@ const Footer: React.FC = () => {
                                     ))}
                                 </div>
 
-                                <div className="contact-info">
-                                    <Paragraph style={{ color: "#c0b7bc", fontWeight: 200, fontSize: '12px', marginBottom: '16px', justifyContent: 'center' }}>
-                                        <EnvironmentOutlined /> <strong>Address:</strong><br />
-                                        MIG 797, Sitamahalakshmi Apartments,<br />
-                                        Ground Floor Back Side,<br />
-                                        Near Bhuvana Vijayam Grounds,<br />
-                                        KPHB Phase 2, Pincode 500072
+                                <div className="footer-address">
+                                    <Paragraph><EnvironmentOutlined /> <strong>Address:</strong><br />
+                                        146, Masjid Banda Main Rd,<br />
+                                        Masjid Banda, Sri Maruthi Nagar Colony,<br />
+                                        Serilingampalle (M), Shivalik Block 504,<br />
+                                        Telangana 500019
+                                    </Paragraph>
+
+                                    <Paragraph>
+                                        <PhoneOutlined /> <strong>Phone:</strong><br />
+                                        <a href="tel:+918309368958">+91 8309368958</a>
                                     </Paragraph>
                                     <Paragraph>
-                                        <PhoneOutlined style={{ marginRight: 8, color: '#0d74b0' }} /> <strong style={{ marginRight: 8, color: '#0d74b0' }}>Phone:</strong><br />
-                                        <a href="tel:+918309368958" style={{ color: '#0d74b0' }}>+91 8309368958</a>
-                                    </Paragraph>
-                                    <Paragraph>
-                                        <WhatsAppOutlined style={{ marginRight: 8, color: '#25D366' }} /> <strong style={{ marginRight: 8, color: '#25D366' }}>Whatsapp:</strong><br />
-                                        <a href="https://wa.me/+61494311801" style={{ color: '#25D366' }}>+61 494 311 801</a>
+                                        <WhatsAppOutlined /> <strong>Whatsapp:</strong><br />
+                                        <a href="https://wa.me/+61494311801">+61 494 311 801</a>
                                     </Paragraph>
                                 </div>
                             </Col>
 
-                            <Col span={10} offset={3}>
-                                <div className="contact-info">
-                                    <Form layout="vertical" onFinish={onFinish} size="small">
-                                        <Form.Item name="name" label={<strong style={{ color: '#3da4b6' }}>Name</strong>} rules={[{ required: true }]}>
-                                            <Input placeholder="Enter your name" />
-                                        </Form.Item>
-                                        <Form.Item name="email" label={<strong style={{ color: '#3da4b6' }}>Email</strong>} rules={[{ required: true }]}>
-                                            <Input type="email" placeholder="Enter your email" />
-                                        </Form.Item>
-                                        <Form.Item label={<strong style={{ color: '#3da4b6' }}>Mobile Number</strong>} required>
-                                            <Input.Group compact>
-                                                <Form.Item
-                                                    name="countrycode"
-                                                    noStyle
-                                                    rules={[{ required: true, message: 'Country code required' }]}
-                                                >
-                                                    <Select placeholder="Code" style={{ width: '35%' }}>
-                                                        {countryCodes.map(({ label, value }) => (
-                                                            <Option key={value} value={value}>{label}</Option>
-                                                        ))}
-                                                    </Select>
-                                                </Form.Item>
+                            <Col xs={24} md={12} className="footer-form">
+                                <Form layout="vertical" onFinish={onFinish} size="small">
+                                    <Form.Item name="name" label="Name" rules={[{ required: true }]}>
+                                        <Input placeholder="Enter your name" />
+                                    </Form.Item>
+                                    <Form.Item name="email" label="Email" rules={[{ required: true }]}>
+                                        <Input type="email" placeholder="Enter your email" />
+                                    </Form.Item>
+                                    <Form.Item label="Mobile Number" required>
+                                        <Input.Group compact>
+                                            <Form.Item
+                                                name="countrycode"
+                                                noStyle
+                                                rules={[{ required: true, message: "Country code required" }]}
+                                            >
+                                                <Select placeholder="Code" style={{ width: "35%" }}>
+                                                    {countryCodes.map(({ label, value }) => (
+                                                        <Option key={value} value={value}>
+                                                            {label}
+                                                        </Option>
+                                                    ))}
+                                                </Select>
+                                            </Form.Item>
 
-                                                <Form.Item
-                                                    name="number"
-                                                    noStyle
-                                                    rules={[{ required: true, message: 'Phone number required' }]}
-                                                >
-                                                    <Input placeholder="Mobile Number" style={{ width: '65%' }} />
-                                                </Form.Item>
-                                            </Input.Group>
-                                        </Form.Item>
-
-                                        <Form.Item name="message" label={<strong style={{ color: '#3da4b6' }}>Message</strong>} rules={[{ required: true }]}>
-                                            <TextArea rows={4} placeholder="Your message" />
-                                        </Form.Item>
-                                        <Form.Item>
-                                            <Button type="primary" htmlType="submit">Send Message</Button>
-                                        </Form.Item>
-                                    </Form>
-                                </div>
+                                            <Form.Item
+                                                name="number"
+                                                noStyle
+                                                rules={[{ required: true, message: "Phone number required" }]}
+                                            >
+                                                <Input placeholder="Mobile Number" style={{ width: "65%" }} />
+                                            </Form.Item>
+                                        </Input.Group>
+                                    </Form.Item>
+                                    <Form.Item name="message" label="Message" rules={[{ required: true }]}>
+                                        <TextArea rows={4} placeholder="Your message" />
+                                    </Form.Item>
+                                    <Form.Item>
+                                        <Button type="primary" htmlType="submit">
+                                            Send Message
+                                        </Button>
+                                    </Form.Item>
+                                </Form>
                             </Col>
                         </Row>
                     </Col>
 
-                    <Col span={4}>
-                        <Title level={4} style={{ color: "#fff", fontWeight: 600, fontSize: '24px', marginBottom: '16px' }}>Global Presence</Title>
+                    {/* Global Presence */}
+                    <Col xs={24} md={12} lg={6} className="footer-section footer-map">
+                        <Title level={4} className="footer-title">Global Presence</Title>
                         <img
                             src="/assets/img/worldmap.png"
                             alt="world map"
-                            style={{ width: "100%", maxHeight: 400, objectFit: "cover", borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}
+                            className="footer-world-map"
                         />
                     </Col>
                 </Row>
-                <Row justify="center" style={{ marginTop: 40, textAlign: "center" }}>
-                    <Col xs={24} style={{ display: 'flex', alignItems: "center", justifyContent: 'center' }}>
-                        <p style={{ color: "#10e06d", fontSize: "20px" }}>100% Secure Payment</p>
+
+                <Row justify="center" className="footer-bottom">
+                    <Col xs={24}>
+                        <p className="footer-payment-title">100% Secure Payment</p>
                         <img
                             src="/assets/img/paymentcardsimage.png"
                             alt="payment methods"
-                            // style={{ maxWidth:"100%" }}
-                            style={{ width: "400px", marginBottom: "28px" }}
+                            className="footer-payment-img"
                         />
                     </Col>
                 </Row>
-                <div style={{ display: "flex", justifyContent: "center", paddingTop: "20px", alignItems: "flex-end", backgroundColor: "#FFF" }}>
-                    <p style={{ textAlign: "center", margin: "0px", color: "#000", justifyContent: 'center' }}>&copy; Copyright <strong>Assignment Linkers</strong>. All Rights Reserved
-                    </p>
-                </div>
+
+
             </div>
-        </div>
+            <section style={{ marginTop: 30, textAlign: "center", }}>
+                <p>&copy; Copyright <strong>Assignment Linkers</strong>. All Rights Reserved</p>
+                <p>
+                    Designed by <strong style={{ color: 'green' }}>LEADXPO IT SOLUTIONS</strong>
+                </p>
+            </section>
+
+        </>
     );
 };
 

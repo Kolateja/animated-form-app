@@ -5,7 +5,7 @@
 }
 
 .contact-form-banner {
-  background-image: url("/public/assets/img/contactus1.jpg");
+  background-image: url("../img/planets.png");
   background-size: cover;
   /* background-position: center;  */
   /* background-attachment: fixed; */

@@ -3,7 +3,7 @@ import { Row, Col, Card, Image, Typography } from "antd";
 import "./MembershipSection.css"; // Custom styles
 import Header from "./Header";
 import Footer from "./FooterSection";
-
+import diamond from '../assets/img/diamond.png'
 const { Title, Text } = Typography;
 
 const MembershipSection: React.FC = () => {
@@ -120,12 +120,13 @@ const MembershipSection: React.FC = () => {
         </div>
 
         <div
-          className="membership-details common-background"
+          // className="membership-details common-background"
           style={{
             padding: "60px 20px",
             textAlign: "center",
             // width: "100vw",
-            margin: "10px"
+            margin: "10px",
+            backgroundColor: '#1b1412'
           }}
         >
           <div className="container">
@@ -133,7 +134,7 @@ const MembershipSection: React.FC = () => {
               level={3}
               style={{
                 fontSize: "28px",
-                background: "linear-gradient(to right, #f7971e, #ffd200)",
+                // background: "linear-gradient(to right, #f7971e, #ffd200)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 marginBottom: "40px",
@@ -149,27 +150,27 @@ const MembershipSection: React.FC = () => {
               {[
                 {
                   name: "Diamond Membership",
-                  src: "/assets/img/membership/diamond.jpeg",
+                  src: '/assets/img/diamondAA.gif',
                   color: "#b9f2ff",
                 },
                 {
                   name: "Platinum Membership",
-                  src: "/assets/img/membership/platinum.jpeg",
+                  src: "/assets/img/platinumAA.gif",
                   color: "#e5e4e2",
                 },
                 {
                   name: "Gold Membership",
-                  src: "/assets/img/membership/gold.jpeg",
+                  src: "/assets/img/oAA.gif",
                   color: "#ffd700",
                 },
                 {
                   name: "Bronze Membership",
-                  src: "/assets/img/membership/bronze.jpeg",
+                  src: "/assets/img/bAAA.gif",
                   color: "#cd7f32",
                 },
                 {
                   name: "Silver Membership",
-                  src: "/assets/img/membership/silver-ring.jpg",
+                  src: "/assets/img/sAA.gif",
                   color: "#c0c0c0",
                 },
               ].map((item, index) => (

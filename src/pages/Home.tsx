@@ -60,6 +60,7 @@ import FeaturesComponent from './FeaturesComponent';
 import AssignmentTypes from './AssignmentTypes';
 import Tools from './Tools';
 import bg from '../assets/img/remining.png'
+import junction from '../assets/img/assignmentjunction.png'
 import ChatWidget from './ChatWidget';
 const { Text, Paragraph, Title } = Typography;
 
@@ -74,11 +75,11 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ fontFamily: "Roboto, sans-serif"}}>
+    <div style={{ fontFamily: "Roboto, sans-serif" }}>
       {/* Hero Section */}
       <div
         style={{
-          backgroundImage: `url(${bag})`,
+          backgroundImage: `url(${junction})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: '220px 20px 180px',
@@ -86,28 +87,19 @@ const Home: React.FC = () => {
           textAlign: 'center',
         }}
       >
-        
-     
-        <h1
-          style={{
-            fontSize: "52px",
-            marginBottom: "20px",
-            color: "#252221",
-            fontWeight: "bold",
-          }}
-        >
-          Achieve Academic Excellence
-        </h1>
         <p
           style={{
-            fontSize: "20px",
+            fontSize: "30px",
             maxWidth: "700px",
             margin: "0 auto 30px",
             color: "#252221",
+            marginTop: '30px',
+            marginBottom: '40px',
+            fontWeight: 'bold',
+            marginRight: '290px'
           }}
         >
-          Top-quality assignment help from experts — trusted by 2000+ students
-          worldwide. Comprehensive Assignment Assistance With a No-AI Guarantee!
+          Comprehensive Assignment Assistance With a No-AI Guarantee!
         </p>
         <Link to="/auth/login-signup">
           <Button
@@ -133,6 +125,7 @@ const Home: React.FC = () => {
           </Button>
         </Link>
       </div>
+      <Consultancy />
       <div style={{
         backgroundImage: `url(${bg})`,
         backgroundSize: 'cover',
@@ -163,17 +156,11 @@ const Home: React.FC = () => {
         <Consultancy />
       </section> */}
 
-
-
-      <section style={contentSectionStyle} data-aos="fade-up">
-        <Consultancy />
-      </section>
-
       {/* Testimonials Section */}
       {/* <section style={contentSectionStyle} data-aos="fade-up">
         <ClientQuote />
       </section> */}
-       <ChatWidget />
+      <ChatWidget />
     </div>
   );
 };

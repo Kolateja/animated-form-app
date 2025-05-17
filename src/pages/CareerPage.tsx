@@ -45,10 +45,10 @@ const CareerPage: React.FC = () => {
         </Col>
         <Col span={8}>
           <img
-            src="./assets/img/career/careers.png"
+            src="/assets/img/Thumbnail.png"
             alt="careers"
             className="img-fluid"
-            // style={{height: "150px",width: "200px"}}
+            style={{height: "150px",width: "200px"}}
           />
         </Col>
       </Row>

@@ -1,6 +1,6 @@
 #main #hero-section {
   /* padding: 20px 0px; */
-  background: #3f71af98;
+  background: #d2d9e298;
   height: 30vh;
   text-align: center;
 }
@@ -11,9 +11,11 @@
 
 #main .offer-card-section {
   padding: 50px;
-  background: rgba(63, 114, 175, 0.92);
+  /* background: rgba(63, 114, 175, 0.92); */
   z-index: 1;
-  background: url(../img/offers/offer-bg-celebration.jpg) top fixed no-repeat;
+  background: #d2d9e298;
+
+  /* background: url(../img/offers/offer-bg-celebration.jpg) top fixed no-repeat; */
   background-size: auto;
   position: relative;
 }

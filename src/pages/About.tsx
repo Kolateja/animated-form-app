@@ -229,6 +229,29 @@ import bg from '../assets/img/contact/hero-bg.jpg'
 // import can from '../assets/img/canvas.gif'
 const { Title, Paragraph } = Typography;
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const textVariants = {
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: 'easeOut',
+    },
+  },
+};
+
 const features = [
   { title: 'Best experienced organisation', img: '/assets/img/aboutus/experiance-organization.png' },
   { title: 'Team of expert writers', img: '/assets/img/aboutus/team-professional-writers.png' },
@@ -281,19 +304,23 @@ const About: React.FC = () => {
           textAlign: 'center',
         }}
       >
-        {/* Left side - Text content */}
         <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          style={{ flex: 1, minWidth: '300px', paddingRight: '2rem' }}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          style={{ maxWidth: '900px', margin: '0 auto' }}
         >
-          <Title level={1} style={{ color: '#fff', fontWeight: 'bold' }}>
-            Assignment Writing Service
-          </Title>
-          <Paragraph style={{ color: '#fff', fontSize: '2rem',fontWeight:'bold'}}>
-            Assignment Junction is an assignment writing company where you can hire experts to write and proofread all academic papers, including essays, research papers, and more.
-          </Paragraph>
+          <motion.div variants={textVariants}>
+            <Title level={1} style={{ color: '#fff', fontWeight: 'bold' }}>
+              Assignment Writing Service
+            </Title>
+          </motion.div>
+          <motion.div variants={textVariants}>
+            <Paragraph style={{ color: '#fff', fontSize: '1.1rem', fontWeight: 'bold' }}>
+              Assignment Junction is an assignment writing company where you can hire experts to write and proofread all academic papers, including essays, research papers, and more.
+            </Paragraph>
+          </motion.div>
         </motion.div>
       </div>
       {/* Feature Cards */}
