@@ -134,17 +134,19 @@ const MembershipSection: React.FC = () => {
               level={3}
               style={{
                 fontSize: "28px",
-                // background: "linear-gradient(to right, #f7971e, #ffd200)",
+                display: "inline-block", // Required for gradient text to render
+                background: "linear-gradient(to right, #f7971e, #ffd200)", // Bright colors on dark background
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 marginBottom: "40px",
                 animation: "fadeInDown 1s ease-in-out",
-                // width: "100vw",
               }}
             >
-              Be a proud privilege member of AL & get access to a world of
-              rewards & prizes
+              Be a proud privilege member of AL & get access to a world of rewards & prizes
             </Title>
+
+
+
 
             <Row gutter={[24, 24]} justify="center">
               {[
@@ -193,7 +195,13 @@ const MembershipSection: React.FC = () => {
                         alt={item.name}
                         src={item.src}
                         preview={false}
-                        style={{ height: "160px", objectFit: "cover" }}
+                        style={{
+                          height: "160px",
+                          display: "flex",
+                          alignItems: index === 0 ? "flex-end" : "center", // shift only first one
+                          justifyContent: "center",
+                          paddingBottom: index === 0 ? "30px" : "0px",     // adjust spacing
+                        }}
                       />
                     }
                     onMouseEnter={(e) =>
