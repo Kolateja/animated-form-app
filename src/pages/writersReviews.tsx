@@ -53,14 +53,15 @@ const FeedbackCard: React.FC = () => {
         <Card
             title={
                 <Title
-                    level={1}
-                    style={{ display: 'flex', justifyContent: 'center', fontWeight: 'bold' }}
+                    level={2}
+
+                    style={{  justifyContent: 'center', fontWeight: 'bold' }}
                 >
                     The Best Assignment Writers
                 </Title>
             }
             bordered
-            style={{ borderRadius: '12px',marginTop:'30px',marginBottom:'30px' }}
+            style={{ borderRadius: '12px', marginTop: '30px', marginBottom: '30px' }}
         >
             <div
                 style={{

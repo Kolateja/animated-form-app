@@ -169,7 +169,7 @@ const FeedbackForm: React.FC = () => {
                 />
               </div>
               <div className="reviewComponent-reviewImages">
-                {["trustpilot", "google", "glassdoor"].map((name) => (
+                {["trust", "google", "glassdoor"].map((name) => (
                   <div className="reviewComponent-reviewImage" key={name}>
                     <img
                       src={`./assets/img/reviews/${name}-reviews.png`}

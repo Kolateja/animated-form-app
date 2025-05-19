@@ -134,8 +134,7 @@
   font-size: 24px;
   cursor: pointer;
 }
-
-/* Show hamburger on small screens */
+/* Hide desktop dropdowns in mobile */
 @media (max-width: 768px) {
   .desktop-menu {
     display: none;
@@ -144,4 +143,27 @@
   .mobile-menu-icon {
     display: block;
   }
+
+  .services-dropdown-menu {
+    flex-direction: column;
+    /* min-width: auto; */
+    box-shadow: none;
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .services-column {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .services-title {
+    padding-left: 16px;
+    font-size: 16px;
+  }
+
+  .services-link {
+    padding-left: 32px;
+  }
 }
+

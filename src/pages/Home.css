@@ -1,47 +1,83 @@
-/* src/pages/Home.css */
+/* Base styles */
+.home-container {
+  font-family: "Roboto", sans-serif;
+}
 
-.home-banner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 4rem 2rem;
-    background-color: #f0f4f8;
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  padding: 220px 20px 180px;
+  color: #fff;
+  text-align: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hero-text {
+  font-size: 30px;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: #252221;
+  font-weight: bold;
+}
+
+.hero-button {
+  padding: 12px 28px;
+  background-color: #1890ff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero-button:hover {
+  background-color: #40a9ff;
+}
+
+.feedback-section {
+  background-size: cover;
+  background-position: center;
+  padding: 20px 20px 40px;
+  color: #fff;
+  text-align: center;
+}
+
+.content-section {
+  padding: 4rem 2rem;
+  background-color: #f0f2f5;
+}
+
+.content-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 120px 15px 100px;
   }
-  
-  .home-text {
-    max-width: 50%;
+
+  .hero-text {
+    font-size: 24px;
+    margin-right: 0 !important;
   }
-  
-  .home-text h1 {
-    font-size: 3rem;
-    color: #023e8a;
-    margin-bottom: 1rem;
+
+  .hero-button {
+    font-size: 14px;
+    padding: 10px 20px;
   }
-  
-  .home-text p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 2rem;
+}
+
+@media (max-width: 480px) {
+  .hero-text {
+    font-size: 20px;
   }
-  
-  .home-text button {
-    background: #0077b6;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s ease;
+
+  .content-section {
+    padding: 2rem 1rem;
   }
-  
-  .home-text button:hover {
-    background: #0096c7;
-  }
-  
-  .home-banner img {
-    max-width: 45%;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  }
-  
+}

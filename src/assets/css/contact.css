@@ -1,3 +1,4 @@
+/* General responsiveness for the banner */
 .contact-form-wrapper {
   background: linear-gradient(to right, #f0f4f8, #d9e2ec);
   min-height: 100vh;
@@ -13,16 +14,71 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* object-fit: cover; */
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+  height: auto;
 }
 
+/* Adjust heading */
 .contact-form-banner-heading {
   color: rgb(19, 90, 177);
   font-size: 120px;
   font-style: oblique;
   font-weight: bold;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  margin: 0 auto 30px auto;
 }
+
+/* Responsive container for the banner content */
+.contact-form-banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Adjust quick info */
+.contact-form-quickinfo {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+/* Tablet view */
+@media screen and (max-width: 768px) {
+  .contact-form-banner-heading {
+    font-size: 48px;
+  }
+
+  .contact-form-social-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Mobile view */
+@media screen and (max-width: 480px) {
+  .contact-form-banner-heading {
+    font-size: 36px;
+  }
+
+  .contact-form-banner-content {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .contact-form-social {
+    gap: 15px;
+  }
+
+  .contact-form-quickinfo {
+    font-size: 14px;
+  }
+}
+
+
 
 .contact-form-container {
   display: flex;

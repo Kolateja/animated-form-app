@@ -1,0 +1,115 @@
+/* CareerPage.css */
+
+.career-container {
+    background: #1d7db2;
+    padding: 16px 0;
+    width: 100%;
+  }
+  
+  .career-hero {
+    background-image: url("../img/carrerbag.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #002b5b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 450px;
+    padding: 3rem;
+  }
+  
+  .hero-content {
+    width: 100%;
+  }
+  
+  .hero-text {
+    padding-left: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #f5430e;
+    margin-bottom: 20px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    color: #f5430e;
+    line-height: 1.6;
+    max-width: 600px;
+  }
+  
+  .why-choose-section {
+    padding: 2rem;
+    text-align: center;
+    background-color: #ffffff;
+  }
+  
+  .why-title {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .card-body {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .card-icon {
+    font-size: 24px;
+    color: #1890ff;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  
+  .resume-section {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #ffffff;
+  }
+  
+  .resume-title {
+    margin-bottom: 1rem;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 992px) {
+    .hero-title {
+      font-size: 3rem;
+    }
+  
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .career-hero {
+      height: auto;
+      padding: 4rem 1rem;
+    }
+  
+    .hero-title {
+      font-size: 2.5rem;
+    }
+  
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .card-body {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .card-icon {
+      margin: 0 auto 10px;
+    }
+  }
+  

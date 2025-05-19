@@ -292,12 +292,12 @@ const Footer: React.FC = () => {
                                 <div className="footer-social-links">
                                     {[
                                         ["https://wa.me/+61494311801", "/assets/img/socialmedialogos/Digital_Stacked_Green.png"],
-                                        ["https://www.instagram.com/assignmentlinkers/", "/assets/img/socialmedialogos/Instagram_Glyph_Gradient.png"],
-                                        ["https://www.facebook.com/profile.php?id=61556511496784", "/assets/img/socialmedialogos/Facebook_Logo_Primary.png"],
-                                        ["https://www.linkedin.com/in/assignmentlinkers/", "/assets/img/socialmedialogos/LI-In-Bug.png"],
+                                        ["https://www.instagram.com/assignmentsjunction/", "/assets/img/socialmedialogos/Instagram_Glyph_Gradient.png"],
+                                        ["https://www.facebook.com/assignmentsjunction/", "/assets/img/socialmedialogos/Facebook_Logo_Primary.png"],
+                                        ["https://www.linkedin.com/in/assignments-junction-07703a2b7/", "/assets/img/socialmedialogos/LI-In-Bug.png"],
                                         ["https://x.com/AssignmentsLink", "/assets/img/socialmedialogos/logo-black.png"],
-                                        ["https://in.pinterest.com/assignmentlinkers/", "/assets/img/socialmedialogos/pinterest-logo.png"],
-                                        ["https://youtube.com/@assignmentlinkers?si=IvE9VbV4XTnGXs6A", "/assets/img/socialmedialogos/yt_logo_rgb_light.png"]
+                                        ["https://in.pinterest.com/assignmentsjunction/?actingBusinessId=912682818142934960s", "/assets/img/socialmedialogos/pinterest-logo.png"],
+                                        ["https://www.youtube.com/@AssignmentsJunction", "/assets/img/socialmedialogos/yt_logo_rgb_light.png"]
                                     ].map(([href, src], idx) => (
                                         <a href={href} key={idx} target="_blank" rel="noopener noreferrer">
                                             <img src={src} width={30} alt="social logo" />
@@ -315,7 +315,7 @@ const Footer: React.FC = () => {
 
                                     <Paragraph>
                                         <PhoneOutlined /> <strong>Phone:</strong><br />
-                                        <a href="tel:+918309368958">+91 8309368958</a>
+                                        <a href="tel:+9177801 80946">+91 77801 80946</a>
                                     </Paragraph>
                                     <Paragraph>
                                         <WhatsAppOutlined /> <strong>Whatsapp:</strong><br />

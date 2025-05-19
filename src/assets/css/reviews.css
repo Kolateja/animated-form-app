@@ -1,105 +1,72 @@
 .reviewComponent-main {
-  font-family: "Open Sans", sans-serif;
-  
+  padding: 20px;
+  background: #f9f9f9;
 }
 
 .reviewComponent-hero {
-  background: #3f71af98;
-  padding: 50px 0;
+  padding: 40px 0;
+  background-color: #fff;
 }
 
 .reviewComponent-container {
   max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
 .reviewComponent-row {
   display: flex;
   flex-wrap: wrap;
+  gap: 30px;
   justify-content: space-between;
-  /* margin: 10px; */
 }
 
-.reviewComponent-colLeft {
-  flex: 1;
-  min-width: 300px;
-}
-
-.reviewComponent-imageWrapper {
-  margin-bottom: 20px;
+.reviewComponent-colLeft,
+.reviewComponent-formWrapper {
+  flex: 1 1 45%;
 }
 
 .reviewComponent-mainImage {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  max-width: 400px;
 }
 
 .reviewComponent-reviewImages {
   display: flex;
-  justify-content: space-between;
+  gap: 16px;
   margin-top: 20px;
 }
 
-.reviewComponent-reviewImage img {
-  width: 150px;
-}
-
-.reviewComponent-formWrapper {
-  flex: 1;
-  min-width: 300px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 30px;
-  padding-bottom: 10px;
-  background: #f8f8f815;
-  margin-top: 20px;
-  box-shadow: 0 0 10px #ffffff;
-  color: white;
-  max-width: 500px;
-  margin-left: 20px;
-  border-radius: 15px;
+.reviewComponent-img {
+  max-height: 50px;
 }
 
 .reviewComponent-formTitle {
-  text-align: center;
-  margin-bottom: 10px;
-  color: white;
-  font-size: 25px;
+  margin-bottom: 20px;
+  font-size: 24px;
 }
 
 .reviewComponent-formGroup {
-  margin-bottom: 10px;
-}
-
-.reviewComponent-ratingContainer {
-  display: flex;
-  gap: 10px;
   margin-bottom: 16px;
 }
 
-.reviewComponent-submitBtnWrapper {
-  text-align: center;
+.reviewComponent-input,
+.reviewComponent-textArea {
+  width: 100%;
 }
 
 .reviewComponent-submitBtn {
-  background-color: #28a745;
-  border: none;
-  padding: 10px 24px;
-  border-radius: 6px;
-  font-size: 16px;
-  color: white;
+  width: 100%;
 }
 
 .reviewComponent-feedbackSection {
-  padding: 50px 20px;
-  background: linear-gradient(120deg, #f0f4f8, #d9e2ec);
+  margin-top: 50px;
+  text-align: center;
 }
 
 .reviewComponent-feedbackTitle {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 40px;
+  font-size: 28px;
+  margin-bottom: 30px;
 }
 
 .reviewComponent-highlight {
@@ -108,37 +75,41 @@
 
 .reviewComponent-cardRow {
   display: flex;
+  gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
-  padding: 20px 0;
 }
 
 .reviewComponent-feedbackCard {
-  width: 300px;
-  margin: 0 auto;
-  text-align: center;
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 16px;
+  width: 100%;
+  max-width: 300px;
   padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .reviewComponent-feedbackMessage {
   font-style: italic;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .reviewComponent-feedbackRating {
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
-.reviewComponent-feedbackName {
-  font-weight: 600;
-  font-size: 16px;
-  margin-bottom: 0;
+.reviewComponent-slider .slick-slide {
+  display: flex !important;
+  justify-content: center;
 }
 
-.reviewComponent-feedbackOrder {
-  color: #999;
+.reviewComponent-slider .slick-dots li button:before {
+  color: #1890ff;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .reviewComponent-row {
+    flex-direction: column;
+  }
 }

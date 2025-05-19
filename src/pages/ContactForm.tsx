@@ -117,9 +117,8 @@ const ContactForm: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="contact-form-banner-header"
         >
-          <h2 className="contact-form-banner-heading" style={{ textAlign: 'left', marginRight: '15rem', marginBottom: '30px' }}>
-            Contact us
-          </h2>
+          <h2 className="contact-form-banner-heading">Contact us</h2>
+
 
         </motion.div>
 
