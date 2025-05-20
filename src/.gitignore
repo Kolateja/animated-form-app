@@ -1,5 +1,5 @@
 # Ignore large assets
-*.png
-*.jpg
+# *.png
+# *.jpg
 *.jpeg
-*.gif
+# *.gif
