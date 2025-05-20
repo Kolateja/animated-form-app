@@ -1,0 +1,197 @@
+/* ResearchPaper.css */
+
+/* General styles */
+.research-paper-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .research-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .research-header,
+.form-card {
+  max-width: 100%;
+}
+@media (min-width: 992px) {
+    .research-section {
+         flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  
+    .research-header {
+      max-width: 50%;
+      text-align: left;
+    }
+  
+    .form-card {
+      max-width: 45%;
+      margin-top: 0;
+    }
+  
+    .research-paper-container {
+      padding: 40px;
+    }
+  
+    .team-scroll {
+      justify-content: center;
+      flex-wrap: wrap;
+      overflow-x: hidden;
+    }
+  }
+  
+  
+  .form-card {
+    flex: 1;
+    max-width: 45%;
+  }
+  
+  
+  /* Section: Header */
+  /* .research-header {
+    text-align: center;
+    padding: 0 20px;
+  } */
+  
+  .research-header h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    background: linear-gradient(to right, #ff6600, #800080);
+    -webkit-background-clip: text;
+    color: #ee174e;
+    margin-bottom: 20px;
+    word-break: break-word;
+  }
+  
+  .research-header p {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  
+  .research-header .trusted {
+    font-weight: bold;
+    font-size: 16px;
+    color: #222;
+  }
+  
+  /* Section: Form */
+  .form-card {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  /* Team Section */
+  .team-section {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .team-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 16px;
+    margin-top: 20px;
+  }
+  
+  .team-card {
+    border-radius: 10px;
+    flex: 0 0 300px;
+    min-width: 300px;
+  }
+  
+  /* How it works section */
+  .how-it-works {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .how-it-works h2 {
+    margin-bottom: 2rem;
+  }
+  
+  /* Core Values */
+  .core-values {
+    margin-bottom: 40px;
+  }
+  
+  .core-values h2 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .core-card {
+    border-radius: 12px;
+    padding: 1.5rem;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .core-card img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+  }
+  
+  .core-card h4 {
+    color: #0f52ba;
+  }
+  
+  .core-card p {
+    color: #555;
+  }
+  
+  /* Reviews */
+  .reviews-section {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .reviews-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 768px) {
+    .research-header h1 {
+      font-size: 56px;
+    }
+  
+    .form-card {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .research-header {
+      text-align: left;
+    }
+  
+    .research-paper-container {
+      padding: 40px;
+    }
+  
+    .team-scroll {
+      justify-content: center;
+      flex-wrap: wrap;
+      overflow-x: hidden;
+    }
+  }
+  

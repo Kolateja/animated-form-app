@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Input, Button, Select, Checkbox, Col, Row, Space, Divider, Rate, Typography } from 'antd';
 import FreeQuote from './getFreeQuote';
 import HowItWorks from './HowItWorks';
+import './HomeWork.css';
 
 const { TextArea } = Input;
 const { Option } = Select;
@@ -112,177 +113,80 @@ const coreValues: CoreValue[] = [
 
 const HomeWork = () => {
     return (
-        <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
-            {/* First Section */}
-            <div
-                style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    justifyContent: 'space-between',
-                    alignItems: 'flex-start',
-                    gap: '20px',
-                    // marginBottom: '60px',
-                    padding: '0 20px',
-                }}
-            >
-                {/* Left Section - Heading and Description */}
-                <div style={{ flex: 1, minWidth: 300, maxWidth: '600px' }}>
-                    <h1
-                        style={{
-                            fontSize: '78px',
-                            lineHeight: 1.2,
-                            background: 'linear-gradient(to right, #ff6600, #800080)',
-                            WebkitBackgroundClip: 'text',
-                            color: '#ee174e',
-                            marginBottom: '20px',
-                        }}
-                    >
-                        Homework Help Online
-                    </h1>
-                    <p style={{ fontSize: '20px', color: '#444', marginBottom: '10px' }}>
+     
+
+        <div className="homework-container">
+            <div className="first-section">
+                <div className="heading-section">
+                    <h1 className="heading-title">Homework Help Online</h1>
+                    <p className="heading-description">
                         Get homework help online today and revamp your career like never before!
                     </p>
-                    <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
-                        Trusted by 1.5M+ happy customers
-                    </p>
+                    <p className="heading-subtext">Trusted by 1.5M+ happy customers</p>
                 </div>
 
-                {/* Right Section - Form Card */}
-                <div style={{ flex: '0 0 700px' }}>
-                    <div
-                        style={{
-                            padding: '30px',
-                            borderRadius: '12px',
-                            backgroundColor: '#fff',
-                            boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
-                        }}
-                    >
+                <div className="form-card-container">
+                    <div className="form-card">
                         <FreeQuote />
                     </div>
                 </div>
             </div>
 
-
-            {/* Second Section */}
-            <div style={{ marginBottom: '40px', textAlign: 'center' }}>
+            <div className="helpers-section">
                 <h2>Top Homework Helpers</h2>
                 <p>Know Our Certified Writers Before You Hire Them.</p>
-                <div
-                    style={{
-                        display: 'flex',
-                        overflowX: 'auto',
-                        gap: 16,
-                        paddingBottom: 16,
-                    }}
-                >
+                <div className="helpers-cards">
                     {feedbackData.map((feedback, index) => (
-                        <Card
-                            key={index}
-                            bordered
-                            style={{
-                                borderRadius: '10px',
-                                flex: '0 0 300px',
-                                minWidth: 300,
-                                height: '100%',
-                            }}
-                            bodyStyle={{ padding: '16px' }}
-                        >
+                        <Card key={index} className="helper-card" bodyStyle={{ padding: '16px' }}>
                             <Space direction="vertical" size={4}>
-                                <Text strong style={{ fontSize: 16 }}>{feedback.name}</Text>
-                                <Text type="secondary" style={{ fontSize: '13px' }}>
-                                    {feedback.education}
-                                </Text>
-                                <Text type="secondary" style={{ fontSize: '13px' }}>
-                                    Completed Orders: {feedback.completedOrders}
-                                </Text>
+                                <Text className="helper-name">{feedback.name}</Text>
+                                <Text type="secondary" className="helper-text">{feedback.education}</Text>
+                                <Text type="secondary" className="helper-text">Completed Orders: {feedback.completedOrders}</Text>
                             </Space>
                             <Divider style={{ margin: '12px 0' }} />
-                            <Paragraph style={{ fontSize: '13px' }}>{feedback.message}</Paragraph>
+                            <Paragraph className="helper-text">{feedback.message}</Paragraph>
                             <Rate disabled defaultValue={feedback.rating} />
                         </Card>
                     ))}
                 </div>
             </div>
 
-            <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
-                <Title level={2} style={{ textAlign: 'center', marginBottom: '2rem' }}>Get Online Homework Help in 3 Steps
-                </Title>
+            <section className="how-it-works-section">
+                <Title level={2} className="how-it-works-title">Get Online Homework Help in 3 Steps</Title>
                 <HowItWorks />
             </section>
 
-
-            {/* Third Section - Services */}
-            <div style={{ marginBottom: '40px' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Get Expert Help with Homework Online</h2>
+            <div className="services-section">
+                <h2 className="services-title">Get Expert Help with Homework Online</h2>
                 <Row gutter={[24, 24]} justify="center">
                     {coreValues.map((value, index) => (
                         <Col xs={24} sm={12} md={12} lg={6} key={index}>
-                            <Card
-                                bordered={false}
-                                hoverable
-                                style={{
-                                    borderRadius: '12px',
-                                    padding: '1.5rem',
-                                    minHeight: '300px',
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    justifyContent: 'flex-start',
-                                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-                                }}
-                            >
-                                <img
-                                    src={value.icon}
-                                    alt={value.title}
-                                    style={{ width: '64px', height: '64px', marginBottom: '1rem' }}
-                                />
-                                <Title level={4} style={{ color: '#0f52ba' }}>
-                                    {value.title}
-                                </Title>
-                                <Paragraph style={{ color: '#555' }}>{value.description}</Paragraph>
+                            <Card bordered={false} hoverable className="card-service">
+                                <img src={value.icon} alt={value.title} className="card-service-icon" />
+                                <Title level={4} className="card-service-title">{value.title}</Title>
+                                <Paragraph className="card-service-desc">{value.description}</Paragraph>
                             </Card>
                         </Col>
                     ))}
                 </Row>
             </div>
 
-            {/* Fourth Section - Reviews */}
-            <div style={{ marginBottom: '40px', textAlign: 'center' }}>
+            <div className="reviews-section">
                 <h2>Student Reviews</h2>
-                <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 20 }}>
+                <div className="review-cards">
                     {reviews.map((review, index) => (
-                        <Card key={index} style={{ width: 300 }}>
+                        <Card key={index} className="review-card">
                             <Text strong>{review.name}</Text>
-                            <p style={{ marginBottom: 4 }}>{review.orderId}</p>
-                            <Paragraph style={{ fontSize: '13px' }}>{review.text}</Paragraph>
+                            <p>{review.orderId}</p>
+                            <Paragraph className="helper-text">{review.text}</Paragraph>
                             <Rate disabled defaultValue={review.rating} />
                         </Card>
                     ))}
                 </div>
             </div>
+            <div className="subjects-section">
 
-            {/* Fifth Section - Subjects */}
-            <div
-                style={{
-                    marginBottom: '60px',
-                    padding: '40px 20px',
-                    background: '#f9f9f9',
-                    borderRadius: '12px',
-                    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)'
-                }}
-            >
-                <h2
-                    style={{
-                        textAlign: 'center',
-                        marginBottom: '30px',
-                        fontWeight: '700',
-                        fontSize: '28px',
-                        color: '#2c3e50'
-                    }}
-                >
-                    TTypes of Services We Offer:
-                </h2>
+                <h2>Subjects We Cover</h2>
                 <ul
                     style={{
                         listStyle: 'none',
@@ -304,8 +208,8 @@ const HomeWork = () => {
 
                 </ul>
             </div>
-
         </div>
+
     );
 };
 
