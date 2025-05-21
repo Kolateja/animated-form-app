@@ -2,6 +2,8 @@ import React from 'react';
 import { Card, Typography, Rate, Row, Col, Divider, Space } from 'antd';
 import FreeQuote from './getFreeQuote';
 import HowItWorks from './HowItWorks';
+import './ResearchPaper.css';
+import styles from './AcademicWritingPage.module.css';
 
 const { Text, Paragraph, Title } = Typography;
 
@@ -67,24 +69,17 @@ const experts = [
 
 const SpeechWritingComponent = () => {
     return (
-        <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
-            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '20px', padding: '0 20px' }}>
-                <div style={{ flex: 1, minWidth: 300, maxWidth: '600px' }}>
-                    <h1 style={{ fontSize: '64px', background: 'linear-gradient(to right, #7F00FF, #E100FF)', WebkitBackgroundClip: 'text', color: '#7F00FF' }}>
-                        Speech Writing Services
-                    </h1>
-                    <p style={{ fontSize: '20px', color: '#444' }}>
-                        Elevate your words. Captivate your audience. Let us write a compelling speech for your special occasion or professional event.
+        <div className={styles.container}>
+            <div className="research-section">
+                <div className="research-header">
+                    <h1>Speech Writing Services</h1>
+                    <p>Elevate your words. Captivate your audience. Let us write a compelling speech for your special occasion or professional event.
                     </p>
-                    <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
-                        Trusted by speakers, executives, and students worldwide.
-                    </p>
+                    <p className="trusted">Trusted by 1.5M+ happy customers</p>
                 </div>
 
-                <div style={{ flex: '0 0 700px' }}>
-                    <div style={{ padding: '30px', borderRadius: '12px', backgroundColor: '#fff', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)' }}>
-                        <FreeQuote />
-                    </div>
+                <div className="form-card">
+                    <FreeQuote />
                 </div>
             </div>
 

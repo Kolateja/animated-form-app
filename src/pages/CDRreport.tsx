@@ -14,6 +14,8 @@ import {
 } from 'antd';
 import FreeQuote from './getFreeQuote';
 import HowItWorks from './HowItWorks';
+import './ResearchPaper.css';
+import styles from './AcademicWritingPage.module.css';
 
 const { TextArea } = Input;
 const { Option } = Select;
@@ -126,52 +128,19 @@ const coreValues: CoreValue[] = [
 
 const CDRReport = () => {
     return (
-        <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
-            <div
-                style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    justifyContent: 'space-between',
-                    alignItems: 'flex-start',
-                    gap: '20px',
-                    padding: '0 20px',
-                }}
-            >
-                <div style={{ flex: 1, minWidth: 300, maxWidth: '600px' }}>
-                    <h1
-                        style={{
-                            fontSize: '72px',
-                            lineHeight: 1.2,
-                            background: 'linear-gradient(to right, #2b5876, #4e4376)',
-                            WebkitBackgroundClip: 'text',
-                            color: '#4e4376',
-                            marginBottom: '20px',
-                        }}
-                    >
-                        CDR Report Help
-                    </h1>
-                    <p style={{ fontSize: '20px', color: '#444', marginBottom: '10px' }}>
-                        Professional CDR writing, reviewing, and editing for Engineers Australia.
+        <div className={styles.container}>
+            <div className="research-section">
+                <div className="research-header">
+                    <h1>CDR Report Help</h1>
+                    <p>Professional CDR writing, reviewing, and editing for Engineers Australia.
                     </p>
-                    <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
-                        Trusted by engineering graduates globally for EA approval
-                    </p>
+                    <p className="trusted">Trusted by 1.5M+ happy customers</p>
                 </div>
 
-                <div style={{ flex: '0 0 700px' }}>
-                    <div
-                        style={{
-                            padding: '30px',
-                            borderRadius: '12px',
-                            backgroundColor: '#fff',
-                            boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
-                        }}
-                    >
-                        <FreeQuote />
-                    </div>
+                <div className="form-card">
+                    <FreeQuote />
                 </div>
             </div>
-
             <div style={{ marginBottom: '40px', textAlign: 'center' }}>
                 <h2>Meet Our CDR Experts</h2>
                 <p>Experienced professionals helping engineers succeed internationally.</p>

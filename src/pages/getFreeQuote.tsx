@@ -43,21 +43,7 @@ const FreeQuote: React.FC = () => {
     };
 
     return (
-        // <div
-        //     style={{
-        //         margin: '5rem auto 0',
-        //         padding: '40px',
-        //         backdropFilter: 'blur(10px)',
-        //         background: 'rgba(255, 255, 255, 0.15)',
-        //         borderRadius: '16px',
-        //         border: '1px solid rgba(255,255,255,0.2)',
-        //         color: '#fff',
-        //         maxWidth: '1000px',
-        //     }}
-        // >
-        //     <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-        //         <h4 style={{ fontSize: 28, fontWeight: 600, color: '#333' }}>Get a free quote now</h4>
-        //     </div>
+   
         <Form form={form} onFinish={onFinish} layout="vertical">
             <Row gutter={[24, 24]}>
                 <Col span={12}>

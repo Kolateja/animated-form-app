@@ -2,7 +2,8 @@ import React from 'react';
 import { Card, Input, Button, Select, Checkbox, Col, Row, Space, Divider, Rate, Typography } from 'antd';
 import FreeQuote from './getFreeQuote';
 import HowItWorks from './HowItWorks';
-
+import './ResearchPaper.css';
+import styles from './AcademicWritingPage.module.css';
 const { TextArea } = Input;
 const { Option } = Select;
 const { Text, Paragraph, Title } = Typography;
@@ -105,62 +106,28 @@ const coreValues: CoreValue[] = [
         title: 'Amazing Referral Schemes:',
         description:
             'Get a reward if students you know use our academic assistance. Your e-wallet will be credited with the referral bonus when your friend joins.',
-            icon: 'https://img.icons8.com/ios-filled/100/gift.png', // Gift/referral bonus icon
+        icon: 'https://img.icons8.com/ios-filled/100/gift.png', // Gift/referral bonus icon
     }
 ];
 
 
 const CaseStudy = () => {
     return (
-        <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
-            {/* First Section */}
-            <div
-                style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    justifyContent: 'space-between',
-                    alignItems: 'flex-start',
-                    gap: '20px',
-                    // marginBottom: '60px',
-                    padding: '0 20px',
-                }}
-            >
-                {/* Left Section - Heading and Description */}
-                <div style={{ flex: 1, minWidth: 300, maxWidth: '600px' }}>
-                    <h1
-                        style={{
-                            fontSize: '78px',
-                            lineHeight: 1.2,
-                            background: 'linear-gradient(to right, #ff6600, #800080)',
-                            WebkitBackgroundClip: 'text',
-                            color: '#ee174e',
-                            marginBottom: '20px',
-                        }}
-                    >
-                        Case Study Help For Your Academic Success
-                    </h1>
-                    <p style={{ fontSize: '20px', color: '#444', marginBottom: '10px' }}>
-                        Sign up for quick and affordable case study assignment help from the best minds today!
+        <div className={styles.container}>
+
+            <div className="research-section">
+                <div className="research-header">
+                    <h1>Case Study Help For Your Academic Success</h1>
+                    <p>Sign up for quick and affordable case study assignment help from the best minds today!
                     </p>
-                    <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
-                        Trusted by 1.5M+ happy customers
-                    </p>
+                    <p className="trusted">Trusted by 1.5M+ happy customers</p>
                 </div>
 
-                {/* Right Section - Form Card */}
-                <div style={{ flex: '0 0 700px' }}>
-                    <div
-                        style={{
-                            padding: '30px',
-                            borderRadius: '12px',
-                            backgroundColor: '#fff',
-                            boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
-                        }}
-                    >
-                        <FreeQuote />
-                    </div>
+                <div className="form-card">
+                    <FreeQuote />
                 </div>
             </div>
+
 
 
             {/* Second Section */}

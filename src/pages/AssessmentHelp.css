@@ -1,0 +1,195 @@
+.assessment-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* First Section */
+.first-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.left-section {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.main-heading {
+    font-size: 78px;
+    line-height: 1.2;
+    background: linear-gradient(to right, #ff6600, #800080);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+}
+
+.subheading {
+    font-size: 20px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.trust-note {
+    font-weight: bold;
+    font-size: 18px;
+    color: #222;
+}
+
+.right-section {
+    flex: 0 0 700px;
+}
+
+.form-card {
+    padding: 30px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Second Section */
+.second-section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.scroll-cards {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 16px;
+}
+
+.feedback-card {
+    border-radius: 10px;
+    flex: 0 0 300px;
+    min-width: 300px;
+    height: 100%;
+}
+
+.feedback-name {
+    font-size: 16px;
+}
+
+.feedback-education,
+.feedback-orders,
+.feedback-message {
+    font-size: 13px;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Third Section */
+.third-section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.service-card {
+    border-radius: 12px;
+    padding: 1.5rem;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+}
+
+.service-title {
+    color: #0f52ba;
+}
+
+.service-description {
+    color: #555;
+}
+
+/* Fourth Section */
+.fourth-section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.review-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Fifth Section */
+.fifth-section {
+    margin-bottom: 60px;
+    padding: 40px 20px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.fifth-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 28px;
+    color: #2c3e50;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #34495e;
+}
+
+.service-list li {
+    margin-bottom: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .first-section {
+        flex-direction: column;
+    }
+
+    .right-section {
+        flex: 1;
+    }
+
+    .main-heading {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-heading {
+        font-size: 36px;
+    }
+
+    .form-card {
+        padding: 20px;
+    }
+
+    .service-card {
+        padding: 1rem;
+    }
+}

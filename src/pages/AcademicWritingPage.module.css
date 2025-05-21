@@ -1,0 +1,219 @@
+.container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.firstSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.textSection {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.heading {
+    font-size: 78px;
+    line-height: 1.2;
+    background: linear-gradient(to right, #ff6600, #800080);
+    -webkit-background-clip: text;
+    color: #ee174e;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.trusted {
+    font-weight: bold;
+    font-size: 18px;
+    color: #222;
+}
+
+.formSection {
+    flex: 0 0 700px;
+}
+
+.formCard {
+    padding: 30px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.writersSection {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.scrollContainer {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 16px;
+}
+
+.writerCard {
+    border-radius: 10px;
+    flex: 0 0 300px;
+    min-width: 300px;
+}
+
+.writerName {
+    font-size: 16px;
+}
+
+.writerMeta {
+    font-size: 13px;
+}
+
+.writerMessage {
+    font-size: 13px;
+}
+
+.divider {
+    margin: 12px 0;
+}
+
+.howItWorksSection {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+}
+
+.sectionTitle {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.servicesSection {
+    margin-bottom: 40px;
+}
+
+.servicesHeading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.serviceCard {
+    border-radius: 12px;
+    padding: 1.5rem;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.serviceIcon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+}
+
+.serviceTitle {
+    color: #0f52ba;
+}
+
+.serviceDescription {
+    color: #555;
+}
+
+.reviewsSection {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.reviewsContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.reviewCard {
+    width: 300px;
+}
+
+.reviewText {
+    font-size: 13px;
+}
+
+.subjectsSection {
+    margin-bottom: 60px;
+    padding: 40px 20px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.subjectsHeading {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 28px;
+    color: #2c3e50;
+}
+
+.subjectList {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #34495e;
+}
+
+.subjectItem {
+    margin-bottom: 10px;
+}
+
+/* ✅ Responsive Queries */
+@media (max-width: 768px) {
+    .heading {
+        font-size: 48px;
+    }
+
+    .formSection {
+        flex: 1 1 100%;
+    }
+
+    .firstSection {
+        flex-direction: column;
+    }
+
+    .serviceCard {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: 36px;
+    }
+
+    .scrollContainer {
+        flex-direction: column;
+    }
+
+    .reviewCard {
+        width: 100%;
+    }
+
+    .textSection,
+    .formSection {
+        padding: 0;
+    }
+}

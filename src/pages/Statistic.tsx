@@ -2,6 +2,8 @@ import React from 'react';
 import { Card, Input, Button, Select, Checkbox, Col, Row, Space, Divider, Rate, Typography } from 'antd';
 import FreeQuote from './getFreeQuote';
 import HowItWorks from './HowItWorks';
+import './ResearchPaper.css';
+import styles from './AcademicWritingPage.module.css';
 
 const { TextArea } = Input;
 const { Option } = Select;
@@ -115,52 +117,19 @@ const coreValues: CoreValue[] = [
 
 const StatisticalAnalysis = () => {
     return (
-        <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
-            <div
-                style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    justifyContent: 'space-between',
-                    alignItems: 'flex-start',
-                    gap: '20px',
-                    padding: '0 20px',
-                }}
-            >
-                <div style={{ flex: 1, minWidth: 300, maxWidth: '600px' }}>
-                    <h1
-                        style={{
-                            fontSize: '72px',
-                            lineHeight: 1.2,
-                            background: 'linear-gradient(to right, #2b5876, #4e4376)',
-                            WebkitBackgroundClip: 'text',
-                            color: '#4e4376',
-                            marginBottom: '20px',
-                        }}
-                    >
-                        Statistical Analysis Services
-                    </h1>
-                    <p style={{ fontSize: '20px', color: '#444', marginBottom: '10px' }}>
-                        Delivering accurate, insightful, and comprehensive statistical analysis for academic and professional use.
+        <div className={styles.container}>
+            <div className="research-section">
+                <div className="research-header">
+                    <h1>Statistical Analysis Services</h1>
+                    <p>Delivering accurate, insightful, and comprehensive statistical analysis for academic and professional use.
                     </p>
-                    <p style={{ fontWeight: 'bold', fontSize: '18px', color: '#222' }}>
-                        Trusted by thousands of researchers and students globally
-                    </p>
+                    <p className="trusted">Trusted by 1.5M+ happy customers</p>
                 </div>
 
-                <div style={{ flex: '0 0 700px' }}>
-                    <div
-                        style={{
-                            padding: '30px',
-                            borderRadius: '12px',
-                            backgroundColor: '#fff',
-                            boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
-                        }}
-                    >
-                        <FreeQuote />
-                    </div>
+                <div className="form-card">
+                    <FreeQuote />
                 </div>
             </div>
-
             <div style={{ marginBottom: '40px', textAlign: 'center' }}>
                 <h2>Meet Our Data Experts</h2>
                 <p>Qualified statisticians delivering reliable and accurate results.</p>
