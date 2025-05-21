@@ -85,6 +85,18 @@ const ServicesMenu = (
     ))}
   </div>
 );
+{/* <Menu.Item key="services" style={{ fontWeight: 'bold' }}>Services</Menu.Item>
+{groupedServices.map((group) => (
+  <div key={group.title} style={{ paddingLeft: '16px' }}>
+    <div style={{ fontWeight: 'bold', margin: '8px 0' }}>{group.title}</div>
+    {group.items.map((item) => (
+      <Menu.Item key={item} style={{ paddingLeft: '16px' }}>
+        <Link to={`/${item.toLowerCase().replace(/\s+/g, "-")}`}>{item}</Link>
+      </Menu.Item>
+    ))}
+  </div>
+))} */}
+
 
 const Header: React.FC = () => {
   const [visible, setVisible] = useState(false);
